@@ -19,9 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/Especialidades_form','ElizabethController@verEspecialidades')->name('especialidades');
+
 Route::get('/social_form','NancyController@verSocial')->name('social_form');
 
 Route::get('/usuarios_form','MauroController@verUsuarios')->name('usuarios_form');
 
 Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudiante_form');
+
 
