@@ -18,5 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
 
 Route::get('/Especialidades_form','ElizabethController@verEspecialidades')->name('especialidades');
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Route::get('/social_form','NancyController@verSocial')->name('social_form');
+=======
+
+Route::get('/usuarios_form','MauroController@verUsuarios')->name('usuarios_form');
+>>>>>>> c5e7361d3dfa8b5c1e05974a2ff8ae9a5051e44f
+=======
+Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudiante_form');
+>>>>>>> 57153a5a60998789d0a141671bbbef8b6bc52d96
+>>>>>>> b79b7cbd6623a93ffce9b909311163fce6eb4e72
