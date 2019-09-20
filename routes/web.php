@@ -18,5 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
 
 Route::get('/usuarios_form','MauroController@verUsuarios')->name('usuarios_form');
+=======
+Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudiante_form');
+>>>>>>> 57153a5a60998789d0a141671bbbef8b6bc52d96
