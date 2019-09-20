@@ -18,3 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudiante_form');
