@@ -31,5 +31,9 @@ Route::resource('/tiposocial_form','TipoSocialController');
 
 Route::resource('/users','UserController');
 
+<<<<<<< HEAD
 
+=======
+Route::resource('/Especialidades_control','EspecialidadesController');
+>>>>>>> 1fb73030b655ff8e93cd90464d9a9963d45d6018
 
