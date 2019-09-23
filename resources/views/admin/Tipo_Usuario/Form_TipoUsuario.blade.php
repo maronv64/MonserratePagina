@@ -18,8 +18,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12"> -->
-                        <form>  
-                        @csrf                  
+                        <form action ="{{url('/Tipo_Usuario')}}" method="POST">  
+                        @csrf 
+                        @method('POST')                
                             <div class="card ">
                                 <div class="card-header" style="background: #007bff" >
                                 <h5 class="card-title text-white">Tipo de Usuario </h5>
@@ -29,9 +30,10 @@
                                                 <div class="input-group-prepend">
                                                   <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
                                                 </div>
-                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name ="descripcion">
                                                 &nbsp;
-                                                <button type="button" class="btn btn-info">Agregar</button>
+                                               <input type="submit" value="agregar">
+                                                <!-- <button type="button" class="btn btn-info">Agregar</button> -->
                                               </div>
                                 </div>
                             </div>
