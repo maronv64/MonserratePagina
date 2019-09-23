@@ -1,5 +1,17 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
+<!-- <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tipo Social</title>
+</head>
+<body>
+        <!DOCTYPE html>
+        <html lang="en">
         <head>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -9,31 +21,36 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Tipo de Personal</title>
+            <title>Tipo de Social</title>
         </head>
             <body>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                                <form>                    
+                        <div class="col-md-12"> -->
+                                <form action="{{url('/tiposocial_form')}}" method="POST">
+                                        @csrf                    
                                     <div class="card ">
                                         <div class="card-header" style="background: #007bff" >
-                                          <h5 class="card-title text-white">Tipo de Personal </h5>
+                                        <h5 class="card-title text-white">Tipo de Social </h5>
                                         </div>
                                         <div class="card-body">
                                                 <div class="input-group mb-3">
                                                         <div class="input-group-prepend">
                                                           <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
                                                         </div>
-                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                                           &nbsp;
-                                                           <button type="button" class="btn btn-info">Agregar</button>
-                                                </div>
+                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                                                        &nbsp;
+                                                        <!-- <button type="button" class="btn btn-info">Agregar</button> -->
+                                                        <input type="submit" class="btn btn-info" value="Agregar"> 
+                                                      </div>
                                         </div>
                                     </div>
                                 </form> 
-                        </div>
+                        <!-- </div>
+        
                     </div>
                 </div>
             </body>
-</html>
+        </html>
+</html> -->
+@endsection
