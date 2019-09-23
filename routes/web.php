@@ -29,3 +29,4 @@ Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudia
 
 Route::resource('/users','UserController');
 
+Route::resource('/tipo_estudiante','TipoEstudianteController');
