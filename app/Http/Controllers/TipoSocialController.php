@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\TipoUsuario;
+use App\TipoSocial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TipoUsuarioController extends Controller
+class TipoSocialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class TipoUsuarioController extends Controller
      */
     public function index()
     {
-        return view ("admin.Tipo_Usuario.Form_Tipousuario");
+        //
     }
 
     /**
@@ -42,10 +42,10 @@ class TipoUsuarioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\TipoSocial  $tipoSocial
      * @return \Illuminate\Http\Response
      */
-    public function show(TipoUsuario $tipoUsuario)
+    public function show(TipoSocial $tipoSocial)
     {
         //
     }
@@ -53,10 +53,10 @@ class TipoUsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\TipoSocial  $tipoSocial
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipoUsuario $tipoUsuario)
+    public function edit(TipoSocial $tipoSocial)
     {
         //
     }
@@ -65,10 +65,10 @@ class TipoUsuarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\TipoSocial  $tipoSocial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TipoUsuario $tipoUsuario)
+    public function update(Request $request, TipoSocial $tipoSocial)
     {
         //
     }
@@ -76,10 +76,10 @@ class TipoUsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\TipoSocial  $tipoSocial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipoUsuario $tipoUsuario)
+    public function destroy(TipoSocial $tipoSocial)
     {
         //
     }

@@ -47,7 +47,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        echo "funcion show, UserController, valor".$id;
+        echo "funcion show, UserController, valor".$id; 
     }
 
     /**

@@ -431,6 +431,7 @@ class ComposerStaticInit22fb6837dfd617f0e8b67195d203a0c7
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\TipoSocial' => __DIR__ . '/../..' . '/app/TipoSocial.php',
         'App\\TipoUsuario' => __DIR__ . '/../..' . '/app/TipoUsuario.php',
         'App\\TipoEstudiante' => __DIR__ . '/../..' . '/app/TipoEstudiante.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
