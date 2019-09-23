@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\TipoEstudiante;
+use App\Especialidades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TipoEstudianteController extends Controller
+class EspecialidadesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class TipoEstudianteController extends Controller
      */
     public function index()
     {
-        return view("admin.TipoEstudiante.FormTipoEstudiante");
+        return view("admin.Especialidades.FormEspecialidades");
     }
 
     /**
@@ -42,10 +42,10 @@ class TipoEstudianteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\TipoEstudiante  $tipoEstudiante
+     * @param  \App\Especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function show(TipoEstudiante $tipoEstudiante)
+    public function show(Especialidades $especialidades)
     {
         //
     }
@@ -53,10 +53,10 @@ class TipoEstudianteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TipoEstudiante  $tipoEstudiante
+     * @param  \App\Especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipoEstudiante $tipoEstudiante)
+    public function edit(Especialidades $especialidades)
     {
         //
     }
@@ -65,10 +65,10 @@ class TipoEstudianteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TipoEstudiante  $tipoEstudiante
+     * @param  \App\Especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TipoEstudiante $tipoEstudiante)
+    public function update(Request $request, Especialidades $especialidades)
     {
         //
     }
@@ -76,10 +76,10 @@ class TipoEstudianteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TipoEstudiante  $tipoEstudiante
+     * @param  \App\Especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipoEstudiante $tipoEstudiante)
+    public function destroy(Especialidades $especialidades)
     {
         //
     }

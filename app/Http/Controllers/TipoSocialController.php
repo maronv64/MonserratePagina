@@ -15,7 +15,8 @@ class TipoSocialController extends Controller
      */
     public function index()
     {
-        //
+            //echo "verSocial";
+             return view("admin.TipoSocial.FormTipoSocial");
     }
 
     /**
