@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+
+@section('content')
+
+<!-- <html lang="en">
 <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -10,8 +13,9 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <form action="">
+            <div class="col-md-12"> -->
+                <form action="{{url('/Especialidades_control')}}" method="POST">
+                    @csrf
                     <div class="card">
                         <div class="card-header">
                             Especialidades
@@ -21,25 +25,27 @@
                                 <div class="input-group-prepend">
                                          <label class="input-group-text" for="inputGroupSelect01">Options</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
+                                <select class="custom-select" id="inputGroupSelect01" name="descripcion" >
                                         <option selected></option>
-                                        <option value="1">Ciencias </option>
-                                        <option value="2">Tecnico</option>
+                                        <option value="Ciencias">Ciencias </option>
+                                        <option value="Tecnico">Tecnico</option>
                                         
                                 </select>
                                 
                                 <a href="#" class="btn btn-info">Agregar Materias</a>
                                 </div>
                             
-                            <a href="#" class="btn btn-info">Guardar</a>
+                            <!-- <a href="#" class="btn btn-info">Guardar</a> -->
+                            <input type="submit" class="btn btn-info" value="Guardar">
                             
                         </div>  
 
                     </div>
                 </form>
-            </div>
+            <!-- </div>
         </div>
     </div>
 
 </body>
-</html>
+</html> -->
+@endsection
