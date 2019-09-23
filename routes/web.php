@@ -31,9 +31,7 @@ Route::resource('/tiposocial_form','TipoSocialController');
 
 Route::resource('/users','UserController');
 
-
 Route::resource('/Tipo_Usuario','TipoUsuarioController');
-
 
 Route::resource('/tipo_estudiante','TipoEstudianteController');
 
