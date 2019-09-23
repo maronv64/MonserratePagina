@@ -15,8 +15,13 @@ class CreateTipoEstudiantesTable extends Migration
     {
         Schema::create('tipo_estudiantes', function (Blueprint $table) {
             $table->bigIncrements('id');
+<<<<<<< HEAD
             $table->string('descripcion','100');
             $table->string('estado_del','2');
+=======
+            $table->string('descripcion',100);
+            $table->string('estado_del',2);
+>>>>>>> 3a30c46cf6a6e1283d4e4a29958c773bb8f29482
             $table->timestamps();
         });
     }
