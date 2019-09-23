@@ -34,8 +34,20 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    'App\\TipoSocial' => $baseDir . '/app/TipoSocial.php',
+=======
+<<<<<<< HEAD
+>>>>>>> 0dec09684032df8bdadeb669c666a5447705bdbd
     'App\\TipoUsuario' => $baseDir . '/app/TipoUsuario.php',
     'App\\TipoEstudiante' => $baseDir . '/app/TipoEstudiante.php',
+<<<<<<< HEAD
+=======
+>>>>>>> 055a4ca3f0179f4d203d8c65d13ca3571070a465
+>>>>>>> 8eded9dac307503642d6e38795f949b5853515c7
+>>>>>>> 0dec09684032df8bdadeb669c666a5447705bdbd
     'App\\User' => $baseDir . '/app/User.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
