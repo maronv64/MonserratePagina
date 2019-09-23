@@ -27,9 +27,5 @@ Route::get('/usuarios_form','MauroController@verUsuarios')->name('usuarios_form'
 
 Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudiante_form');
 
-<<<<<<< HEAD
-Route::resource("/users","UserController");
-=======
 Route::resource('/users','UserController');
 
->>>>>>> 055a4ca3f0179f4d203d8c65d13ca3571070a465
