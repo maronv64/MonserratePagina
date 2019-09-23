@@ -15,7 +15,7 @@ class TipoUsuarioController extends Controller
      */
     public function index()
     {
-        //
+        return view ("admin.Tipo_Usuario.Form_Tipousuario");
     }
 
     /**
