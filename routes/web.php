@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');        
 
 Route::get('/Especialidades_form','ElizabethController@verEspecialidades')->name('especialidades');
 
@@ -28,7 +28,3 @@ Route::get('/usuarios_form','MauroController@verUsuarios')->name('usuarios_form'
 Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudiante_form');
 
 Route::resource("/users","UserController");
-<<<<<<< HEAD
-=======
-
->>>>>>> 447e1d6b4a8f675b6675fcb6ab2ceec8ed0b683d
