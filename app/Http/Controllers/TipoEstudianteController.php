@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 
 class TipoEstudianteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +40,13 @@ class TipoEstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $items=new TipoEstudiante();
+        $items->descripcion=$request->descripcion;
+        $items->estado_del="A";
+        $items->save();
+        echo $items;
+        return; 
+        
     }
 
     /**
