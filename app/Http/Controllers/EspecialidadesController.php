@@ -13,7 +13,12 @@ class EspecialidadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+     public function index()
     {
         return view("admin.Especialidades.FormEspecialidades");
     }
@@ -36,7 +41,12 @@ class EspecialidadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $especialidad =new Especialidades();
+        $especialidad->descripcion=$request->descripcion;
+        $especialidad->estado_del="A";
+        $especialidad->save();
+        echo $especialidad;
+        return;
     }
 
     /**
