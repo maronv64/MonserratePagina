@@ -15,8 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        echo "Funcion Index ,Controller";
-
+        echo "funcion index, UserController";
     }
 
     /**
@@ -48,7 +47,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        echo "Funcion Show, UserController,valor" . $id;
+        echo "funcion show, UserController, valor".$id;
     }
 
     /**
