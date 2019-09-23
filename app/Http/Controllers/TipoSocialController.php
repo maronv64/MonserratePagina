@@ -13,6 +13,12 @@ class TipoSocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
             //echo "verSocial";
@@ -37,7 +43,12 @@ class TipoSocialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipoSocial=new TipoSocial();
+        $tipoSocial->descripcion=$request->descripcion;
+        $tipoSocial->estado_del="A";
+        $tipoSocial->save();
+        echo $tipoSocial;
+        return;
     }
 
     /**
