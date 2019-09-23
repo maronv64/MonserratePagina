@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Especialidades' => $baseDir . '/app/Especialidades.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -34,14 +35,19 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     'App\\TipoSocial' => $baseDir . '/app/TipoSocial.php',
 =======
 <<<<<<< HEAD
+>>>>>>> 0dec09684032df8bdadeb669c666a5447705bdbd
     'App\\TipoUsuario' => $baseDir . '/app/TipoUsuario.php',
-=======
     'App\\TipoEstudiante' => $baseDir . '/app/TipoEstudiante.php',
+<<<<<<< HEAD
+=======
 >>>>>>> 055a4ca3f0179f4d203d8c65d13ca3571070a465
 >>>>>>> 8eded9dac307503642d6e38795f949b5853515c7
+>>>>>>> 0dec09684032df8bdadeb669c666a5447705bdbd
     'App\\User' => $baseDir . '/app/User.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
