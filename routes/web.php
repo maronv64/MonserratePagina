@@ -27,5 +27,9 @@ Route::get('/usuarios_form','MauroController@verUsuarios')->name('usuarios_form'
 
 Route::get('/estudiantes_form','GustavoController@verEstudiante')->name('estudiante_form');
 
+Route::resource('/tiposocial_form','TipoSocialController');
+
 Route::resource('/users','UserController');
+
+
 
