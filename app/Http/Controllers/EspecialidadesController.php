@@ -50,8 +50,10 @@ class EspecialidadesController extends Controller
         $especialidad->descripcion=$request->descripcion;
         $especialidad->estado_del="A";
         $especialidad->save();
-        echo $especialidad;
-        return;
+        $items=Especialidades::Where("estado_del","A")->get();
+        return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+        // echo $especialidad;
+        // return;
     }
 
     /**
@@ -60,10 +62,11 @@ class EspecialidadesController extends Controller
      * @param  \App\Especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function show(Especialidades $especialidades)
+    public function show($id)
     {
         //
-        echo "show";
+        $item =Especialidades::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
@@ -84,9 +87,9 @@ class EspecialidadesController extends Controller
      * @param  \App\Especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especialidades $especialidades)
+    public function update(Request $request,$id)
     {
-        //
+        return $request;
     }
 
     /**
@@ -97,11 +100,13 @@ class EspecialidadesController extends Controller
      */
     public function destroy($id)
     {
-        //  $item =Especialidades::where("id",$id)->first();
-        //  $item->estado_del="E";
-        //  $item->update();
-        //  echo $item;
-        echo "funcion destroy";
-       return;
+          $item =Especialidades::where("id",$id)->first();
+          $item->estado_del="E";
+          $item->update();
+        //   echo $item;
+          return redirect('/Especialidades_control');
+          //return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+        // echo "funcion destroy";
+    //    return;
     }
 }
