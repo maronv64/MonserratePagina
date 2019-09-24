@@ -20,7 +20,12 @@ class EspecialidadesController extends Controller
 
      public function index()
     {
-        return view("admin.Especialidades.FormEspecialidades");
+        $items=Especialidades::Where("estado_del","A")->get();
+        // echo $items;
+        // return;
+      
+        return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+       
     }
 
     /**
@@ -58,6 +63,7 @@ class EspecialidadesController extends Controller
     public function show(Especialidades $especialidades)
     {
         //
+        echo "show";
     }
 
     /**
@@ -89,8 +95,13 @@ class EspecialidadesController extends Controller
      * @param  \App\Especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Especialidades $especialidades)
+    public function destroy($id)
     {
-        //
+        //  $item =Especialidades::where("id",$id)->first();
+        //  $item->estado_del="E";
+        //  $item->update();
+        //  echo $item;
+        echo "funcion destroy";
+       return;
     }
 }

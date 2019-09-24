@@ -42,10 +42,57 @@
 
                     </div>
                 </form>
+                <!-- <form action=""> -->
+                        <table class="table table-bordered">
+                                <thead class="thead bg-primary text-white" >
+                                  <tr>
+                                    <th scope="col">Especialidad</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Accion</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($lista_especialidades as $item)
+                                        <tr>
+                                            <th scope="row">Ciencias</th>
+                                             <th>
+                                                 {{$item["descripcion"]}}
+                                             </th>
+                                        
+                                            <td>
+                                                <a href="#" class="btn btn-info">Modificar</a>
+                                                {{-- <form action="{{url('Especialidades_control/'.$item['id'])}}" method="POST"> --}}
+                                                <form action="{{route('Especialidades_control.destroy',$item['id'])}}" method="POST">
+                                                              @csrf    
+                                                              @method("DELETE")                
+                                                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                                                </form>
+                                                <!-- <a href="{{route('Especialidades_control.destroy',$item['id'])}}">elim</a> -->
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    <!-- <tr>
+                                        <th scope="row">Ciencias</th>
+                                        <th>jajjaa</th>
+                                        <td>
+                                            <a href="#" class="btn btn-info">Modificar</a>
+                                            <a href="#" class="btn btn-danger">Eliminar</a>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tecnico</th>
+                                        <th>jajjaa</th>
+                                        <td>
+                                                <a href="#" class="btn btn-info">Modificar</a>
+                                                <a href="#" class="btn btn-danger">Eliminar</a>   
+                                        </td>   
+                                    </tr> -->
+                                </tbody>
+                        </table>    
+                <!-- </form> -->
             <!-- </div>
         </div>
     </div>
-
 </body>
 </html> -->
 @endsection
