@@ -27,7 +27,7 @@
                                         </div>  
                                     </div>
                                     <div class="modal-footer">
-                                            <input type="button" class="btn btn-info" value ="modificar">                                    
+                                            <input type="submit" class="btn btn-info" value ="modificar">                                    
                                     </div>                            
                                 </form>
                          </div>
