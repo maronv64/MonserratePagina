@@ -90,8 +90,13 @@ class TipoSocialController extends Controller
      */
     public function update(Request $request,$id)
     {
-        //
-        return $request;
+        //echo $request;
+        // return $request;
+         $item=TipoSocial::where("id",$request->id)->first();
+          $item->descripcion=$request->descripcion;
+          $item->update();
+        //   return $item;
+         return redirect('/tiposocial_form');
     }
 
     /**
