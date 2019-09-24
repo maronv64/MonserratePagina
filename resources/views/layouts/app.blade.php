@@ -12,8 +12,19 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/GestionEspecialidades.js') }}" defer></script>
+<<<<<<< HEAD
     <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
+=======
+
+    <script src="{{ asset('js/GestionTipoUsuario.js') }}" defer></script>
+    
+
+    <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
+
+    <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
+
+>>>>>>> 642d8c75dfbc0325c68af0f196fb618865d24c1b
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

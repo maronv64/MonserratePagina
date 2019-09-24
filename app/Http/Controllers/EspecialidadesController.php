@@ -90,7 +90,11 @@ class EspecialidadesController extends Controller
      */
     public function update(Request $request,$id)
     {
-        return $request;
+         $item=Especialidades::where("id",$request->id)->first();
+         $item->descripcion=$request->descripcion;
+         $item->update();
+         return redirect('/Especialidades_control');
+        // return $request;
     }
 
     /**

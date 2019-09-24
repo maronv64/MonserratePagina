@@ -8,7 +8,7 @@
             <div class="modal-header" style="background-color: #007bff;">
                 <h5 class="card-title text-white">Tipos de Estudiantes</h5>
             </div>
-                <form action="{{route('Especialidades_control.update',1)}}" method="POST">
+                <form action="{{route('tipo_estudiante.update',1)}}" method="POST">
                     @csrf
                     @method('PATCH')
                     <div class="modal-body">

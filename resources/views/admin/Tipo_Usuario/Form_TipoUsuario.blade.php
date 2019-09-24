@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12"> -->
-                        <form action ="{{url('/Tipo_Usuario')}}" method="POST">  
+                        <form action ="{{url('/tipo_usuario')}}" method="POST">  
                         @csrf 
                         @method('POST')                
                             <div class="card ">
@@ -38,12 +38,39 @@
                                 </div>
                             </div>
                         </form> 
+                        <table class="table">
+                            <thead class="thead bg-primary text-white" >
+                              <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Descripciòn</th>                               
+                                <th scope="col">Opciones </th>
+                              </tr>
+                            </thead>
+                            
+                            <tbody>
+                            @foreach ($lista_tipoUsuario as $item)
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>{{$item['descripcion']}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-info" onclick = "verTipoUsuario(<?php echo $item['id'] ?>)">Modificar</button>
+                                    <form action="{{route('tipo_usuario.destroy',$item['id'])}}" method="POST">
+                                                              @csrf    
+                                                              @method("DELETE")                
+                                                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                                    </form>
+                                </td>
+                              </tr>
+                            @endforeach                                                                                                                               
+                            </tbody>
+                          </table>
                 <!-- </div>
 
             </div>
         </div>
     </body>
 </html> -->
+@include('admin.Tipo_Usuario.Modal_TipoUsuario')
 @endsection
 <!-- <label for="exampleFormControlInput1">Descripcion</label>
 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="texto">
