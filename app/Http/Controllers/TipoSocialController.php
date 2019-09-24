@@ -22,7 +22,12 @@ class TipoSocialController extends Controller
     public function index()
     {
             //echo "verSocial";
-             return view("admin.TipoSocial.FormTipoSocial");
+            $items=TipoSocial::where("estado_del","A")->get();
+
+            //  echo $items;
+            //  return;
+             return view("admin.TipoSocial.FormTipoSocial", ["lista_tipo_social"=>$items]);
+            //  return view("admin.TipoSocial.FormTipoSocial");
     }
 
     /**
@@ -91,8 +96,12 @@ class TipoSocialController extends Controller
      * @param  \App\TipoSocial  $tipoSocial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipoSocial $tipoSocial)
+    public function destroy($id)
     {
-        //
+        // $item=TipoSocial::where("id", $id)->first();
+        // $item->estado_del="E";
+        // $item->update();
+        echo "funcion destroy";
+        return;
     }
 }
