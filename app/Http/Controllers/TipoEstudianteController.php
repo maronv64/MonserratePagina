@@ -19,7 +19,10 @@ class TipoEstudianteController extends Controller
      */
     public function index()
     {
-        return view("admin.TipoEstudiante.FormTipoEstudiante");
+        $items=TipoEstudiante::where("estado_del","A")->get();
+        // echo $items;
+        // return
+        return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
     }
 
     /**
@@ -89,8 +92,12 @@ class TipoEstudianteController extends Controller
      * @param  \App\TipoEstudiante  $tipoEstudiante
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipoEstudiante $tipoEstudiante)
+    public function destroy($id)
     {
-        //
+        // $items=TipoEstudiante::where("id",$id)->first();
+        // $items->estado_del="E";
+        // $items->update();
+        echo "funcion destroy";
+        return;
     }
 }
