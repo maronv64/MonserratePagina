@@ -62,8 +62,6 @@
                                             <td>
                                                 <a href="#" class="btn btn-info">Agregar Materias</a>
                                                 <a href="#" onclick='verEspecialidad(<?php echo $item["id"] ?>)' class="btn btn-info" >Modificar</a>
-
-                                                {{-- <form action="{{url('Especialidades_control/'.$item['id'])}}" method="POST"> --}}
                                                 <form action="{{route('Especialidades_control.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
                                                               @method("DELETE")                
