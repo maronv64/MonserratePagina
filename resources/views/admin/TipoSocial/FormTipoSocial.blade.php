@@ -61,9 +61,9 @@
                                         
                                             <td>
                                                 
-                                                <a href="#" onclick='verTipoSocial(<?php echo $item["id"] ?>)' class="btn btn-info" >Modificar</a>
+                                                <a href="#" onclick='verTipoSocial(<?php echo $item["id"]?>)' class="btn btn-info" >Modificar</a>
 
-                                                {{-- <form action="{{url('tiposocial_form/'.$item['id'])}}" method="POST"> --}}
+                                                <!-- {{-- <form action="{{url('tiposocial_form/'.$item['id'])}}" method="POST"> --}} -->
                                                 <form action="{{route('tiposocial_form.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
                                                               @method("DELETE")                

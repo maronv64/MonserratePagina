@@ -1,14 +1,14 @@
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".hola">hola </button> -->
 
-<div class="modal fade TipoSocial bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade MTipoSocial bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-container">
                     <div class="modal-header">
-                        Modificar Social
+                        Modificar Tipo Social
                     </div> 
 
-                    <form action="{{route('tiposocial_form.update',$item['id'])}}" method="POST">
+                    <form action="{{route('tiposocial_form.update',1)}}" method="POST">
                         @csrf
                         @method('PATCH')
                         <!-- <input name="_method" type="hidden" value="PATCH"> -->
