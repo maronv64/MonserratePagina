@@ -45,8 +45,9 @@ class TipoEstudianteController extends Controller
         $items->descripcion=$request->descripcion;
         $items->estado_del="A";
         $items->save();
-        $items=TipoEstudiante::where("estado_del","A")->get();
-        return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
+        return redirect('/tipo_estudiante'); 
+        // $items=TipoEstudiante::where("estado_del","A")->get();
+        // return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
         
     }
 
@@ -56,9 +57,10 @@ class TipoEstudianteController extends Controller
      * @param  \App\TipoEstudiante  $tipoEstudiante
      * @return \Illuminate\Http\Response
      */
-    public function show(TipoEstudiante $tipoEstudiante)
+    public function show($id)
     {
-        //
+        $item =TipoEstudiante::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
@@ -79,9 +81,9 @@ class TipoEstudianteController extends Controller
      * @param  \App\TipoEstudiante  $tipoEstudiante
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TipoEstudiante $tipoEstudiante)
+    public function update(Request $request,$id)
     {
-        //
+        return $request;
     }
 
     /**
@@ -95,9 +97,9 @@ class TipoEstudianteController extends Controller
         $items=TipoEstudiante::where("id",$id)->first();
         $items->estado_del="E";
         $items->update();
-
-        $items=TipoEstudiante::where("estado_del","A")->get();
-        return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
+        return redirect('/tipo_estudiante'); 
+        // $items=TipoEstudiante::where("estado_del","A")->get();
+        // return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
         // echo "funcion destroy";
         // return;
     }
