@@ -25,14 +25,14 @@
                                 <div class="input-group-prepend">
                                          <label class="input-group-text" for="inputGroupSelect01">Options</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01" name="descripcion" >
+                                <!-- <select class="custom-select" id="inputGroupSelect01" name="descripcion" >
                                         <option selected></option>
                                         <option value="Ciencias">Ciencias </option>
                                         <option value="Tecnico">Tecnico</option>
                                         
-                                </select>
+                                </select> -->
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                                 
-                                <a href="#" class="btn btn-info">Agregar Materias</a>
                                 </div>
                             
                             <!-- <a href="#" class="btn btn-info">Guardar</a> -->
@@ -46,7 +46,7 @@
                         <table class="table table-bordered">
                                 <thead class="thead bg-primary text-white" >
                                   <tr>
-                                    <th scope="col">Especialidad</th>
+                                    <th scope="col">#</th>
                                     <th scope="col">Descripcion</th>
                                     <th scope="col">Accion</th>
                                   </tr>
@@ -54,19 +54,22 @@
                                 <tbody>
                                     @foreach($lista_especialidades as $item)
                                         <tr>
-                                            <th scope="row">Ciencias</th>
+                                            <th scope="row">1</th>
                                              <th>
                                                  {{$item["descripcion"]}}
                                              </th>
                                         
                                             <td>
-                                                <a href="#" class="btn btn-info">Modificar</a>
+                                                <a href="#" class="btn btn-info">Agregar Materias</a>
+                                                <a href="#" onclick='verEspecialidad(<?php echo $item["id"] ?>)' class="btn btn-info" >Modificar</a>
+
                                                 {{-- <form action="{{url('Especialidades_control/'.$item['id'])}}" method="POST"> --}}
                                                 <form action="{{route('Especialidades_control.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
                                                               @method("DELETE")                
                                                     <input type="submit" class="btn btn-danger" value="Eliminar">
                                                 </form>
+                                                
                                                 <!-- <a href="{{route('Especialidades_control.destroy',$item['id'])}}">elim</a> -->
                                             </td>
                                         </tr>
@@ -95,4 +98,5 @@
     </div>
 </body>
 </html> -->
+@include('admin.Especialidades.ModalEspecialidades')
 @endsection
