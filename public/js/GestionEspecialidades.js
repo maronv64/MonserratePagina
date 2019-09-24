@@ -5,5 +5,5 @@ function verEspecialidad(id) {
         // $("#idEspecialidad").val(id);
         $("#descripcionEspecialidad").val(data.descripcion);
     });
-    $(".hola").modal("show");
+    $(".especialidad").modal("show");
 }
