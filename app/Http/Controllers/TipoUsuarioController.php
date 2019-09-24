@@ -13,6 +13,12 @@ class TipoUsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         return view ("admin.Tipo_Usuario.Form_Tipousuario");
@@ -36,7 +42,13 @@ class TipoUsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $items=new TipoUsuario();
+        $items->descripcion=$request->descripcion;
+        $items->estado_del="A";
+        $items->save();
+        echo $items;
+        return ;
+        
     }
 
     /**
