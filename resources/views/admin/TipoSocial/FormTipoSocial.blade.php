@@ -24,7 +24,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form>
                                 <table class="table table-bordered">
                                         <thead class="thead bg-primary text-white">
                                           <tr>
@@ -51,11 +50,8 @@
                                                     </td>
                                                 </tr>
                                                 @endforeach
-                                                
-
                                        </tbody>
                                 </table>
-                </form>
             </div>
         </div>
     </div>
