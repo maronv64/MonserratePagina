@@ -12,7 +12,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/GestionEspecialidades.js') }}" defer></script>
+<<<<<<< HEAD
+    <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
+=======
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
+>>>>>>> 294ab4f564ca0331a09c7fe7cfacf78902a84854
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
