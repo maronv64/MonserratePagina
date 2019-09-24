@@ -51,7 +51,8 @@ class EspecialidadesController extends Controller
         $especialidad->estado_del="A";
         $especialidad->save();
         $items=Especialidades::Where("estado_del","A")->get();
-        return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+        return redirect('/Especialidades_control');
+        //return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
         // echo $especialidad;
         // return;
     }
