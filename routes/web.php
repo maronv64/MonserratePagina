@@ -31,18 +31,8 @@ Route::resource('/tiposocial_form','TipoSocialController');
 
 Route::resource('/users','UserController');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
 Route::resource('/Tipo_Usuario','TipoUsuarioController');
 
-
->>>>>>> aad7ae91fdc2a2182c5a394cc959320235d342d6
-=======
-Route::resource('/Tipo_Usuario','TipoUsuarioController');
-
->>>>>>> f9ec227942c9041d812c3e00aaed886ec068d32d
 Route::resource('/tipo_estudiante','TipoEstudianteController');
 
 Route::resource('/Especialidades_control','EspecialidadesController');

@@ -46,6 +46,60 @@
                                         </div>
                                     </div>
                                 </form> 
+                                <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form>
+                                <table class="table table-bordered">
+                                        <thead class="thead bg-primary text-white">
+                                          <tr>
+                                              <th scope="col">Codigo</th>
+                                              <th scope="col">Descripcion</th>
+                                              <th scope="col">Acciones</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>  
+                                                    <td>ffff</td>
+                                                    <td>
+                                                          <button type="button" class="btn btn-info">Modificar</button>
+                                                          <button type="button" class="btn btn-danger">Eliminar</button>
+                                                    </td>
+                                                </tr>
+                                        </tbody> 
+                                        <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>  
+                                                    <td>ffff</td>
+                                                    <td>
+                                                          <button type="button" class="btn btn-info">Modificar</button>
+                                                          <button type="button" class="btn btn-danger">Eliminar</button>
+                                                    </td>
+                                                </tr>
+                                        </tbody>
+                                        <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>  
+                                                    <td>ffff</td>
+                                                    <td>
+                                                          <button type="button" class="btn btn-info">Modificar</button>
+                                                          <button type="button" class="btn btn-danger">Eliminar</button>
+                                                    </td>
+                                                </tr>
+                                        </tbody>  
+
+                                </table>
+                        </form>
+                    </div>
+                </div>
+        </div>
                         <!-- </div>
         
                     </div>
