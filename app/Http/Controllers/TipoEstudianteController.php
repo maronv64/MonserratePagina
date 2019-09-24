@@ -83,7 +83,12 @@ class TipoEstudianteController extends Controller
      */
     public function update(Request $request,$id)
     {
-        return $request;
+        $item=TipoEstudiante::where("id",$request->id)->first();
+        $item->descripcion=$request->descripcion;
+        $item->update();
+        return redirect('/tipo_estudiante');
+        
+        
     }
 
     /**

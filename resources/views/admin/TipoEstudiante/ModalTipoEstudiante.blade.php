@@ -19,7 +19,7 @@
                             <input type="hidden" id="idTipoEstudiante" name="id">   
                             <input id="descripcionTipoEstudiante" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                              &nbsp;
-                            <button type="button" class="btn btn-outline-info">Guardar</button>
+                            <input type="submit" class="btn btn-outline-info" value="Guardar">
                         </div>    
                     </div>
                 </form>
