@@ -21,13 +21,11 @@ class TipoSocialController extends Controller
 
     public function index()
     {
-            //echo "verSocial";
-            $items=TipoSocial::where("estado_del","A")->get();
-
-            //  echo $items;
-            //  return;
-             return view("admin.TipoSocial.FormTipoSocial", ["lista_tipo_social"=>$items]);
-            //  return view("admin.TipoSocial.FormTipoSocial");
+        $items=TipoSocial::Where("estado_del","A")->get();
+        // echo $items;
+        // return;
+      
+        return view("admin.TipoSocial.FormTipoSocial" ,["lista_tipo_social"=>$items]);
     }
 
     /**
@@ -52,8 +50,11 @@ class TipoSocialController extends Controller
         $tipoSocial->descripcion=$request->descripcion;
         $tipoSocial->estado_del="A";
         $tipoSocial->save();
-        echo $tipoSocial;
-        return;
+        // echo $tipoSocial;
+        // return;
+        return redirect('/tiposocial_form');
+        // $items=TipoSocial::where("estado_del","A")->get();
+        // return view("admin.TipoSocial.FormTipoSocial", ["lista_tipo_social"=>$items]);
     }
 
     /**
@@ -62,9 +63,11 @@ class TipoSocialController extends Controller
      * @param  \App\TipoSocial  $tipoSocial
      * @return \Illuminate\Http\Response
      */
-    public function show(TipoSocial $tipoSocial)
+    public function show($id)
     {
         //
+        $item =TipoSocial::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
@@ -85,9 +88,10 @@ class TipoSocialController extends Controller
      * @param  \App\TipoSocial  $tipoSocial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TipoSocial $tipoSocial)
+    public function update(Request $request,$id)
     {
         //
+        return $request;
     }
 
     /**
@@ -98,10 +102,14 @@ class TipoSocialController extends Controller
      */
     public function destroy($id)
     {
-        // $item=TipoSocial::where("id", $id)->first();
-        // $item->estado_del="E";
-        // $item->update();
-        echo "funcion destroy";
-        return;
+        $item=TipoSocial::where("id", $id)->first();
+        $item->estado_del="E";
+        $item->update();
+        // echo $item;
+        return redirect('/tiposocial_form');
+        // $items=TipoSocial::where("estado_del","A")->get();
+        // return view("admin.TipoSocial.FormTipoSocial", ["lista_tipo_social"=>$items]);
+        // echo "funcion destroy";
+        // return;
     }
 }
