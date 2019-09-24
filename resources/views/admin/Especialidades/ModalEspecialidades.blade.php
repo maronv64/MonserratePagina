@@ -9,7 +9,7 @@
                         Modificar Especialidades
                     </div> 
 
-                    <form action="{{route('Especialidades_control.update',$item['id'])}}" method="POST">
+                    <form action="{{route('Especialidades_control.update',1)}}" method="POST">
                         @csrf
                         @method('PATCH')
                         <!-- <input name="_method" type="hidden" value="PATCH"> -->
