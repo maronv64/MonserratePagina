@@ -20,8 +20,6 @@ class TipoEstudianteController extends Controller
     public function index()
     {
         $items=TipoEstudiante::where("estado_del","A")->get();
-        // echo $items;
-        // return
         return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
     }
 
@@ -47,8 +45,8 @@ class TipoEstudianteController extends Controller
         $items->descripcion=$request->descripcion;
         $items->estado_del="A";
         $items->save();
-        echo $items;
-        return; 
+        $items=TipoEstudiante::where("estado_del","A")->get();
+        return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
         
     }
 
@@ -94,10 +92,13 @@ class TipoEstudianteController extends Controller
      */
     public function destroy($id)
     {
-        // $items=TipoEstudiante::where("id",$id)->first();
-        // $items->estado_del="E";
-        // $items->update();
-        echo "funcion destroy";
-        return;
+        $items=TipoEstudiante::where("id",$id)->first();
+        $items->estado_del="E";
+        $items->update();
+
+        $items=TipoEstudiante::where("estado_del","A")->get();
+        return view("admin.TipoEstudiante.FormTipoEstudiante",["listaTipoEstudiante"=>$items]);
+        // echo "funcion destroy";
+        // return;
     }
 }

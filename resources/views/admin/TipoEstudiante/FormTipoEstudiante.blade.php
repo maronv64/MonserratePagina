@@ -21,7 +21,7 @@
                 </div>
             </div>                      
         </form>
-        <form>
+        
             <div class="table-responsive"> 
                 <table class="table">
                     <thead class="thead bg-primary text-white">
@@ -38,11 +38,11 @@
                                 <td>{{$item["descripcion"]}}</td>
                                 <td>
                                     <button type="button" class="btn btn-outline-info">Actualizar</button>
-                                    <form action="{{url('tipo_estudiante/'.$item['id'])}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="submit" class="btn btn-outline-danger" value="Eliminar">
-                                        </form>
+                                    <form action="{{route('tipo_estudiante.destroy',$item['id'])}}" method="POST">
+                                        @csrf    
+                                        @method("DELETE")                
+                                        <input type="submit" class="btn btn-outline-danger" value="Eliminar">
+                                    </form>
                                 </td>
                              </tr>
                             @endforeach  
@@ -50,5 +50,4 @@
                         </tbody>
                 </table>
             </div> 
-        </form>
 @endsection
