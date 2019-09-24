@@ -85,9 +85,13 @@ class TipoUsuarioController extends Controller
      * @param  \App\TipoUsuario  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TipoUsuario $tipoUsuario)
+    public function update(Request $request, $id)
     {
-        
+        $item =TipoUsuario::where("id",$request->id)->first();
+        $item->descripcion=$request->descripcion;
+        $item->update();
+        return redirect('/tipo_usuario');   
+        return $request;
     }
 
     /**
