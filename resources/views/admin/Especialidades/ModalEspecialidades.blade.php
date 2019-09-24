@@ -1,7 +1,7 @@
 
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".hola">hola </button> -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".especialidad">hola </button> -->
 
-        <div class="modal fade hola bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal fade especialidad bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-container">
