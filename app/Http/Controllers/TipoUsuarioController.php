@@ -21,7 +21,11 @@ class TipoUsuarioController extends Controller
     
     public function index()
     {
-        return view ("admin.Tipo_Usuario.Form_Tipousuario");
+        $items=TipoUsuario::Where("estado_del","A")->get();
+        
+      
+        return view("admin.Tipo_Usuario.Form_Tipousuario" ,["lista_tipoUsuario"=>$items]);
+        //return view ("admin.Tipo_Usuario.Form_Tipousuario");
     }
 
     /**
@@ -46,8 +50,8 @@ class TipoUsuarioController extends Controller
         $items->descripcion=$request->descripcion;
         $items->estado_del="A";
         $items->save();
-        echo $items;
-        return ;
+        //echo $items;
+        return redirect('/tipo_usuario') ;
         
     }
 
@@ -57,9 +61,10 @@ class TipoUsuarioController extends Controller
      * @param  \App\TipoUsuario  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function show(TipoUsuario $tipoUsuario)
+    public function show($id)
     {
-        //
+        $item =TipoUsuario::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
@@ -82,7 +87,7 @@ class TipoUsuarioController extends Controller
      */
     public function update(Request $request, TipoUsuario $tipoUsuario)
     {
-        //
+        
     }
 
     /**
@@ -91,8 +96,11 @@ class TipoUsuarioController extends Controller
      * @param  \App\TipoUsuario  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipoUsuario $tipoUsuario)
+    public function destroy($id)
     {
-        //
-    }
+        $item =TipoUsuario::where("id",$id)->first();
+        $item->estado_del="E";
+        $item->update();
+        return redirect('/tipo_usuario');  
+    } 
 }
