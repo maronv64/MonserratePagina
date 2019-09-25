@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Fadaces\Hash;
 use App\TipoUsuario;
 use App\User;
 
@@ -28,7 +27,7 @@ class DatabaseSeeder extends Seeder
        $item->idtipo="1";
        $item->name="admin";
        $item->email="admin@admin.com";
-       $item->password=Hash::make("adminadmin");
+       $item->password=bcrypt('adminadmin');
        $item->save();
         // $this->call(UsersTableSeeder::class);
     }
