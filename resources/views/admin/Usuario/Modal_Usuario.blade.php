@@ -11,48 +11,52 @@
                                     <h5 class="card-title text-white">Usuario </h5>
            
                                  </div>
-                                 <div class="modal-body">
 
-                                 <input type="hidden" id="idUsuario" name="id">
-                                     <div class="input-group mb-3">
-                                             <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="inputGroupSelect01">Id de Tipo</label>
+                                 <form action="{{route('users.update',1)}}" method="POST">
+                                    @method('PATCH')
+                                    @csrf
+                                    <div class="modal-body">
+
+                                    <input type="hidden" id="idUsuario" name="id">
+                                       <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                      <label class="input-group-text" for="inputGroupSelect01">Id de Tipo</label>
+                                                </div>
+                                                <select id="cmbTipousuario" name= "idtipo" class="custom-select" id="inputGroupSelect01">
+                                                   <option disabled ="true" selected>Escoja...</option>
+                                                   @foreach($lista_tipoUsuario as $item)
+                                                         <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
+                                                   @endforeach
+                                                </select>
                                              </div>
-                                             <select class="custom-select" id="inputGroupSelect01">
-                                                   <option selected>Escoja...</option>
-                                                   <option value="1">admin</option>
-                                                   <option value="2">secretary</option>
-                                                   <option value="3">otros</option>
-                                             </select>
+            
+                                       <div class="input-group mb-3">
+                                          <div class="input-group-prepend">
+                                             <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
                                           </div>
-           
-                                     <div class="input-group mb-3">
-                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
-                                         </div>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nombre">                                                                                                                                    
-                                     </div> 
+                                             <input id="nombreUsuario" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nombre">                                                                                                                                    
+                                       </div> 
 
-                                     <div class="input-group mb-3">
-                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
-                                         </div>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="email">                                                                                                                                    
-                                     </div> 
+                                       <div class="input-group mb-3">
+                                          <div class="input-group-prepend">
+                                             <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
+                                          </div>
+                                             <input id="email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="email">                                                                                                                                    
+                                       </div> 
 
-                                     <div class="input-group mb-3">
-                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
-                                         </div>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="contraseña">                                                                                                                                    
-                                     </div> 
-
-
-                                 </div>
+                                       <div class="input-group mb-3">
+                                          <div class="input-group-prepend">
+                                             <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
+                                          </div>
+                                             <input id="contraseña" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="contraseña">                                                                                                                                    
+                                      </div>
+                                 
                                  <div class="modal-footer">
-                                       <button type="button" class="btn btn-info">modificar</button>                                    
+                                 <input type="submit" class="btn btn-info" value ="modificar">                                      
                                  </div>                            
-                        
+                                 </form>
+                                 </div>                                      
+                                 </div>
                          </div>
                        
                      </div>

@@ -70,7 +70,8 @@
                                 <td>{{$item['email']}}</td>
                                 <td>{{$item['password']}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-info" onclick = "verUsuario(<?php echo $item['id'] ?>)">Modificar</button>
+                                <button type="button" class="btn btn-info" onclick = "verUsuario(<?php echo $item['id'] ?>)">Modificar</button>
+                                  
                                     <form action="{{route('users.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
                                                               @method("DELETE")                

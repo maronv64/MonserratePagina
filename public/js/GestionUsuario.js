@@ -1,11 +1,12 @@
 function verUsuario(id) {
-    //alert("este es id :"+id);
+    // alert("este es id :"+id);
     
-    $.get('tipo_usuario/'+id,function (data) {
+    $.get('users/'+id,function (data) {
+        $("#cmbTipousuario").val(data.idtipo);
         $("#idUsuario").val(id);
-        $("#nombreUsuario").val(data.nombre);
+        $("#nombreUsuario").val(data.name);
         $("#email").val(data.email);
-        $("#contraseña").val(data.contraseña);
+        $("#contraseña").val(data.password);
     });
     $(".modalUsuario").modal("show");
 }
