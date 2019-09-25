@@ -27,7 +27,7 @@
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text" for="inputGroupSelect01">Descripcion</label>
                                                 </div>
-                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                                                 
                                             </div>
                                     
@@ -53,7 +53,7 @@
                                                     <th scope="row">1</th>
                                                     <td>{{$item["descripcion"]}}</td>
                                                     <td>
-                                                        <a href="#" class="btn btn-info">Agregar Docente</a>
+                                                        <a href="#" onclick='verDocentes(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Docente</a>
                                                         <a href="#" onclick='verMateria(<?php echo $item["id"] ?>)' class="btn btn-info">Modificar</a>
                                                         <form action="{{route('materia_control.destroy',$item['id'])}}" method="POST">
                                                               @csrf    

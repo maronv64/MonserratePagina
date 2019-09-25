@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Especialidades' => $baseDir . '/app/Especialidades.php',
+    'App\\Estudiante' => $baseDir . '/app/Estudiante.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -19,7 +20,11 @@ return array(
     'App\\Http\\Controllers\\EspecialidadesController' => $baseDir . '/app/Http/Controllers/EspecialidadesController.php',
     'App\\Http\\Controllers\\GustavoController' => $baseDir . '/app/Http/Controllers/GustavoController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\MateriaControllerController' => $baseDir . '/app/Http/Controllers/MateriaControllerController.php',
+=======
+    'App\\Http\\Controllers\\MateriaController' => $baseDir . '/app/Http/Controllers/MateriaController.php',
+>>>>>>> fb263bf9d9654fc070277ac038f3e79b199c1728
     'App\\Http\\Controllers\\MauroController' => $baseDir . '/app/Http/Controllers/MauroController.php',
     'App\\Http\\Controllers\\NancyController' => $baseDir . '/app/Http/Controllers/NancyController.php',
     'App\\Http\\Controllers\\SocialController' => $baseDir . '/app/Http/Controllers/SocialController.php',
@@ -35,7 +40,9 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Materia' => $baseDir . '/app/Materia.php',
     'App\\MateriaController' => $baseDir . '/app/MateriaController.php',
+    'App\\Materia_Personal' => $baseDir . '/app/Materia_Personal.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

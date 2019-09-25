@@ -36,11 +36,16 @@ Route::resource('/tipo_usuario','TipoUsuarioController');
 //Route::resource('/Tipo_Usuario','TipoUsuarioController');
 
 Route::resource('/tipo_estudiante','TipoEstudianteController');
+Route::resource('/estudiante','EstudianteController');
 
 Route::resource('/Especialidades_control','EspecialidadesController');
 
+<<<<<<< HEAD
 Route::resource('/materia_control','MateriaControllerController');
 
+=======
+Route::resource('/materia_control','MateriaController');
+>>>>>>> fb263bf9d9654fc070277ac038f3e79b199c1728
 Route::resource('/social_form','SocialController');
 
 Route::resource('/tipopersonal_form','TipoPersonalController');

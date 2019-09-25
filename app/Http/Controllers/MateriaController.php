@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\MateriaController;
+use App\Materia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class MateriaControllerController extends Controller
+class MateriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class MateriaControllerController extends Controller
 
     public function index()
     {
-        $items=MateriaController::Where("estado_del","A")->get();
+        $items=Materia::Where("estado_del","A")->get();
         return view("admin.Materias.FormMaterias" ,["lista_materias"=>$items]);
     }
 
@@ -42,7 +42,7 @@ class MateriaControllerController extends Controller
      */
     public function store(Request $request)
     {
-        $materia =new MateriaController();
+        $materia =new Materia();
         $materia->descripcion=$request->descripcion;
         $materia->estado_del="A";
         $materia->save();
@@ -53,19 +53,19 @@ class MateriaControllerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\MateriaController  $materiaController
+     * @param  \App\Materia  $materiaController
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $item =MateriaController::where("id",$id)->first();
+        $item =Materia::where("id",$id)->first();
         return response()->json($item);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\MateriaController  $materiaController
+     * @param  \App\Materia  $materiaController
      * @return \Illuminate\Http\Response
      */
     public function edit(MateriaController $materiaController)
@@ -77,26 +77,28 @@ class MateriaControllerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\MateriaController  $materiaController
+     * @param  \App\Materia  $materiaController
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,$id)
     {
-        $item=MateriaController::where("id",$request->id)->first();
+        $item=Materia::where("id",$request->id)->first();
         $item->descripcion=$request->descripcion;
         $item->update();
         return redirect('/materia_control');
+        //return $request;
+       
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\MateriaController  $materiaController
+     * @param  \App\Materia  $materiaController
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $item =MateriaController::where("id",$id)->first();
+        $item =Materia::where("id",$id)->first();
         $item->estado_del="E";
         $item->update();
         return redirect('/materia_control');

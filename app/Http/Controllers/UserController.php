@@ -92,12 +92,12 @@ class UserController extends Controller
         $item =User::where("id",$request->id)->first();
         $items->name=$request->nombre;
         $items->email=$request->email;
-        $items->password=$request->contraseña;
+        $items->password=bcrypt($request->contraseña);
         $items->estado_del="A";
         $items->update();
         //echo $items;
-        return redirect('/users') ;
-        return $request;
+         return redirect('/users') ;
+        
     }
 
     /**

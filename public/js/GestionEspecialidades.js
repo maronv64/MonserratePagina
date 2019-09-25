@@ -7,3 +7,10 @@ function verEspecialidad(id) {
     });
     $(".especialidad").modal("show");
 }
+function verMateriaE(id) {
+    //  alert("este es id :"+id);
+    $.get('Especialidades_control/'+id,function (data) {
+       
+    });
+    $(".especialidadMateria").modal("show");
+}
