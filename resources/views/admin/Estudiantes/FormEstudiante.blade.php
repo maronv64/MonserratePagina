@@ -26,15 +26,17 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Especialidades &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01" name="especialidad">
-                        <option value="1">Tecnico</option>
-                        <option value="2">Ciencias</option>
+                    <select  class="custom-select" id="inputGroupSelect01" name="idespecialidad">
+                    <option disabled="true" selected>Escoja...</option>                  
+                        @foreach($lista_TipoEspecialidad as $item)
+                            <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="input-group-mb-3">
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-outline-info btn-lg btn-block" value="Agregar">
+                            <input type="button" class="btn btn-outline-info btn-lg btn-block" value="Agregar">
                         </div>
                         <div class="col-md-6">
                             <input type="submit" class="btn btn-outline-info btn-lg btn-block" value="Guardar">
@@ -52,6 +54,7 @@
                             <th scope="col">Código</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
+                            <th scope="col">Cedula</th>
                             <th scope="col">Especialidad</th>
                             <th scope="col">Opciones</th>
                          </tr>
@@ -63,10 +66,10 @@
                                 <td>{{$item["apellido"]}}</td>
                                 <td>{{$item["cedula"]}}</td>
                                 <td>{{$item["especialidad"]}}</td>
-                                <td>{{$item["Opciones"]}}</td>
                                 <td>
-                                <a href="#" onclick='verEstudiante(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</a>
-                                    <form action="{{route('tipo_estudiante.destroy',$item['id'])}}" method="POST">
+                                <button type="button" onclick='verTipoE(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Tipo Estudiante</button>
+                                <button type="button" onclick='verEstudiantes(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</button>
+                                    <form action="{{route('estudiante.destroy',$item['id'])}}" method="POST">
                                         @csrf    
                                         @method("DELETE")                
                                         <input type="submit" class="btn btn-outline-danger" value="Eliminar">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Estudiante;
+use App\Especialidades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,7 +21,9 @@ class EstudianteController extends Controller
     public function index()
     {
         $items=Estudiante::where("estado_del","A")->get();
-        return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items]);
+        $items2=Especialidades::Where("estado_del","A")->get();
+
+        return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items,"lista_TipoEspecialidad"=>$items2]);
     }
 
     /**
@@ -41,7 +44,16 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $items=new Estudiante();
+        $items->nombre=$request->nombre;
+        $items->apellido=$request->apellido;
+        $items->cedula=$request->cedula;
+        $items->idEspecialidad=$request->idespecialidad;
+        $items->estado_del="A";
+        $items->save();
+        return redirect('/estudiante'); 
+        // echo $items;
+        // return;
     }
 
     /**
@@ -50,9 +62,10 @@ class EstudianteController extends Controller
      * @param  \App\Estudiante  $estudiante
      * @return \Illuminate\Http\Response
      */
-    public function show(Estudiante $estudiante)
+    public function show($id)
     {
-        echo "hola";
+        $item =Estudiante::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
@@ -73,9 +86,16 @@ class EstudianteController extends Controller
      * @param  \App\Estudiante  $estudiante
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estudiante $estudiante)
+    //update
+    public function update(Request $request,$id)
     {
-        //
+        $items=Estudiante::where("id",$request->id)->first();
+        $items->nombre=$request->nombre;
+        $items->apellido=$request->apellido;
+        $items->cedula=$request->cedula;
+        $items->idEspecialidad=$request->idespecialidad;
+        $items->update();
+        return redirect('/estudiante');
     }
 
     /**
@@ -84,8 +104,12 @@ class EstudianteController extends Controller
      * @param  \App\Estudiante  $estudiante
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estudiante $estudiante)
+    public function destroy($id)
     {
-        //
+        $items=Estudiante::where("id",$id)->first();
+        $items->estado_del="E";
+        $items->update();
+        return redirect('/estudiante');
+    
     }
 }

@@ -8,7 +8,7 @@
             <div class="modal-header" style="background-color: #007bff;">
                 <h5 class="card-title text-white">Estudiantes</h5>
             </div>
-            <form action="{{route('tipo_estudiante.update',1)}}" method="POST">
+            <form action="{{route('estudiante.update',1)}}" method="POST">
                  @csrf
                  @method('PATCH')
                 <div class="modal-body">
@@ -26,6 +26,17 @@
                         </div>
                             <input id="cedulaEstudiante" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cedula">
                     </div> 
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Especialidades &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                    </div>
+                    <select  class="custom-select" id="cmbespecialidadE" name="idespecialidad">
+                    <option disabled="true" selected>Escoja...</option>                  
+                        @foreach($lista_TipoEspecialidad as $item)
+                            <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
+                        @endforeach
+                    </select>
+                </div>
                     <div class="input-group-mb-3"> 
                         <div class="row">
                             <div class="col-md-12">
