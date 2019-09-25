@@ -44,7 +44,7 @@
                         <div class="modal-footer">
                                 <input type="submit" class="btn btn-info" value="Actualizar">   
                         </div> 
-                                       
+                  </form>                 
               </div>
             </div>
           </div>
