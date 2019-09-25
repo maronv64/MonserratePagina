@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Especialidades' => $baseDir . '/app/Especialidades.php',
+    'App\\Estudiante' => $baseDir . '/app/Estudiante.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -16,10 +17,14 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ElizabethController' => $baseDir . '/app/Http/Controllers/ElizabethController.php',
+    'App\\Http\\Controllers\\EspecialidadesController' => $baseDir . '/app/Http/Controllers/EspecialidadesController.php',
     'App\\Http\\Controllers\\GustavoController' => $baseDir . '/app/Http/Controllers/GustavoController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\MauroController' => $baseDir . '/app/Http/Controllers/MauroController.php',
     'App\\Http\\Controllers\\NancyController' => $baseDir . '/app/Http/Controllers/NancyController.php',
+    'App\\Http\\Controllers\\TipoEstudianteController' => $baseDir . '/app/Http/Controllers/TipoEstudianteController.php',
+    'App\\Http\\Controllers\\TipoSocialController' => $baseDir . '/app/Http/Controllers/TipoSocialController.php',
+    'App\\Http\\Controllers\\TipoUsuarioController' => $baseDir . '/app/Http/Controllers/TipoUsuarioController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -34,20 +39,9 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    'App\\TipoSocial' => $baseDir . '/app/TipoSocial.php',
-=======
-<<<<<<< HEAD
->>>>>>> 0dec09684032df8bdadeb669c666a5447705bdbd
-    'App\\TipoUsuario' => $baseDir . '/app/TipoUsuario.php',
     'App\\TipoEstudiante' => $baseDir . '/app/TipoEstudiante.php',
-<<<<<<< HEAD
-=======
->>>>>>> 055a4ca3f0179f4d203d8c65d13ca3571070a465
->>>>>>> 8eded9dac307503642d6e38795f949b5853515c7
->>>>>>> 0dec09684032df8bdadeb669c666a5447705bdbd
+    'App\\TipoSocial' => $baseDir . '/app/TipoSocial.php',
+    'App\\TipoUsuario' => $baseDir . '/app/TipoUsuario.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
