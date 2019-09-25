@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,18 +10,21 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-     <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Actividad</button>
+<body> -->
+     <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Actividad</button> -->
 
-             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+             <div class="modal fade MSocial bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                <div class="modal-content">
                    <div class="modal-container">
                        <div class="modal-header">
-                          Modificar Actividad
+                          Modificar Social
                        </div>
+                       <form action="{{route('social_form.update',1)}}" method="POST">
+                           @csrf
+                           @method('PATCH')
                            <div class="modal-body">
-                                        <div class="input-group mb-3">
+                                        <!-- <div class="input-group mb-3">
                                                         <div class="input-group-prepend">
                                                           <label class="input-group-text" for="inputGroupSelect01">Tipo de Social</label>
                                                         </div>
@@ -30,27 +33,37 @@
                                                           <option value="1">Actividad</option>
                                                           <option value="2">Noticia</option>
                                                         </select>
-                                        </div>
+                                                        <input type="hidden" id="idSocial" name="id">
+                                                        <input id="tipo_socialSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="tipoSocial">             
+
+                                        </div> -->
+
                                 <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Titulo   </span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                </div>   
-                                <div class="input-group mb-3">
+                                        <input type="hidden" id="idSocial" name="id">
+                                        <input id="tituloSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo">
+                               </div>
+                               
+                               <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Descripcion</span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                </div>
-                           </div>
-                           <div class="modal-footer">
-                                <button type="button" class="btn btn-info">Guardar</button>
-                            </div>                            
+                                        <input type="hidden" id="idSocial" name="id">
+                                        <input id="descripcionSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                               </div>
 
-                    </div>
-               </div>
+
+                          <div class="modal-footer">
+                            <input type="submit" class="btn btn-info" value="Actualizar">
+                          </div>  
+                        </div>                          
+                  </form>
+                 
+                </div>
               </div>
-             </div>
-</body>
-</html>
+            </div>
+          </div>
+<!-- </body>
+</html> -->

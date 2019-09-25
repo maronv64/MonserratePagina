@@ -11,14 +11,17 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
     <script src="{{ asset('js/GestionEspecialidades.js') }}" defer></script>
 
     <script src="{{ asset('js/GestionTipoUsuario.js') }}" defer></script>
-    
 
     <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
 
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
+    <script src="{{ asset('js/GestionMaterias.js') }}" defer></script>
+
+    <script src="{{ asset('js/GestionSocial.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
