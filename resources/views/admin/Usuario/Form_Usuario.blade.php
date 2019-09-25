@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class ="content">
                  <form action ="{{url('/users')}}" method="POST">>
                   @csrf 
                   @method('POST')                     
@@ -50,6 +51,7 @@
                          </div>
                      </div>
                  </form> 
+                 <div class="table-responsive">
                  <table class="table">
                     <thead class="thead bg-primary text-white" >
                         <tr>
@@ -82,12 +84,10 @@
                             @endforeach                                                    
                     </tbody>
                   </table>
+                  </div>
+                  
                               
-             <!-- </div>
-
-         </div>
-     </div>
-</body>
-</html> -->
+                  </div>
 @include ('admin.Usuario.Modal_Usuario')
+</div>
 @endsection

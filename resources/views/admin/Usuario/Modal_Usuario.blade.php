@@ -22,7 +22,7 @@
                                                 <div class="input-group-prepend">
                                                       <label class="input-group-text" for="inputGroupSelect01">Id de Tipo</label>
                                                 </div>
-                                                <select id="cmbTipousuario" name= "idtipo" class="custom-select" id="inputGroupSelect01">
+                                                <select id="cmbTusuario" name= "idtipo" class="custom-select" >
                                                    <option disabled ="true" selected>Escoja...</option>
                                                    @foreach($lista_tipoUsuario as $item)
                                                          <option value="{{$item['id']}}">{{$item['descripcion']}} </option>

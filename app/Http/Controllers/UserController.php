@@ -97,7 +97,7 @@ class UserController extends Controller
         $items->update();
         //echo $items;
          return redirect('/users') ;
-        return $request;
+        
     }
 
     /**

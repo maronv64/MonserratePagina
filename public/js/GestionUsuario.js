@@ -2,7 +2,8 @@ function verUsuario(id) {
     // alert("este es id :"+id);
     
     $.get('users/'+id,function (data) {
-        $("#cmbTipousuario").val(data.idtipo);
+        console.log(data);
+        $("#cmbTusuario").val(data.idtipo);
         $("#idUsuario").val(id);
         $("#nombreUsuario").val(data.name);
         $("#email").val(data.email);
