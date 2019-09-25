@@ -18,11 +18,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12"> -->
-                                <form action="{{url('/tiposocial_form')}}" method="POST">       
+                                <form action="{{url('/tipopersonal_form')}}" method="POST">       
                                         @csrf             
                                      <div class="card ">
-                                        <div class="card-header" style="background: #f8c2f5" >
-                                          <h5 class="card-title text-white">Tipo de Personal </h5>
+                                        <div class="card-header" style="background: #ffeed" >
+                                          <h5>Tipo de Personal </h5>
                                         </div>
                                         <div class="card-body">
                                                 <div class="input-group mb-3">

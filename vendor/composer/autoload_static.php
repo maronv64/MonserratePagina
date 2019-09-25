@@ -416,17 +416,16 @@ class ComposerStaticInit22fb6837dfd617f0e8b67195d203a0c7
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ElizabethController' => __DIR__ . '/../..' . '/app/Http/Controllers/ElizabethController.php',
         'App\\Http\\Controllers\\EspecialidadesController' => __DIR__ . '/../..' . '/app/Http/Controllers/EspecialidadesController.php',
+        'App\\Http\\Controllers\\EstudianteController' => __DIR__ . '/../..' . '/app/Http/Controllers/EstudianteController.php',
         'App\\Http\\Controllers\\GustavoController' => __DIR__ . '/../..' . '/app/Http/Controllers/GustavoController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-<<<<<<< HEAD
-        'App\\Http\\Controllers\\MateriaControllerController' => __DIR__ . '/../..' . '/app/Http/Controllers/MateriaControllerController.php',
-=======
         'App\\Http\\Controllers\\MateriaController' => __DIR__ . '/../..' . '/app/Http/Controllers/MateriaController.php',
->>>>>>> fb263bf9d9654fc070277ac038f3e79b199c1728
+        'App\\Http\\Controllers\\MateriaPersonalController' => __DIR__ . '/../..' . '/app/Http/Controllers/MateriaPersonalController.php',
         'App\\Http\\Controllers\\MauroController' => __DIR__ . '/../..' . '/app/Http/Controllers/MauroController.php',
         'App\\Http\\Controllers\\NancyController' => __DIR__ . '/../..' . '/app/Http/Controllers/NancyController.php',
         'App\\Http\\Controllers\\SocialController' => __DIR__ . '/../..' . '/app/Http/Controllers/SocialController.php',
         'App\\Http\\Controllers\\TipoEstudianteController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoEstudianteController.php',
+        'App\\Http\\Controllers\\TipoPersonalController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoPersonalController.php',
         'App\\Http\\Controllers\\TipoSocialController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoSocialController.php',
         'App\\Http\\Controllers\\TipoUsuarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoUsuarioController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
@@ -441,18 +440,17 @@ class ComposerStaticInit22fb6837dfd617f0e8b67195d203a0c7
         'App\\Materia' => __DIR__ . '/../..' . '/app/Materia.php',
         'App\\MateriaController' => __DIR__ . '/../..' . '/app/MateriaController.php',
         'App\\Materia_Personal' => __DIR__ . '/../..' . '/app/Materia_Personal.php',
+        'App\\Personal' => __DIR__ . '/../..' . '/app/Personal.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-<<<<<<< HEAD
         'App\\Social' => __DIR__ . '/../..' . '/app/Social.php',
         'App\\TipoEstudiante' => __DIR__ . '/../..' . '/app/TipoEstudiante.php',
         'App\\TipoPersonal' => __DIR__ . '/../..' . '/app/TipoPersonal.php',
-=======
->>>>>>> fb263bf9d9654fc070277ac038f3e79b199c1728
         'App\\TipoSocial' => __DIR__ . '/../..' . '/app/TipoSocial.php',
+        'App\\TipoUsuario' => __DIR__ . '/../..' . '/app/TipoUsuario.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
