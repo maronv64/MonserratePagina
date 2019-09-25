@@ -12,10 +12,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/GestionEspecialidades.js') }}" defer></script>
-<<<<<<< HEAD
     <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
-=======
 
     <script src="{{ asset('js/GestionTipoUsuario.js') }}" defer></script>
     
@@ -24,13 +22,14 @@
 
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
 
->>>>>>> 642d8c75dfbc0325c68af0f196fb618865d24c1b
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet"> --}}
+    
 </head>
 <body>
     <div id="app">
@@ -85,6 +84,9 @@
             </div>
         </nav>
 
+        <div >
+            @yield('dashboard')
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
