@@ -60,7 +60,7 @@
                                              </th>
                                         
                                             <td>
-                                                <a href="#" class="btn btn-info">Agregar Materias</a>
+                                                <a href="#" onclick='verMateriaE(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Materias</a>
                                                 <a href="#" onclick='verEspecialidad(<?php echo $item["id"] ?>)' class="btn btn-info" >Modificar</a>
                                                 <form action="{{route('Especialidades_control.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
@@ -97,4 +97,5 @@
 </body>
 </html> -->
 @include('admin.Especialidades.ModalEspecialidades')
+@include('admin.Especialidades_Materias.Modal_Especialidades_Materias')
 @endsection

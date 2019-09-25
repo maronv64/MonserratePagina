@@ -8,3 +8,7 @@ function verMateria(id) {
     });
     $(".materia").modal("show");
 }
+function verDocentes(id) {
+    //  alert("este es id :"+id);
+    // $(".").modal("show");
+}
