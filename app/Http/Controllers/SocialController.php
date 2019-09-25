@@ -2,30 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\TipoUsuario;
+use App\Social;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TipoUsuarioController extends Controller
+class SocialController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
-    
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $items=TipoUsuario::Where("estado_del","A")->get();
-        
-      
-        return view("admin.Tipo_Usuario.Form_Tipousuario" ,["lista_tipoUsuario"=>$items]);
-        //return view ("admin.Tipo_Usuario.Form_Tipousuario");
+         $items=Social::Where("estado_del","A")->get();
+         return view("admin.Social.FormSocial" ,["lista_social"=>$items]);
     }
 
     /**
@@ -46,34 +43,34 @@ class TipoUsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $items=new TipoUsuario();
-        $items->descripcion=$request->descripcion;
-        $items->estado_del="A";
-        $items->save();
-        //echo $items;
-        return redirect('/tipo_usuario') ;
-        
+        $social=new Social();
+        $social->tipoSocial=$request->tipoSocial;
+        $social->titulo=$request->titulo;
+        $social->descripcion=$request->descripcion;
+        $social->estado_del="A";
+        $social->save();
+        return redirect('/social_form');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $item =TipoUsuario::where("id",$id)->first();
+        $item =Social::where("id",$id)->first();
         return response()->json($item);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipoUsuario $tipoUsuario)
+    public function edit(Social $social)
     {
         //
     }
@@ -82,29 +79,30 @@ class TipoUsuarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $item =TipoUsuario::where("id",$request->id)->first();
+        $item=Social::where("id",$request->id)->first();
+        $item->tipoSocial=$request->tipoSocial;
+        $item->titulo=$request->titulo;
         $item->descripcion=$request->descripcion;
         $item->update();
-        return redirect('/tipo_usuario');   
-        return $request;
+       return redirect('/social_form');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $item =TipoUsuario::where("id",$id)->first();
+        $item=Social::where("id", $id)->first();
         $item->estado_del="E";
         $item->update();
-        return redirect('/tipo_usuario');  
-    } 
+        return redirect('/social_form');
+    }
 }

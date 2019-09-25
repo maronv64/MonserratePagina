@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\TipoUsuario;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +13,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+       $tipo=new TipoUsuario();
+       $tipo->descripcion="admin";
+       $tipo->estado_del="A";
+       $tipo->save();
+
+       $tipo=new TipoUsuario();
+       $tipo->descripcion="secretary";
+       $tipo->estado_del="A";
+       $tipo->save();
+
+       $item=new User();
+       $item->idtipo="1";
+       $item->name="admin";
+       $item->email="admin@admin.com";
+       $item->password=bcrypt('adminadmin');
+       $item->save();
         // $this->call(UsersTableSeeder::class);
     }
 }
