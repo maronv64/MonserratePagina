@@ -13,19 +13,24 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script src="{{ asset('js/GestionEspecialidades.js') }}" defer></script>
+    <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
+    <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoUsuario.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
+    <script src="{{ asset('js/GestionUsuario.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
     <script src="{{ asset('js/GestionMaterias.js') }}" defer></script>
     <script src="{{ asset('js/GestionEstudiantes.js') }}" defer></script>
     <script src="{{ asset('js/GestionSocial.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet"> --}}
+    
 </head>
 <body>
     <div id="app">
@@ -80,6 +85,9 @@
             </div>
         </nav>
 
+        <div >
+            @yield('dashboard')
+        </div>
         <main class="py-4">
             @yield('content')
         </main>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMateriaControllersTable extends Migration
+class CreateMateriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMateriaControllersTable extends Migration
      */
     public function up()
     {
-        Schema::create('materia_controllers', function (Blueprint $table) {
+        Schema::create('materias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('descripcion','100');
             $table->string('estado_del','2');
@@ -28,6 +28,6 @@ class CreateMateriaControllersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materia_controllers');
+        Schema::dropIfExists('materias');
     }
 }
