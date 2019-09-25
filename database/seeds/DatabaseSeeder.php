@@ -19,6 +19,11 @@ class DatabaseSeeder extends Seeder
        $tipo->estado_del="A";
        $tipo->save();
 
+       $tipo=new TipoUsuario();
+       $tipo->descripcion="secretary";
+       $tipo->estado_del="A";
+       $tipo->save();
+
        $item=new User();
        $item->idtipo="1";
        $item->name="admin";
