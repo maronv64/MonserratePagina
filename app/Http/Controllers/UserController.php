@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\TipoUsuario;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -15,7 +17,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        echo "funcion index, UserController";
+        $items=User::Where("estado_del","A")->get();
+        
+        $items2=TipoUsuario::Where("estado_del","A")->get();
+        return view("admin.Usuario.Form_Usuario" ,["lista_usuario"=>$items,"lista_tipoUsuario"=>$items2]);
     }
 
     /**
@@ -36,7 +41,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $items=new User();
+        $items->name=$request->nombre;
+        $items->email=$request->email;
+        $items->password=Hash::make($request->contraseña);
+        $items->estado_del="A";
+        $items->save();
+        //echo $items;
+        return redirect('/users') ;
     }
 
     /**
@@ -47,7 +59,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        echo "funcion show, UserController, valor".$id; 
+        $item =User::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
@@ -70,7 +83,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $item =User::where("id",$request->id)->first();
+        $items->name=$request->nombre;
+        $items->email=$request->email;
+        $items->password=$request->contraseña;
+        $items->estado_del="A";
+        $items->update();
+        //echo $items;
+        return redirect('/users') ;
+        return $request;
     }
 
     /**
@@ -81,6 +102,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item =User::where("id",$id)->first();
+        $item->estado_del="E";
+        $item->update();
+        return redirect('/users');  
     }
 }
