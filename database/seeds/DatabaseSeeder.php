@@ -18,14 +18,13 @@ class DatabaseSeeder extends Seeder
         $tipo->descripcion="admin";
         $tipo->estado_del="A";
         $tipo->save();
-
+        
         $item=new User();
         $item->idtipo="1";
         $item->name="admin";
         $item->email="admin@admin.com";
         $item->password=Hash::make("adminadmin");
         $item->save();
-    
         // $this->call(UsersTableSeeder::class);
     }
 }
