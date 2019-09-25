@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\SocialController;
+use App\TipoPersonal;
 use Faker\Generator as Faker;
 
-$factory->define(SocialController::class, function (Faker $faker) {
+$factory->define(TipoPersonal::class, function (Faker $faker) {
     return [
         //
     ];

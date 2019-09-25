@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Social;
-use App\TipoSocial;
+use App\TipoPersonal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SocialController extends Controller
+class TipoPersonalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,11 +21,8 @@ class SocialController extends Controller
 
     public function index()
     {
-         $items=Social::Where("estado_del","A")->get();
-         $items2=TipoSocial::Where("estado_del","A")->get();
-        // //  echo $items2;
-        // //  return;
-         return view("admin.Social.FormSocial" ,["lista_social"=>$items, "lista_tipo_social"=>$items2]);
+        $items=TipoPersonal::Where("estado_del","A")->get();
+        return view("admin.TipoPersonal.FormTipoPersonal" ,["lista_tipo_personal"=>$items]);
     }
 
     /**
@@ -47,36 +43,34 @@ class SocialController extends Controller
      */
     public function store(Request $request)
     {
-        $social=new Social();
-        $social->idtipo=$request->idtipo;
-        $social->titulo=$request->titulo;
-        $social->descripcion=$request->descripcion;
-        $social->estado_del="A";
-        $social->save();
-        return redirect('/social_form');
-        // echo $request;
-        // return;
+        $tipoPersonal=new TipoPersonal();
+        $tipoPersonal->descripcion=$request->descripcion;
+        $tipoPersonal->estado_del="A";
+        $tipoPersonal->save();
+       
+        return redirect('/tipopersonal_form');
+       
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Social  $social
+     * @param  \App\TipoPersonal  $tipoPersonal
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $item =Social::where("id",$id)->first();
+        $item =TipoPersonal::where("id",$id)->first();
         return response()->json($item);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Social  $social
+     * @param  \App\TipoPersonal  $tipoPersonal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Social $social)
+    public function edit(TipoPersonal $tipoPersonal)
     {
         //
     }
@@ -85,31 +79,29 @@ class SocialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Social  $social
+     * @param  \App\TipoPersonal  $tipoPersonal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        $item=Social::where("id",$request->id)->first();
-        $item->idtipo=$request->idtipo;
-        $item->titulo=$request->titulo;
+        $item=TipoPersonal::where("id",$request->id)->first();
         $item->descripcion=$request->descripcion;
         $item->update();
-       return redirect('/social_form');
-
+       return redirect('/tipopersonal_form');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Social  $social
+     * @param  \App\TipoPersonal  $tipoPersonal
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $item=Social::where("id", $id)->first();
+        $item=TipoPersonal::where("id", $id)->first();
         $item->estado_del="E";
         $item->update();
-        return redirect('/social_form');
+       
+        return redirect('/tipopersonal_form');
     }
 }

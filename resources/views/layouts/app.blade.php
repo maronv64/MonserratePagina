@@ -19,6 +19,9 @@
     <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
 
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
+
+    <script src="{{ asset('js/GestionTipoPersonal.js') }}" defer></script>
+
     <script src="{{ asset('js/GestionMaterias.js') }}" defer></script>
 
     <script src="{{ asset('js/GestionSocial.js') }}" defer></script>

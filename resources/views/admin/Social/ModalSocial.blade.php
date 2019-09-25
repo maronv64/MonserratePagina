@@ -37,12 +37,23 @@
                                                         <input id="tipo_socialSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="tipoSocial">             
 
                                         </div> -->
+                                        <div class="input-group mb-3">
+                                     <div class="input-group-prepend">
+                                         <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+                                     </div>
+                                     <select name= "idtipo" class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Escoja...</option>
+                                        @foreach($lista_tipo_social as $item)
+                                            <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
+                                        @endforeach
+                                     </select>
+                                  </div>
+
 
                                 <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Titulo   </span>
                                         </div>
-                                        <input type="hidden" id="idSocial" name="id">
                                         <input id="tituloSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo">
                                </div>
                                
@@ -50,11 +61,11 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Descripcion</span>
                                         </div>
-                                        <input type="hidden" id="idSocial" name="id">
+                                       
                                         <input id="descripcionSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                                </div>
 
-
+                               <input type="hidden" id="idSocial" name="id">
                           <div class="modal-footer">
                             <input type="submit" class="btn btn-info" value="Actualizar">
                           </div>  

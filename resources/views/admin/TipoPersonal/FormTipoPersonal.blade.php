@@ -18,7 +18,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12"> -->
-                                <form action="">       
+                                <form action="{{url('/tiposocial_form')}}" method="POST">       
                                         @csrf             
                                      <div class="card ">
                                         <div class="card-header" style="background: #f8c2f5" >
@@ -29,16 +29,48 @@
                                                         <div class="input-group-prepend">
                                                           <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
                                                         </div>
-                                                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion"> 
                                                            &nbsp;
-                                                           <button type="button" class="btn btn-info">Agregar</button>
+                                                           <input type="submit" class="btn btn-info" value="Guardar">
                                                 </div>
                                         </div>
                                      </div>
                                 </form> 
+                               
+                                <table class="table table-bordered">
+                                <thead class="thead bg-primary text-white" >
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Accion</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($lista_tipo_personal as $item)
+                                        <tr>
+                                            <th scope="row">1</th>
+                                             <th>
+                                                 {{$item["descripcion"]}}
+                                             </th>
+                                        
+                                            <td>
+                                                
+                                                <a href="#" onclick='verTipoPersonal(<?php echo $item["id"]?>)' class="btn btn-info" >Modificar</a>
+                                                <form action="{{route('tipopersonal_form.destroy',$item['id'])}}" method="POST">
+                                                              @csrf    
+                                                              @method("DELETE")                
+                                                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                        </tbody>  
+                                </table>
+                        
                         <!-- </div>
                     </div>
                 </div>
             </body>
 </html> -->
+@include('admin.TipoPersonal.ModalTipoPersonal')
 @endsection

@@ -32,15 +32,21 @@
 
                             </div>
 
-                            <select class="custom-select" id="inputGroupSelect01">
-                              <option selected></option>
-                              <option value="1">Actividad</option>
-                              <option value="2">Noticia</option>
-                            </select>
-
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="tipo_de_social">
 
                           </div> -->
+
+                           <div class="input-group mb-3">
+                                     <div class="input-group-prepend">
+                                         <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+                                     </div>
+                                     <select name= "idtipo" class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Escoja...</option>
+                                        @foreach($lista_tipo_social as $item)
+                                            <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
+                                        @endforeach
+                                     </select>
+                                  </div>
 
                             <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -81,12 +87,13 @@
 
                                         @foreach($lista_social as $item)
                                           <tr>
-                                              <th scope="row">Noticia</th>
+                                              <th scope="row">no definido</th>
+                                              <th scope="row">{{$item["titulo"]}}</th>
 
-                                              <th>{{$item["titulo"]}}</th>
+                                              <th>{{$item["descripcion"]}}</th>
 
                                               <td>
-                                                     <a href="#" onclick='verSocial(<?php echo $item["id"]?>)' class="btn btn-info" >Modificar</a>
+                                                     <a href="#" onclick="verSocial(<?php echo $item['id']?>)" class="btn btn-info" >Modificar</a>
                                                     <form action="{{route('social_form.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
                                                               @method("DELETE")                
