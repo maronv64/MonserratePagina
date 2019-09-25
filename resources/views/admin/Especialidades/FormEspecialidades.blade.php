@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                         <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                         <label class="input-group-text" for="inputGroupSelect01">Descripcion</label>
                                 </div>
                                 <!-- <select class="custom-select" id="inputGroupSelect01" name="descripcion" >
                                         <option selected></option>
@@ -62,9 +62,7 @@
                                             <td>
                                                 <a href="#" class="btn btn-info">Agregar Materias</a>
                                                 <a href="#" onclick='verEspecialidad(<?php echo $item["id"] ?>)' class="btn btn-info" >Modificar</a>
-                                                <form action="{{route('Especialidades_control.destroy',$item[
-                                                    
-                                                    'id'])}}" method="POST">
+                                                <form action="{{route('Especialidades_control.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
                                                               @method("DELETE")                
                                                     <input type="submit" class="btn btn-danger" value="Eliminar">
