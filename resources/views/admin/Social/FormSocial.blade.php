@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,43 +15,111 @@
 <body>
  <div class="container">
     <div class="row">
-        <div class="col-md-12">
-             <form>                
+
+        <div class="col-md-12"> -->
+             <form action="{{url('/social_form')}}" method="POST">   
+                 @csrf             
                  <div class="card">
                     <div class="card-header">
-                        Sociales
+                        Social
                     </div>
+
                     <div class="card-body">
-                        <div class="input-group mb-3">
+                        <!-- <div class="input-group mb-3">
                             <div class="input-group-prepend">
+
                               <label class="input-group-text" for="inputGroupSelect01">Tipo de Social</label>
+
                             </div>
+
                             <select class="custom-select" id="inputGroupSelect01">
                               <option selected></option>
                               <option value="1">Actividad</option>
                               <option value="2">Noticia</option>
                             </select>
-                          </div>
+
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="tipo_de_social">
+
+                          </div> -->
+
                             <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="inputGroup-sizing-default">Titulo   </span>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo">
                             </div>   
                             <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="inputGroup-sizing-default">Descripcion</span>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                             </div>
 
-                           <button type="button" class="btn btn-info">Guardar</button>  
+                            <input type="submit" class="btn btn-info" value="Guardar"> 
                     </div>
                  </div>
              </form>
-        </div>
+        <!-- </div>
     </div>
  </div>
 
+ <div class="container">
+                <div class="row">
+                    <div class="col-md-12"> -->
+                        <!-- <form> -->
+                            <table class="table table-bordered">
+                                        <thead class="thead bg-primary text-white">
+                                              <tr>
+                                                  <th scope="col">Tipo Social</th>
+                                                  <th scope="col">Titulo</th>
+                                                  <th scope="col">Descripcion</th> 
+                                                  <th scope="col">Acciones</th>               
+                                              </tr>
+                                        </thead>
+
+                                 <tbody>
+
+                                        @foreach($lista_social as $item)
+                                          <tr>
+                                              <th scope="row">Noticia</th>
+
+                                              <th>{{$item["titulo"]}}</th>
+
+                                              <td>
+                                                     <a href="#" onclick='verSocial(<?php echo $item["id"]?>)' class="btn btn-info" >Modificar</a>
+                                                    <form action="{{route('social_form.destroy',$item['id'])}}" method="POST">
+                                                              @csrf    
+                                                              @method("DELETE")                
+                                                         <input type="submit" class="btn btn-danger" value="Eliminar">
+                                                    </form>
+                                              </td>
+                                          </tr>
+                                          @endforeach
+                                            <!-- <tr>
+                                                <th scope="row">Evento</th>
+                                                <td>fggg</td>
+                                                <td>bbjj</td>
+                                                <td>
+                                                   <button type="button" class="btn btn-info">Modificar</button>
+                                                   <button type="button" class="btn btn-danger">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Noticia</th>
+                                                <td>Bbbb</td>
+                                                <td>Dddd</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-info">Modificar</button>
+                                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                                </td>
+                                            </tr> -->
+                                  </tbody> 
+                            </table>                      
+                        <!-- </form> -->
+                    <!-- </div>   
+                </div>           
+       </div>                
 </body>
-</html>
+</html> -->
+@include('admin.Social.ModalSocial')
+@endsection
