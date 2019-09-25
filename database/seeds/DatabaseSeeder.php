@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Hash;
+use Illuminate\Support\Facades\Hash;
 use App\TipoUsuario;
 use App\User;
 
@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $tipo->descripcion="admin";
         $tipo->estado_del="A";
         $tipo->save();
+        
         $item=new User();
         $item->idtipo="1";
         $item->name="admin";
