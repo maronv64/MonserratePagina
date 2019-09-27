@@ -46,4 +46,5 @@ Route::resource('/social_form','SocialController');
 
 Route::resource('/tipopersonal_form','TipoPersonalController');
 
+Route::resource('/buzon','BuzonController');
 Route::resource('/personal_form','PersonalController');
