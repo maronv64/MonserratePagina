@@ -1,4 +1,4 @@
-function verEstudiantes(id){
+function GE_verEstudiantes(id){
     $.get('estudiante/'+id,function(data){
         $("#idEstudiante").val(id);
         $("#cmbespecialidadE").val(data.idEspecialidad);
@@ -9,7 +9,7 @@ function verEstudiantes(id){
     $(".Estudiante").modal("show");
 
 }
-function verTipoE(id){
+function GE_verTipoE(id){
     
 
     $(".TipoE").modal("show");

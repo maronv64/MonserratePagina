@@ -74,8 +74,8 @@
                                 <td>{{$item["especialidad"]}}</td>
                                 <td></td>
                                 <td>
-                                <button type="button" onclick='verTipoE(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Tipo Estudiante</button>
-                                <button type="button" onclick='verEstudiantes(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</button>
+                                <button type="button" onclick='GE_verTipoE(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Tipo Estudiante</button>
+                                <button type="button" onclick='GE_verEstudiantes(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</button>
                                     <form action="{{route('estudiante.destroy',$item['id'])}}" method="POST">
                                         @csrf    
                                         @method("DELETE")                

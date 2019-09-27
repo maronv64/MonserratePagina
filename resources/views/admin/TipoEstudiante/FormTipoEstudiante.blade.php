@@ -42,7 +42,7 @@
                         <th scope="row">1</th>
                         <td>{{$item["descripcion"]}}</td>
                         <td>
-                        <a href="#" onclick='verTipoEstudiante(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</a>
+                        <a href="#" onclick='GTE_verTipoEstudiante(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</a>
                             <form action="{{route('tipo_estudiante.destroy',$item['id'])}}" method="POST">
                                 @csrf    
                                 @method("DELETE")                
