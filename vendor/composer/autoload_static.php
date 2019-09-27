@@ -441,6 +441,7 @@ class ComposerStaticInit22fb6837dfd617f0e8b67195d203a0c7
         'App\\Materia' => __DIR__ . '/../..' . '/app/Materia.php',
         'App\\MateriaController' => __DIR__ . '/../..' . '/app/MateriaController.php',
         'App\\Materia_Personal' => __DIR__ . '/../..' . '/app/Materia_Personal.php',
+        'App\\Personal' => __DIR__ . '/../..' . '/app/Personal.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

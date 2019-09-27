@@ -1,4 +1,4 @@
-function verTipoPersonal(id) {
+function verTipoPersonals(id) {
     
     $.get('tipopersonal_form/'+id, function(data){
        $("#idTipoPersonal").val(id);

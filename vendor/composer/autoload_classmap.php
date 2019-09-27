@@ -43,6 +43,7 @@ return array(
     'App\\Materia' => $baseDir . '/app/Materia.php',
     'App\\MateriaController' => $baseDir . '/app/MateriaController.php',
     'App\\Materia_Personal' => $baseDir . '/app/Materia_Personal.php',
+    'App\\Personal' => $baseDir . '/app/Personal.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

@@ -2,9 +2,14 @@
 
 @section('content')
 
-    <form action="{{url('/tipo_estudiante')}}" method="POST">
-        @csrf
-        @method('POST')
+          
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+        <form action="{{url('/tipo_estudiante')}}" method="POST">
+            @csrf
+            @method('POST')
         <div class="card">
             <div class="card-header" style="background-color: #007bff;">
                 <h5 class="card-title text-white">Tipos de Estudiantes</h5>
@@ -14,13 +19,13 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
                     </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
-                        &nbsp;
-                        <input type="submit" class="btn btn-outline-info" value="Guardar">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                    &nbsp;
+                    <input type="submit" class="btn btn-outline-info" value="Guardar">
                 </div>             
             </div>
         </div>                      
-    </form>
+        </form>
     
         <div class="table-responsive"> 
             <table class="table">
@@ -31,23 +36,26 @@
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
-                    <tbody>
-                        @foreach($listaTipoEstudiante as $item)
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>{{$item["descripcion"]}}</td>
-                            <td>
-                            <a href="#" onclick='verTipoEstudiante(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</a>
-                                <form action="{{route('tipo_estudiante.destroy',$item['id'])}}" method="POST">
-                                    @csrf    
-                                    @method("DELETE")                
-                                    <input type="submit" class="btn btn-outline-danger" value="Eliminar">
-                                </form>
-                            </td>
-                            </tr>
-                        @endforeach  
-                    </tbody>
+                <tbody>
+                    @foreach($listaTipoEstudiante as $item)
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{$item["descripcion"]}}</td>
+                        <td>
+                        <a href="#" onclick='verTipoEstudiante(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</a>
+                            <form action="{{route('tipo_estudiante.destroy',$item['id'])}}" method="POST">
+                                @csrf    
+                                @method("DELETE")                
+                                <input type="submit" class="btn btn-outline-danger" value="Eliminar">
+                            </form>
+                        </td>
+                        </tr>
+                    @endforeach  
+                </tbody>
             </table>
         </div> 
-@include('admin.TipoEstudiante.ModalTipoEstudiante')            
+@include('admin.TipoEstudiante.ModalTipoEstudiante')       
+        </div>
+    </div>
+</div>
 @endsection

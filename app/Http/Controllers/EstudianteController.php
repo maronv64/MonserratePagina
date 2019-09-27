@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Estudiante;
+use App\TipoEstudiante;
 use App\Especialidades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class EstudianteController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,8 +23,9 @@ class EstudianteController extends Controller
     {
         $items=Estudiante::where("estado_del","A")->get();
         $items2=Especialidades::Where("estado_del","A")->get();
+        $items3=TipoEstudiante::where("estado_del","A")->get();
 
-        return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items,"lista_TipoEspecialidad"=>$items2]);
+        return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items,"lista_TipoEspecialidad"=>$items2,"lista_TipoEstudiante"=>$items3]);
     }
 
     /**

@@ -20,11 +20,12 @@
     <script src="{{ asset('js/GestionUsuario.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
 
-    <script src="{{ asset('js/GestionTipoPersonal.js') }}" defer></script>
+    <script src="{{ asset('js/GestionTipoPersonals.js') }}" defer></script>
 
     <script src="{{ asset('js/GestionMaterias.js') }}" defer></script>
     <script src="{{ asset('js/GestionEstudiantes.js') }}" defer></script>
     <script src="{{ asset('js/GestionSocial.js') }}" defer></script>
+    <script src="{{ asset('js/GestionPersonal.js') }}" defer></script>
 
     <!-- Fonts -->
     {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
