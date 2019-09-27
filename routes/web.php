@@ -41,10 +41,7 @@ Route::resource('/estudiante','EstudianteController');
 Route::resource('/Especialidades_control','EspecialidadesController');
 
 Route::resource('/materia_control','MateriaController');
-<<<<<<< HEAD
 
-=======
->>>>>>> fe715c5c51a95f436d7b0109f872856942d20bfe
 Route::resource('/social_form','SocialController');
 
 Route::resource('/tipopersonal_form','TipoPersonalController');
