@@ -81,9 +81,7 @@
                                </div>
                            </div>
 
-                           <div class="modal-footer">
-                                <button type="button" class="btn btn-info">Agregar Tipo Personal</button>
-                            </div>  
+                           
 
                             <input type="hidden" id="idPersonal" name="id">
                            <div class="modal-footer">
