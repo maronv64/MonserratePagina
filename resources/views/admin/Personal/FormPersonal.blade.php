@@ -98,7 +98,7 @@
                                               <th scope="row">{{$item["telefono"]}}</th>
         
                                               <td>
-                                                    <a href="#" onclick='verTipoPersonal(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Tipo Personal</a>
+                                                    <a href="#" onclick='gp_verTipoPersonal(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Tipo Personal</a>
                                                      <a href="#" onclick="verPersonal(<?php echo $item['id']?>)" class="btn btn-info" >Modificar</a>
                                                     <form action="{{route('personal_form.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
