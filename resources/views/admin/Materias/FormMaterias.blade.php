@@ -41,11 +41,11 @@
                         <!-- <form action=""> -->
                                 <table class="table table-bordered">
                                         <thead class="thead bg-primary text-white" >
-                                          <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Descripcion</th>
-                                            <th scope="col">Accion</th>
-                                          </tr>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Descripcion</th>
+                                                <th scope="col">Accion</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($lista_materias as $item)
