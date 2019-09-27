@@ -47,7 +47,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $items=new User();
+        $items->idtipo=$request->idtipo;
         $items->name=$request->nombre;
         $items->email=$request->email;
         $items->password=Hash::make($request->contraseña);
@@ -89,7 +91,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item =User::where("id",$request->id)->first();
+        $items =User::where("id",$request->id)->first();
         $items->name=$request->nombre;
         $items->email=$request->email;
         $items->password=bcrypt($request->contraseña);
@@ -97,6 +99,7 @@ class UserController extends Controller
         $items->update();
         //echo $items;
          return redirect('/users') ;
+        // return $request;
         
     }
 

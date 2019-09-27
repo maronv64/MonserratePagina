@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Buzon' => $baseDir . '/app/Buzon.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Especialidades' => $baseDir . '/app/Especialidades.php',
     'App\\Estudiante' => $baseDir . '/app/Estudiante.php',
@@ -18,17 +19,16 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ElizabethController' => $baseDir . '/app/Http/Controllers/ElizabethController.php',
     'App\\Http\\Controllers\\EspecialidadesController' => $baseDir . '/app/Http/Controllers/EspecialidadesController.php',
+    'App\\Http\\Controllers\\EstudianteController' => $baseDir . '/app/Http/Controllers/EstudianteController.php',
     'App\\Http\\Controllers\\GustavoController' => $baseDir . '/app/Http/Controllers/GustavoController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
-<<<<<<< HEAD
-    'App\\Http\\Controllers\\MateriaControllerController' => $baseDir . '/app/Http/Controllers/MateriaControllerController.php',
-=======
     'App\\Http\\Controllers\\MateriaController' => $baseDir . '/app/Http/Controllers/MateriaController.php',
->>>>>>> fb263bf9d9654fc070277ac038f3e79b199c1728
+    'App\\Http\\Controllers\\MateriaPersonalController' => $baseDir . '/app/Http/Controllers/MateriaPersonalController.php',
     'App\\Http\\Controllers\\MauroController' => $baseDir . '/app/Http/Controllers/MauroController.php',
     'App\\Http\\Controllers\\NancyController' => $baseDir . '/app/Http/Controllers/NancyController.php',
     'App\\Http\\Controllers\\SocialController' => $baseDir . '/app/Http/Controllers/SocialController.php',
     'App\\Http\\Controllers\\TipoEstudianteController' => $baseDir . '/app/Http/Controllers/TipoEstudianteController.php',
+    'App\\Http\\Controllers\\TipoPersonalController' => $baseDir . '/app/Http/Controllers/TipoPersonalController.php',
     'App\\Http\\Controllers\\TipoSocialController' => $baseDir . '/app/Http/Controllers/TipoSocialController.php',
     'App\\Http\\Controllers\\TipoUsuarioController' => $baseDir . '/app/Http/Controllers/TipoUsuarioController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
