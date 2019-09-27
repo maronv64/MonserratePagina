@@ -56,6 +56,7 @@
                             <th scope="col">Apellido</th>
                             <th scope="col">Cedula</th>
                             <th scope="col">Especialidad</th>
+                            <th scope="col">Tipo Estudiante</th>
                             <th scope="col">Opciones</th>
                          </tr>
                         </thead>
@@ -66,6 +67,7 @@
                                 <td>{{$item["apellido"]}}</td>
                                 <td>{{$item["cedula"]}}</td>
                                 <td>{{$item["especialidad"]}}</td>
+                                <td></td>
                                 <td>
                                 <button type="button" onclick='verTipoE(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Tipo Estudiante</button>
                                 <button type="button" onclick='verEstudiantes(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</button>
