@@ -45,7 +45,16 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $personal=new Personal();
+        $personal->idtipo=$request->idtipo;
+        $personal->nombres=$request->nombres;
+        $personal->apellidos=$request->apellidos;
+        $personal->cedula=$request->cedula;
+        $personal->titulo=$request->titulo;
+        $personal->telefono=$request->telefono;
+        $personal->estado_del="A";
+        $personal->save();
+        return redirect('/personal_form');
     }
 
     /**
@@ -54,9 +63,10 @@ class PersonalController extends Controller
      * @param  \App\Personal  $personal
      * @return \Illuminate\Http\Response
      */
-    public function show(Personal $personal)
+    public function show($id)
     {
-        //
+        $item =Personal::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
@@ -77,9 +87,18 @@ class PersonalController extends Controller
      * @param  \App\Personal  $personal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Personal $personal)
+    public function update(Request $request, $id)
     {
-        //
+        $item=Personal::where("id",$request->id)->first();
+        $item->idtipo=$request->idtipo;
+        $item->nombres=$request->nombres;
+        $item->apellidos=$request->apellidos;
+        $item->cedula=$request->cedula;
+        $item->titulo=$request->titulo;
+        $item->telefono=$request->telefono;
+        $item->update();
+       return redirect('/personal_form');
+
     }
 
     /**
@@ -88,8 +107,11 @@ class PersonalController extends Controller
      * @param  \App\Personal  $personal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personal $personal)
+    public function destroy($id)
     {
-        //
+        $item=Personal::where("id", $id)->first();
+        $item->estado_del="E";
+        $item->update();
+        return redirect('/personal_form');
     }
 }
