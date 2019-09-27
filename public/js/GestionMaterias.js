@@ -10,5 +10,8 @@ function verMateria(id) {
 }
 function verDocentes(id) {
     //  alert("este es id :"+id);
-    // $(".").modal("show");
+    $.get('materia_control/'+id,function (data) {
+       
+    });
+    $(".materiaPersonal").modal("show");
 }

@@ -98,8 +98,8 @@
                                               <th scope="row">{{$item["telefono"]}}</th>
         
                                               <td>
+                                                    <a href="#" onclick='verTipoPersonal(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Tipo Personal</a>
                                                      <a href="#" onclick="verPersonal(<?php echo $item['id']?>)" class="btn btn-info" >Modificar</a>
-                                                     <button type="button" class="btn btn-info">Agregar Tipo Personal</button>
                                                     <form action="{{route('personal_form.destroy',$item['id'])}}" method="POST">
                                                               @csrf    
                                                               @method("DELETE")                
@@ -118,4 +118,5 @@
 </body>
 </html> -->
 @include('admin.Personal.ModalPersonal')
+@include('admin.Personal_TipoPersonal.Modal_personal_tipopersonal')
 @endsection

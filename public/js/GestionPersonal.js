@@ -13,6 +13,10 @@ function verPersonal(id) {
     $(".MPersonal").modal("show");
    
 }
-function name(params) {
-   
+function verTipoPersonal(id) {
+    //  alert("este es id :"+id);
+    $.get('personal_form/'+id,function (data) {
+       
+    });
+    $(".personalTipoPersonal").modal("show");
 }

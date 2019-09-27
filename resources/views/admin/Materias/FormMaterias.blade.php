@@ -77,4 +77,5 @@
 <!-- </body>
 </html> -->
 @include('admin.Materias.ModalMaterias')
+@include('admin.Materias_Personal.Modal_Materias_Personal')
 @endsection
