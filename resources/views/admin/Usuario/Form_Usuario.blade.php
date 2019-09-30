@@ -73,7 +73,7 @@
                                     @foreach ($lista_usuario as $item)
                                             <tr>
                                                 
-                                                <td>no definido</td>
+                                                <td>{{$item['tipo_usuario']['descripcion']}}</td>
                                                 <td>{{$item['name']}}</td>
                                                 <td>{{$item['email']}}</td>
                                                 <td>{{$item['password']}}</td>
