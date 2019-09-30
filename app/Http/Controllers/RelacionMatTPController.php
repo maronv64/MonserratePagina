@@ -2,27 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Materia;
+use App\RelacionMatTP;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class MateriaController extends Controller
+class RelacionMatTPController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        $items=Materia::with("lista_tipo_personal")->Where("estado_del","A")->get();
-        // return view("admin.Materias.FormMaterias" ,["lista_materias"=>$items]);
-        return response()->json($items);
+        //
     }
 
     /**
@@ -43,33 +36,32 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        $materia =new Materia();
-        $materia->descripcion=$request->descripcion;
-        $materia->estado_del="A";
-        $materia->save();
-        //$items=Especialidades::Where("estado_del","A")->get();
+        $item =new RelacionMatTP();
+        $item->id_materia=$request->id_materia;
+        $item->id_tipopersonal=$request->id_tipopersonal;
+        $item->estado_del="A";
+        $item->save();
         return redirect('/materia_control');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Materia  $materiaController
+     * @param  \App\RelacionMatTP  $relacionMatTP
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(RelacionMatTP $relacionMatTP)
     {
-        $item =Materia::where("id",$id)->first();
-        return response()->json($item);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Materia  $materiaController
+     * @param  \App\RelacionMatTP  $relacionMatTP
      * @return \Illuminate\Http\Response
      */
-    public function edit(MateriaController $materiaController)
+    public function edit(RelacionMatTP $relacionMatTP)
     {
         //
     }
@@ -78,28 +70,27 @@ class MateriaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Materia  $materiaController
+     * @param  \App\RelacionMatTP  $relacionMatTP
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, RelacionMatTP $relacionMatTP)
     {
-        $item=Materia::where("id",$request->id)->first();
-        $item->descripcion=$request->descripcion;
-        $item->update();
-        return redirect('/materia_control');
-        //return $request;
-       
+        $item=RelacionMatTP::where("id",$request->id)->first();
+        $item->id_materia=$request->id_materia;
+        $item->id_tipopersonal=$request->id_tipopersonal;
+         $item->update();
+         return redirect('/materia_control');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Materia  $materiaController
+     * @param  \App\RelacionMatTP  $relacionMatTP
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(RelacionMatTP $relacionMatTP)
     {
-        $item =Materia::where("id",$id)->first();
+        $item =RelacionMatTP::where("id",$id)->first();
         $item->estado_del="E";
         $item->update();
         return redirect('/materia_control');
