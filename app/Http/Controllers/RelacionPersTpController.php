@@ -2,27 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\TipoPersonal;
+use App\RelacionPersTp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TipoPersonalController extends Controller
+class RelacionPersTpController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        $items=TipoPersonal::with("lista_personal")->Where("estado_del","A")->get();
-        return response()->json($items);
+        //
     }
 
     /**
@@ -43,34 +36,32 @@ class TipoPersonalController extends Controller
      */
     public function store(Request $request)
     {
-        $tipoPersonal=new TipoPersonal();
-        $tipoPersonal->descripcion=$request->descripcion;
-        $tipoPersonal->estado_del="A";
-        $tipoPersonal->save();
-       
+        $item =new RelacionPersTp();
+        $item->id_TipoPersonal=$request->id_TipoPersonal;
+        $item->id_personal=$request->id_personal;
+        $item->estado_del="A";
+        $item->save();
         return redirect('/tipopersonal_form');
-       
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\TipoPersonal  $tipoPersonal
+     * @param  \App\RelacionPersTp  $relacionPersTp
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(RelacionPersTp $relacionPersTp)
     {
-        $item =TipoPersonal::where("id",$id)->first();
-        return response()->json($item);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TipoPersonal  $tipoPersonal
+     * @param  \App\RelacionPersTp  $relacionPersTp
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipoPersonal $tipoPersonal)
+    public function edit(RelacionPersTp $relacionPersTp)
     {
         //
     }
@@ -79,29 +70,29 @@ class TipoPersonalController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TipoPersonal  $tipoPersonal
+     * @param  \App\RelacionPersTp  $relacionPersTp
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, RelacionPersTp $relacionPersTp)
     {
-        $item=TipoPersonal::where("id",$request->id)->first();
-        $item->descripcion=$request->descripcion;
-        $item->update();
-       return redirect('/tipopersonal_form');
+        $item=RelacionPersTp::where("id",$request->id)->first();
+        $item->id_tipopersonal=$request->id_tipopersonal;
+        $item->id_personal=$request->id_personal;
+         $item->update();
+         return redirect('/tipopersonal_form');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TipoPersonal  $tipoPersonal
+     * @param  \App\RelacionPersTp  $relacionPersTp
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(RelacionPersTp $relacionPersTp)
     {
-        $item=TipoPersonal::where("id", $id)->first();
+        $item =RelacionPersTp::where("id",$id)->first();
         $item->estado_del="E";
         $item->update();
-       
         return redirect('/tipopersonal_form');
     }
 }
