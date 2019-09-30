@@ -23,10 +23,10 @@ class UserController extends Controller
    
      public function index()
     {
-        $items=User::Where("estado_del","A")->get();
-        
+        $items=User::With("tipo_usuario")->Where("estado_del","A")->get();
         $items2=TipoUsuario::Where("estado_del","A")->get();
-        return view("admin.Usuario.Form_Usuario" ,["lista_usuario"=>$items,"lista_tipoUsuario"=>$items2]);
+        return view("admin.Usuario.Form_Usuario" ,["lista_usuario"=>$items,"lista_tipoUsuario"=>$items2]);        
+        // return response()->json($items);
     }
 
     /**
