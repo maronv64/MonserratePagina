@@ -21,11 +21,13 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        $items=Estudiante::where("estado_del","A")->get();
-        $items2=Especialidades::Where("estado_del","A")->get();
-        $items3=TipoEstudiante::where("estado_del","A")->get();
+        $items=Estudiante::with("lista_tipos")->where("estado_del","A")->get();
+        return response()->json($items);
+        // $items=Estudiante::where("estado_del","A")->get();
+        // $items2=Especialidades::Where("estado_del","A")->get();
+        // $items3=TipoEstudiante::where("estado_del","A")->get();
 
-        return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items,"lista_TipoEspecialidad"=>$items2,"lista_TipoEstudiante"=>$items3]);
+        // return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items,"lista_TipoEspecialidad"=>$items2,"lista_TipoEstudiante"=>$items3]);
     }
 
     /**
