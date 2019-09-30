@@ -22,11 +22,15 @@ class SocialController extends Controller
 
     public function index()
     {
-         $items=Social::Where("estado_del","A")->get();
+         $items=Social::With("tiposocial")->Where("estado_del","A")->get();
+        //  return response()->json( $items);
+
          $items2=TipoSocial::Where("estado_del","A")->get();
+         return view("admin.Social.FormSocial" ,["lista_social"=>$items, "lista_tipo_social"=>$items2]);
+
+        //  $items=Social::Where("estado_del","A")->get();
         // //  echo $items2;
         // //  return;
-         return view("admin.Social.FormSocial" ,["lista_social"=>$items, "lista_tipo_social"=>$items2]);
     }
 
     /**
