@@ -20,8 +20,9 @@ class MateriaController extends Controller
 
     public function index()
     {
-        $items=Materia::Where("estado_del","A")->get();
-        return view("admin.Materias.FormMaterias" ,["lista_materias"=>$items]);
+        $items=Materia::with("lista_tipo_personal")->Where("estado_del","A")->get();
+        // return view("admin.Materias.FormMaterias" ,["lista_materias"=>$items]);
+        return response()->json($items);
     }
 
     /**

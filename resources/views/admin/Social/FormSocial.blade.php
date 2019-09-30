@@ -87,7 +87,7 @@
 
                                         @foreach($lista_social as $item)
                                           <tr>
-                                              <th scope="row">no definido</th>
+                                              <th scope="row">{{$item["tiposocial"]["descripcion"]}}</th>
                                               <th scope="row">{{$item["titulo"]}}</th>
 
                                               <th>{{$item["descripcion"]}}</th>

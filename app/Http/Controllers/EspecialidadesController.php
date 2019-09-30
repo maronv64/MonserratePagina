@@ -20,11 +20,11 @@ class EspecialidadesController extends Controller
 
      public function index()
     {
-        $items=Especialidades::Where("estado_del","A")->get();
-        // echo $items;
-        // return;
-      
-        return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+        $items=Especialidades::with("lista_materias")->Where("estado_del","A")->get();
+        // $items=Especialidades::Where("estado_del","A")->get();
+        // return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+       // echo $items;
+        return response()->json($items);
        
     }
 
