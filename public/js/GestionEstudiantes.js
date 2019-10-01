@@ -23,7 +23,7 @@ function GE_verTipoE(id){
 
     $("#tabla_tipos_estudiantes tr").each(function (index) {
         // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
-        var valores = $(this).parents("tr").find("td")[1].innerHTML;
+        //var valores = $(this).parents("tr").find("td")[1].innerHTML;
     });
 
     $(".TipoE").modal("show");
