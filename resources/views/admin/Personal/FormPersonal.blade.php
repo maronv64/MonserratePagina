@@ -80,7 +80,8 @@
                                               <th scope="col">Apellidos</th>
                                               <th scope="col">Cedula</th> 
                                               <th scope="col">Titulo</th>
-                                              <th scope="col">Telefono</th>  
+                                              <th scope="col">Telefono</th> 
+                                              <td scope="col">Tipo Personal</td> 
                                               <th scope="col">Acciones</th> 
 
                                           </tr>
@@ -91,11 +92,17 @@
                                               <th scope="row">
                                                  
                                               </th>  
-                                              <th scope="row">{{$item["nombres"]}}</th>
-                                              <th scope="row">{{$item["apellidos"]}}</th>
-                                              <th scope="row">{{$item["cedula"]}}</th>
-                                              <th scope="row">{{$item["titulo"]}}</th>
-                                              <th scope="row">{{$item["telefono"]}}</th>
+                                              <td scope="row">{{$item["nombres"]}}</td>
+                                              <td scope="row">{{$item["apellidos"]}}</td>
+                                              <td scope="row">{{$item["cedula"]}}</td>
+                                              <td scope="row">{{$item["titulo"]}}</td>
+                                              <td scope="row">{{$item["telefono"]}}</td>
+                                              
+                                              <td>
+                                                        @foreach($item["lista_tipo_personal"] as $item2)
+                                                            {{ $item2["tipo_personal"]["descripcion"]}}
+                                                        @endforeach
+                                                    </td>
         
                                               <td>
                                                     <a href="#" onclick='gp_verTipoPersonal(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Tipo Personal</a>

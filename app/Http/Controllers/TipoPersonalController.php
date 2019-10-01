@@ -21,8 +21,9 @@ class TipoPersonalController extends Controller
 
     public function index()
     {
-        $items=TipoPersonal::with("lista_personal")->Where("estado_del","A")->get();
-        return response()->json($items);
+        $items=TipoPersonal::Where("estado_del","A")->get();
+        return view("admin.TipoPersonal.FormTipoPersonal" ,["lista_tipo_personal"=>$items]);
+        // return response()->json($items);
     }
 
     /**

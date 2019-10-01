@@ -15,7 +15,9 @@ class BuzonController extends Controller
      */
     public function index()
     {
-        return view("admin.Buzon.TablaBuzon");
+        $items=Buzon::where("estado_del","A")->get();
+        return view("admin.Buzon.TablaBuzon",["lista_buzon"=>$items]);
+        // return response()->json($items);
     }
 
     /**
@@ -36,7 +38,15 @@ class BuzonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $items=new buzon ();
+        $items->id=$request->id;
+        $items->name=$request->nombre;
+        $items->email=$request->email;
+        $items->message=$request->mensage;
+        $items->estado_del="A";
+        $items->save();
+        return redirect('/');
     }
 
     /**

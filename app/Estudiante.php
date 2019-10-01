@@ -11,4 +11,8 @@ class Estudiante extends Model
     {
         return $this->hasMany('App\RelacionTipoEEst', 'id_estudiante', 'id')->with("tipo");
     }
+    public function especialidad()
+    {
+        return $this->belongsTo('App\Especialidades', 'idEspecialidad', 'id');
+    }
 }

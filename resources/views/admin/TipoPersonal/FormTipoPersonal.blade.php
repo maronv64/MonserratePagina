@@ -26,6 +26,7 @@
                                         <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Descripcion</th>
+                                        
                                         <th scope="col">Accion</th>
                                         </tr>
                                     </thead>
@@ -36,6 +37,7 @@
                                                     <th>
                                                         {{$item["descripcion"]}}
                                                     </th>
+                                                    
                                             
                                                 <td>
                                                     
