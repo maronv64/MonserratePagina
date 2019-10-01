@@ -19,15 +19,18 @@
 		<!--
 		CSS
 		============================================= -->
-		<link rel="stylesheet" href="css/linearicons.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/magnific-popup.css">
-		<link rel="stylesheet" href="css/nice-select.css">
-		<link rel="stylesheet" href="css/animate.min.css">
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<link rel="stylesheet" href="css/jquery-ui.css">
-        <link rel="stylesheet" href="css/main.css">
+		
+
+
+		<link rel="stylesheet" href="css/css_plantilla/linearicons.css">
+		<link rel="stylesheet" href="css/css_plantilla/font-awesome.min.css">
+		<link rel="stylesheet" href="css/css_plantilla/bootstrap.css">
+		<link rel="stylesheet" href="css/css_plantilla/magnific-popup.css">
+		<link rel="stylesheet" href="css/css_plantilla/nice-select.css">
+		<link rel="stylesheet" href="css/css_plantilla/animate.min.css">
+		<link rel="stylesheet" href="css/css_plantilla/owl.carousel.css">
+		<link rel="stylesheet" href="css/css_plantilla/jquery-ui.css">
+        <link rel="stylesheet" href="css/css_plantilla/main.css">
         
         
 	</head>
@@ -716,20 +719,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</footer>
 		<!-- End footer Area -->
-		<script src="js/vendor/jquery-2.2.4.min.js"></script>
+		
+		<script src="{{asset('js/js_plantilla/vendor/jquery-2.2.4.min.js')}}" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="{{('js/js_plantilla/vendor/bootstrap.min.js')}}"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-		<script src="js/easing.min.js"></script>
-		<script src="js/hoverIntent.js"></script>
-		<script src="js/superfish.min.js"></script>
-		<script src="js/jquery.ajaxchimp.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/mn-accordion.js"></script>
-		<script src="js/jquery-ui.js"></script>
-		<script src="js/jquery.nice-select.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/mail-script.js"></script>
-		<script src="js/main.js"></script>
+		<script src="{{('js/js_plantilla/easing.min.js')}}"></script>
+		<script src="{{('js/js_plantilla/hoverIntent.js')}}"></script>
+		<script src="{{('js/js_plantilla/superfish.min.js')}}"></script>
+		<script src="{{('js/js_plantilla/jquery.ajaxchimp.min.js')}}"></script>
+		<script src="{{('js/js_plantilla/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{('js/js_plantilla/mn-accordion.js')}}"></script>
+		<script src="{{('js/js_plantilla/jquery-ui.js')}}"></script>
+		<script src="{{('js/js_plantilla/jquery.nice-select.min.js')}}"></script>
+		<script src="{{('js/js_plantilla/owl.carousel.min.js')}}"></script>
+		<script src="{{('js/js_plantilla/mail-script.js')}}"></script>
+		<script src="{{('js/js_plantilla/main.js')}}"></script>
 	</body>
 </html>
