@@ -28,6 +28,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Descripcion</th>
+                    <th scope="col">Materias</th>
                     <th scope="col">Accion</th>
                 </tr>
             </thead>
@@ -35,10 +36,12 @@
                 @foreach($lista_especialidades as $item)
                     <tr>
                         <th scope="row">1</th>
-                            <th>
-                                {{$item["descripcion"]}}
-                            </th>
-                    
+                        <td>{{$item["descripcion"]}} </td>
+                        <td>
+                        @foreach($item["lista_materias"] as $item2)
+                            {{ $item2["materia"]["descripcion"]}}
+                        @endforeach
+                        </td>
                         <td>
                             <a href="#" onclick='verMateriaE(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Materias</a>
                             <a href="#" onclick='verEspecialidad(<?php echo $item["id"] ?>)' class="btn btn-info" >Modificar</a>

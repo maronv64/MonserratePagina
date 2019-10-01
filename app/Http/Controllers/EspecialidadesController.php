@@ -22,9 +22,9 @@ class EspecialidadesController extends Controller
     {
         $items=Especialidades::with("lista_materias")->Where("estado_del","A")->get();
         // $items=Especialidades::Where("estado_del","A")->get();
-        // return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
-       // echo $items;
-        return response()->json($items);
+        return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+    //    echo $items;
+        // return response()->json($items);
        
     }
 

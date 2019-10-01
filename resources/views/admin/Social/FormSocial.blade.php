@@ -41,7 +41,7 @@
                                          <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
                                      </div>
                                      <select name= "idtipo" class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Escoja...</option>
+                                        <option selected>...</option>
                                         @foreach($lista_tipo_social as $item)
                                             <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                                         @endforeach
@@ -60,6 +60,7 @@
                                     </div>
                                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                             </div>
+                            
 
                             <input type="submit" class="btn btn-info" value="Guardar"> 
                     </div>

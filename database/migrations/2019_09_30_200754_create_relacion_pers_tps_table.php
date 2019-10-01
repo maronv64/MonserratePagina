@@ -15,8 +15,8 @@ class CreateRelacionPersTpsTable extends Migration
     {
         Schema::create('relacion_pers_tps', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_tipopersonal');
             $table->bigInteger('id_personal');
+            $table->bigInteger('id_tipopersonal');
             $table->string('estado_del','2');
             $table->timestamps();
         });

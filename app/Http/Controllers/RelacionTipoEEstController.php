@@ -36,11 +36,18 @@ class RelacionTipoEEstController extends Controller
      */
     public function store(Request $request)
     {
-        $items=new RelacionTipoEEst();
-        $items->id_tipo_estudiante=$request->id_tipo_estudiante;
-        $items->id_estudiante=$request->id_estudiantes;
-        $items->estado_del="A";
-        $items->save();
+        $idTiposEst = explode(",", $request->listaTiposId);
+        //return response()->json($request);
+        foreach ($idTiposEst as $key => $value) {
+            //echo $value;
+            $items=new RelacionTipoEEst();
+            $items->id_estudiante=$request->idEstudiante;
+            $items->id_tipo_estudiante=$value;
+            $items->estado_del="A";
+            $items->save();    
+        }
+        return redirect('/estudiante');
+        
     }
 
     /**

@@ -16,7 +16,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nombres y Apellidos</span>
                         </div>
-                        <input type="hidden" id="idEstudiante" name="id"> 
+                        <input type="hidden" id="idEstudiante" name="idEstudiante"> 
                         <input id="nombreEstudiante" type="text" aria-label="First name" class="form-control" name="nombre">
                         <input id="apellidoEstudiante" type="text" aria-label="Last name" class="form-control" name="apellido">
                     </div>

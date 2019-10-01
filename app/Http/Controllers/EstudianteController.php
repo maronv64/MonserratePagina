@@ -21,13 +21,13 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        $items=Estudiante::with("lista_tipos")->where("estado_del","A")->get();
-        return response()->json($items);
-        // $items=Estudiante::where("estado_del","A")->get();
-        // $items2=Especialidades::Where("estado_del","A")->get();
-        // $items3=TipoEstudiante::where("estado_del","A")->get();
+        $items=Estudiante::with(["lista_tipos","especialidad"])->where("estado_del","A")->get();
+        // return response()->json($items);
 
-        // return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items,"lista_TipoEspecialidad"=>$items2,"lista_TipoEstudiante"=>$items3]);
+        $items2=Especialidades::Where("estado_del","A")->get();
+        $items3=TipoEstudiante::where("estado_del","A")->get();
+
+        return view("admin.Estudiantes.FormEstudiante",["listaEstudiante"=>$items,"lista_TipoEspecialidad"=>$items2,"lista_TipoEstudiante"=>$items3]);
     }
 
     /**
@@ -68,7 +68,7 @@ class EstudianteController extends Controller
      */
     public function show($id)
     {
-        $item =Estudiante::where("id",$id)->first();
+        $item =Estudiante::with(["lista_tipos","especialidad"])->where("id",$id)->first();
         return response()->json($item);
     }
 

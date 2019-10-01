@@ -22,9 +22,10 @@ class PersonalController extends Controller
 
     public function index()
     {
-        $items= Personal::Where("estado_del","A")->get();
+        $items=Personal::with("lista_tipo_personal")->Where("estado_del","A")->get();
         $items1=TipoPersonal::Where("estado_del","A")->get();
         return view("admin.Personal.FormPersonal" ,["lista_personal"=>$items, "lista_tipo_personal"=>$items1]);
+        // return response()->json($items);
     }
 
     /**

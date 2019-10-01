@@ -71,8 +71,12 @@
                                 <td>{{$item["nombre"]}}</td>
                                 <td>{{$item["apellido"]}}</td>
                                 <td>{{$item["cedula"]}}</td>
-                                <td>{{$item["especialidad"]}}</td>
-                                <td></td>
+                                <td>{{$item["especialidad"]["descripcion"]}}</td>
+                                <td>
+                                @foreach($item["lista_tipos"] as $item2)
+                                    {{$item2["tipo"]["descripcion"]}} <?php echo "<br>" ?>
+                                @endforeach
+                                </td>
                                 <td>
                                 <button type="button" onclick='GE_verTipoE(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Tipo Estudiante</button>
                                 <button type="button" onclick='GE_verEstudiantes(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</button>
