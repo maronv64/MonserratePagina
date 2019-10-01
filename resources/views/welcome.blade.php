@@ -43,11 +43,12 @@
 					<div class="row justify-content-between align-items-center">
 						<div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
 							<a href="index.html">
-								<img class="img-fluid" src="img/logo.png" alt="">
+								<img class="img-fluid" src="{{asset('img/logoMAG.png')}}" alt=""width="80" height="80">>
 							</a>
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-							<img class="img-fluid" src="img/banner-ad.jpg" alt="">
+						<h4 class="text-center" class="font-weight-bold">"La enseñanza que deja huella no es la que se hace de cabeza a cabeza, sino de corazón a corazón"</h4>	
+						
 						</div>
 					</div>
 				</div>
@@ -657,8 +658,8 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="formGroupExampleInput4">mensage</label>							
-								<textarea name="mensage" class="form-control" id="" cols="30" rows="10"></textarea>
+								<label for="formGroupExampleInput4">mensaje</label>							
+								<textarea name="mensaje" class="form-control" id="" cols="30" rows="10"></textarea>
 							</div>
 						</div>
 					</form>

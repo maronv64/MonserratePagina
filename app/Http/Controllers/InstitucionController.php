@@ -2,26 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Buzon;
+use App\Institucion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class BuzonController extends Controller
+class InstitucionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     public function index()
     {
-        $items=Buzon::where("estado_del","A")->get();
-        return view("admin.Buzon.TablaBuzon",["lista_buzon"=>$items]);
-        // return response()->json($items);
+        $items=Institucion::where("estado_del","A")->get();
+        return view("admin.Institucion.TablaInstitucion",["lista_institucion"=>$items]);
+         return response()->json($items);
     }
 
     /**
@@ -42,24 +38,26 @@ class BuzonController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        $items=new buzon ();
+        $items=new Institucion ();
         $items->id=$request->id;
-        $items->name=$request->nombre;
-        $items->email=$request->email;
-        $items->message=$request->mensaje;
+        $items->mision=$request->mision;
+        $items->vision=$request->vision;
+        $items->himno=$request->himno;
+        $items->file_name=$request->file;
+        $items->file_ext=$request->file;
         $items->estado_del="A";
         $items->save();
-        return redirect('/');
+        return redirect('/tablainstitucion');
+        // return $request;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Buzon  $buzon
+     * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function show(Buzon $buzon)
+    public function show(Institucion $institucion)
     {
         //
     }
@@ -67,10 +65,10 @@ class BuzonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Buzon  $buzon
+     * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Buzon $buzon)
+    public function edit(Institucion $institucion)
     {
         //
     }
@@ -79,10 +77,10 @@ class BuzonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Buzon  $buzon
+     * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buzon $buzon)
+    public function update(Request $request, Institucion $institucion)
     {
         //
     }
@@ -90,10 +88,10 @@ class BuzonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Buzon  $buzon
+     * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buzon $buzon)
+    public function destroy(Institucion $institucion)
     {
         //
     }
