@@ -14,18 +14,26 @@ function GE_verTipoE(id){
     $("#idEstudiante_").val(id);
 
     $.get('estudiante/'+id,function(data){
+
         $.each(data.lista_tipos,function (a,item) {
-            console.log(item.tipo.id);
+            // console.log(item);
+            $('#tabla_tipos_estudiantes tr').each(function () {
+                $(this).find("td:eq(2) input[type='checkbox']").each(function () {
+                    //alert($(this).val());
+                    if (item.tipo.id==$(this).val()) {
+                        $(this).attr('checked',true);
+                        listaidtipo.push(item.tipo.id);
+                    }
+                // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
+                });
+            })
             
         });
         
     });
+    
 
-    $("#tabla_tipos_estudiantes tr").each(function (index) {
-        // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
-        var valores = $(this).parents("tr").find("td")[1].innerHTML;
-    });
-
+console.log(listaidtipo);
     $(".TipoE").modal("show");
     
 }
@@ -46,6 +54,7 @@ function pasaridtipo(obj)
     } else if(obj.checked == false){
         var indice = listaidtipo.indexOf(id);
         listaidtipo.splice(indice, 1);
+        console.log(listaidtipo);
     }
     // console.log(listaidtipo);
     $("#listaTiposId").val(listaidtipo);
