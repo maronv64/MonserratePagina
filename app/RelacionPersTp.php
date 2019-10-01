@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RelacionPersTp extends Model
 {
-    public function personal()
+    public function Tipo_personal()
     {
-        return $this->hasOne('App\Personal','id','id_personal');
+        return $this->hasOne('App\TipoPersonal','id','id_tipopersonal');
     }
 }

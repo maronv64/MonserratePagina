@@ -44,6 +44,7 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Descripcion</th>
+                                                <th scope="col">Docente</th>
                                                 <th scope="col">Accion</th>
                                             </tr>
                                         </thead>
@@ -52,6 +53,11 @@
                                                 <tr>
                                                     <th scope="row">1</th>
                                                     <td>{{$item["descripcion"]}}</td>
+                                                    <td>
+                                                        @foreach($item["lista_tipo_personal"] as $item2)
+                                                            {{ $item2["tipo_personal"]["descripcion"]}}
+                                                        @endforeach
+                                                    </td>
                                                     <td>
                                                         <a href="#" onclick='verDocentes(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Docente</a>
                                                         <a href="#" onclick='verMateria(<?php echo $item["id"] ?>)' class="btn btn-info">Modificar</a>
