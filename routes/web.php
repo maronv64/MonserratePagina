@@ -37,6 +37,7 @@ Route::resource('/tipo_usuario','TipoUsuarioController');
 
 Route::resource('/tipo_estudiante','TipoEstudianteController');
 Route::resource('/estudiante','EstudianteController');
+Route::resource('/relacion_tipoe_est','RelacionTipoEEstController');
 
 Route::resource('/Especialidades_control','EspecialidadesController');
 
