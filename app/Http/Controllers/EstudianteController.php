@@ -21,7 +21,9 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        $items=Estudiante::where("estado_del","A")->get();
+        $items=Estudiante::with(["lista_tipos","especialidad"])->where("estado_del","A")->get();
+        // return response()->json($items);
+
         $items2=Especialidades::Where("estado_del","A")->get();
         $items3=TipoEstudiante::where("estado_del","A")->get();
 
@@ -66,7 +68,7 @@ class EstudianteController extends Controller
      */
     public function show($id)
     {
-        $item =Estudiante::where("id",$id)->first();
+        $item =Estudiante::with(["lista_tipos","especialidad"])->where("id",$id)->first();
         return response()->json($item);
     }
 

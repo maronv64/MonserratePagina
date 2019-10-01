@@ -450,6 +450,7 @@ class ComposerStaticInit22fb6837dfd617f0e8b67195d203a0c7
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\RelacionTipoEEst' => __DIR__ . '/../..' . '/app/RelacionTipoEEst.php',
         'App\\RelacionEspMat' => __DIR__ . '/../..' . '/app/RelacionEspMat.php',
         'App\\RelacionMatTP' => __DIR__ . '/../..' . '/app/RelacionMatTP.php',
         'App\\RelacionPersTp' => __DIR__ . '/../..' . '/app/RelacionPersTp.php',
