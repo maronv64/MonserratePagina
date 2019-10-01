@@ -22,41 +22,22 @@
 		
 
 
-		<link rel="stylesheet" href="css/css_plantilla/linearicons.css">
-		<link rel="stylesheet" href="css/css_plantilla/font-awesome.min.css">
-		<link rel="stylesheet" href="css/css_plantilla/bootstrap.css">
-		<link rel="stylesheet" href="css/css_plantilla/magnific-popup.css">
-		<link rel="stylesheet" href="css/css_plantilla/nice-select.css">
-		<link rel="stylesheet" href="css/css_plantilla/animate.min.css">
-		<link rel="stylesheet" href="css/css_plantilla/owl.carousel.css">
-		<link rel="stylesheet" href="css/css_plantilla/jquery-ui.css">
-        <link rel="stylesheet" href="css/css_plantilla/main.css">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/linearicons.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/bootstrap.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/magnific-popup.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/nice-select.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/animate.min.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/owl.carousel.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/css_plantilla/jquery-ui.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/css_plantilla/main.css')}}">
         
         
 	</head>
 	<body>
 		<header>
 			
-			<div class="header-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance"></i></a></li>
-							</ul>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
-							<ul>
-								<li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>+440 012 3654 896</span></a></li>
-								<li><a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span><span>support@colorlib.com</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 			<div class="logo-wrap">
 				<div class="container">
 					<div class="row justify-content-between align-items-center">
@@ -79,17 +60,17 @@
 							<li><a href="archive.html">Archive</a></li>
 							<li><a href="category.html">Category</a></li>
 							<li class="menu-has-children"><a href="">Post Types</a>
-							<ul>
+						    <ul>
 								<li><a href="standard-post.html">Standard Post</a></li>
 								<li><a href="image-post.html">Image Post</a></li>
 								<li><a href="gallery-post.html">Gallery Post</a></li>
 								<li><a href="video-post.html">Video Post</a></li>
 								<li><a href="audio-post.html">Audio Post</a></li>
 							</ul>
-						</li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
+						  </li>
+						  <li><a href="about.html">About</a></li>
+						  <li><a href="contact.html">Contact</a></li>
+					   </ul>
 					</nav><!-- #nav-menu-container -->
 					<div class="navbar-right">
 						<form class="Search">
@@ -722,18 +703,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		
 		<script src="{{asset('js/js_plantilla/vendor/jquery-2.2.4.min.js')}}" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="{{('js/js_plantilla/vendor/bootstrap.min.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/vendor/bootstrap.min.js')}}"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-		<script src="{{('js/js_plantilla/easing.min.js')}}"></script>
-		<script src="{{('js/js_plantilla/hoverIntent.js')}}"></script>
-		<script src="{{('js/js_plantilla/superfish.min.js')}}"></script>
-		<script src="{{('js/js_plantilla/jquery.ajaxchimp.min.js')}}"></script>
-		<script src="{{('js/js_plantilla/jquery.magnific-popup.min.js')}}"></script>
-		<script src="{{('js/js_plantilla/mn-accordion.js')}}"></script>
-		<script src="{{('js/js_plantilla/jquery-ui.js')}}"></script>
-		<script src="{{('js/js_plantilla/jquery.nice-select.min.js')}}"></script>
-		<script src="{{('js/js_plantilla/owl.carousel.min.js')}}"></script>
-		<script src="{{('js/js_plantilla/mail-script.js')}}"></script>
-		<script src="{{('js/js_plantilla/main.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/easing.min.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/hoverIntent.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/superfish.min.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/jquery.ajaxchimp.min.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/mn-accordion.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/jquery-ui.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/jquery.nice-select.min.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/owl.carousel.min.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/mail-script.js')}}"></script>
+		<script src="{{asset('js/js_plantilla/main.js')}}"></script>
 	</body>
 </html>
