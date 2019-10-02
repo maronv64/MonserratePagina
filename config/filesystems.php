@@ -49,7 +49,7 @@ return [
         ],
         'imgDisk' => [
             'driver' => 'local',
-            'root' => public_path('img'),
+            'root' => public_path('img/biblioteca'),
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],

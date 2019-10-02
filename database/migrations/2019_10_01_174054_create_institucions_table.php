@@ -18,8 +18,8 @@ class CreateInstitucionsTable extends Migration
             $table->string('mision');
             $table->string('vision');
             $table->string('himno');
-            $table->string('file_name');
-            $table->string('file_ext');
+            $table->string('file_name',"100");
+            $table->string('file_ext',"100");
             $table->string('estado_del')->default('A');
             $table->timestamps();
         });

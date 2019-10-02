@@ -9,7 +9,7 @@
             @include('admin.dashboard')
         </div>
         <div class="col-md-9">
-        <form action="{{url('/estudiante')}}" method="POST" >
+        <form action="{{url('/estudiante')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST') 
             <div class="card">

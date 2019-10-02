@@ -52,18 +52,17 @@ class EstudianteController extends Controller
         $items=new Estudiante();
 
         //*************************GUARDAR UNA IMAGEN********************************************** */    
-        //el archivo
-        $file = $request->file('file');
-        //extraccion de los datos del archivo
-        $extension = $file->getClientOriginalExtension();
-        $name='estudiante_'.date('Ymd').time();
-        $fileName = $name.'.'.$extension;
-        $ruta = public_path()."/img/".$fileName; 
-
-        $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));            
+         //el archivo
+         $file = $request->file('file');      
+         //extraccion de los datos del archivo
+         $extension = $file->getClientOriginalExtension();
+        $name='estudiante_'.date('Ymd').time();    
+        $fileName = $name.'.'.$extension; 
+        
+        $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));
 
         $items->file_name=$name;
-        $items->file_ext=$extension;
+        $items->file_ext=$extension;   
 
      //************************************************************************ */
 
@@ -72,10 +71,10 @@ class EstudianteController extends Controller
         $items->cedula=$request->cedula;
         $items->idEspecialidad=$request->idespecialidad;
         $items->estado_del="A";
-        // $items->save();
-        // return redirect('/estudiante'); 
+        $items->save();
+        return redirect('/estudiante'); 
         // echo $items;
-         return $request;
+        //  return $file;
     }
 
     /**
@@ -130,6 +129,18 @@ class EstudianteController extends Controller
     {
         $items=Estudiante::where("id",$id)->first();
         $items->estado_del="E";
+
+         //************************Eliminar una imagen**************************************** */
+         $name = $item->file_name.'.'.$item->file_ext;
+         $ruta = public_path()."/img/biblioteca/".$fileName; 
+         
+         try {
+             unlink($ruta);
+         } catch (\Throwable $th) {
+             //throw $th;
+         }
+         //************************************************************************************ */
+    
         $items->update();
         return redirect('/estudiante');
     
