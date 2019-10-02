@@ -66,6 +66,7 @@ class SocialController extends Controller
 
            $social->file_name=$name;
            $social->file_ext=$extension;
+
           
         //************************************************************************ */
 

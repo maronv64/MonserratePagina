@@ -33,15 +33,12 @@ function GE_verTipoE(id){
     });
     
 
-<<<<<<< HEAD
     $("#tabla_tipos_estudiantes tr").each(function (index) {
         // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
         //var valores = $(this).parents("tr").find("td")[1].innerHTML;
     });
 
-=======
 console.log(listaidtipo);
->>>>>>> 7ca64d6f3ba9b58058a58871ea40e7b2f878992a
     $(".TipoE").modal("show");
     
 }
