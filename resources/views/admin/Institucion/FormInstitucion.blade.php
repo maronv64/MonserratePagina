@@ -10,7 +10,7 @@
                      <div class="card-header" style="background: #007bff">Institucion</div>
 
                     <div class="card-body">
-                         <form action="{{url('/tablainstitucion')}}" method="POST" enctype="multipart/form-data">
+                         <form action="{{url('/institucion')}}" method="POST" enctype="multipart/form-data">
                          @csrf
                                 <div class="row">
                                     <div class="input-group mb-3">
@@ -57,7 +57,40 @@
                                  </div> 
 
                                     
-                         </form>   
+                         </form>  
+                         <div class="table responsive">
+                             <table class="table">
+                                 <thead class="thead bg-primary text-white">
+                                     <tr>
+                                        <th scope="col">mision </th>
+                                        <th scope="col">vision</th>
+                                        <th scope="col">himno</th> 
+                                        <th scope="col">imagen</th>                                     
+                                        <th scope="col">opciones</th>
+                                        
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 @foreach ($lista_institucion as $item)
+                                         <tr>
+                                            <td>{{$item['mision']}}</td>
+                                            <td>{{$item['vision']}}</td>
+                                            <td>{{$item['himno']}}</td>
+                                            <td>archivo</td>
+                                            <td>                                        
+                                                <form action="{{route('institucion.destroy',$item['id'])}}" method="POST">
+                                                                @csrf
+                                                                @method("DELETE")
+                                                        <input type="submit" class="btn btn-danger" value="Eliminar">
+                                                </form>
+                                            </td>
+                                         </tr>
+                                        @endforeach
+                                 </tbody>
+
+                             </table>
+
+                         </div> 
 
                       </div>                                          
                  </div>

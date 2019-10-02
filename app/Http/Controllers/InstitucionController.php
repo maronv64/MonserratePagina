@@ -17,8 +17,8 @@ class InstitucionController extends Controller
     public function index()
     {
         $items=Institucion::where("estado_del","A")->get();
-        return view("admin.Institucion.TablaInstitucion",["lista_institucion"=>$items]);
-         return response()->json($items);
+        return view("admin.Institucion.FormInstitucion",["lista_institucion"=>$items]);
+        //  return response()->json($items);
     }
 
     /**
@@ -62,7 +62,7 @@ class InstitucionController extends Controller
 
         $items->estado_del="A";
         $items->save();
-        return redirect('/tablainstitucion');
+        return redirect('/institucion');
         // return $extension;
     }
 
@@ -74,7 +74,7 @@ class InstitucionController extends Controller
      */
     public function show(Institucion $institucion)
     {
-        //
+        
     }
 
     /**
@@ -106,11 +106,13 @@ class InstitucionController extends Controller
      * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Institucion $institucion)
+    public function destroy($id)
     {
+        $item=institucion::where("id",$id)->first();
+        $item->estado_del="E";
         //
         //************************Eliminar una imagen**************************************** */
-        $name = $item->file_name.'.'.$item->file_ext;
+        $fileName = $item->file_name.'.'.$item->file_ext;
         $ruta = public_path()."/img/biblioteca/".$fileName; 
         
         try {
@@ -119,5 +121,7 @@ class InstitucionController extends Controller
             //throw $th;
         }
         //************************************************************************************ */
+        $item->update();
+        return redirect('/institucion');
     }
 }
