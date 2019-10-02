@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body> -->
-        <!-- <div class="container">
-                <div class="row">
-                    <div class="col-md-12"> -->
+        <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-3">
+                      @include('admin.dashboard')
+                    </div>
+                    <div class="col-md-9">
                          <form action="{{url('/personal_form')}}" method="POST">  
                                @csrf                
                              <div class="card">
@@ -22,7 +25,7 @@
                                 </div>
                                 <div class="card-body">
 
-                                   <div class="input-group mb-3">
+                                {{--<div class="input-group mb-3">
                                      <div class="input-group-prepend">
                                          <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
                                      </div>
@@ -32,7 +35,7 @@
                                             <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                                         @endforeach
                                      </select>
-                                    </div>
+                                    </div>--}}
 
                                         <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -81,7 +84,6 @@
                                               <th scope="col">Cedula</th> 
                                               <th scope="col">Titulo</th>
                                               <th scope="col">Telefono</th> 
-                                              <td scope="col">Tipo Personal</td> 
                                               <th scope="col">Acciones</th> 
 
                                           </tr>
@@ -90,7 +92,9 @@
                                         @foreach($lista_personal as $item)
                                           <tr>
                                               <th scope="row">
-                                                 
+                                              @foreach($item["lista_tipo_personal"] as $item2)
+                                                            {{ $item2["tipo_personal"]["descripcion"]}}
+                                                        @endforeach
                                               </th>  
                                               <td scope="row">{{$item["nombres"]}}</td>
                                               <td scope="row">{{$item["apellidos"]}}</td>
@@ -98,11 +102,7 @@
                                               <td scope="row">{{$item["titulo"]}}</td>
                                               <td scope="row">{{$item["telefono"]}}</td>
                                               
-                                              <td>
-                                                        @foreach($item["lista_tipo_personal"] as $item2)
-                                                            {{ $item2["tipo_personal"]["descripcion"]}}
-                                                        @endforeach
-                                                    </td>
+
         
                                               <td>
                                                     <a href="#" onclick='gp_verTipoPersonal(<?php echo $item["id"] ?>)' class="btn btn-info">Agregar Tipo Personal</a>
@@ -119,11 +119,11 @@
                                         @endforeach
                                         </tbody> 
                                 </table>                      
-                    <!-- </div>
+                    </div>
                 </div>
              </div>
-</body>
+<!-- </body>
 </html> -->
 @include('admin.Personal.ModalPersonal')
-@include('admin.Personal_TipoPersonal.Modal_personal_tipopersonal')
+@include('admin.Personal.Modal_Tipos_Personal')
 @endsection
