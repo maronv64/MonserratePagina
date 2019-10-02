@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Especialidades;
+use App\Materia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -21,8 +22,9 @@ class EspecialidadesController extends Controller
      public function index()
     {
         $items=Especialidades::with("lista_materias")->Where("estado_del","A")->get();
+        $items1=Materia::Where("estado_del","A")->get();
         // $items=Especialidades::Where("estado_del","A")->get();
-        return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items]);
+        return view("admin.Especialidades.FormEspecialidades" ,["lista_especialidades"=>$items, "lista_materias"=>$items1]);
     //    echo $items;
         // return response()->json($items);
        

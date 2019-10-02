@@ -45,7 +45,7 @@
                                 <td>{{$item["descripcion"]}} </td>
                                 <td>
                                 @foreach($item["lista_materias"] as $item2)
-                                    {{ $item2["materia"]["descripcion"]}}
+                                    {{ $item2["lista_especialidades"]["descripcion"]}}
                                 @endforeach
                                 </td>
                                 <td>
@@ -67,5 +67,5 @@
 </div>   
 
 @include('admin.Especialidades.ModalEspecialidades')
-@include('admin.Especialidades_Materias.Modal_Especialidades_Materias')
+@include('admin.Especialidades.Modal_Materias_Esp')
 @endsection

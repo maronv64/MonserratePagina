@@ -1,6 +1,4 @@
-
-
-      <div class="modal especialidadMateria bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal especialidadMateria bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
               <div class="modal-content">
                     <div class="modal-container">
@@ -20,7 +18,7 @@
                                               </thead>
                                               <tbody>
                                               
-                                                @foreach($lista_especialidades as $item)
+                                                @foreach($lista_materias as $item)
                                                         <tr>
                                                             <th scope="row"> {{$item["descripcion"]}}</th>
                                                             <td> 
