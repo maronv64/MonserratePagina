@@ -48,8 +48,8 @@
                                     <th scope="row">1</th>
                                     <td>{{$item["descripcion"]}}</td>
                                     <td>
-                                        @foreach($item["lista_tipo_personal"] as $item2)
-                                            {{ $item2["tipo_personal"]["descripcion"]}}
+                                        @foreach($item["lista_tipo_person"] as $item2)
+                                            {{ $item2["lista_materias"]["descripcion"]}}
                                         @endforeach
                                     </td>
                                     <td>
@@ -73,5 +73,5 @@
 </div>
                             
 @include('admin.Materias.ModalMaterias')
-@include('admin.Materias_Personal.Modal_Materias_Personal')
+@include('admin.Materias.Modal_Personal_M')
 @endsection
