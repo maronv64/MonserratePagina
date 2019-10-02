@@ -60,13 +60,13 @@ class SocialController extends Controller
         $extension = $file->getClientOriginalExtension();
         $name='social_'.date('Ymd').time();
         $fileName = $name.'.'.$extension;
-        $ruta = public_path()."/img/".$fileName; 
+
 
            $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));            
 
            $social->file_name=$name;
            $social->file_ext=$extension;
-           $social->file_ruta=$ruta;
+          
         //************************************************************************ */
 
         $social->idtipo=$request->idtipo;
@@ -134,7 +134,7 @@ class SocialController extends Controller
 
         //************************Eliminar una imagen**************************************** */
         $name = $item->file_name.'.'.$item->file_ext;
-        $ruta = public_path()."/img/".$fileName; 
+        $ruta = public_path()."/img/biblioteca/".$fileName; 
         
         try {
             unlink($ruta);
