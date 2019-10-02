@@ -6,6 +6,7 @@ use App\Personal;
 use App\TipoPersonal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class PersonalController extends Controller
 {
@@ -53,14 +54,12 @@ class PersonalController extends Controller
         $extension = $file->getClientOriginalExtension();
         $name='personal_'.date('Ymd').time();
         $fileName = $name.'.'.$extension;
-        $ruta = public_path()."/img/".$fileName; 
 
            $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));            
 
            $personal->file_name=$name;
            $personal->file_ext=$extension;
 
-        $personal->idtipo=$request->idtipo;
         $personal->nombres=$request->nombres;
         $personal->apellidos=$request->apellidos;
         $personal->cedula=$request->cedula;
@@ -104,7 +103,6 @@ class PersonalController extends Controller
     public function update(Request $request, $id)
     {
         $item=Personal::where("id",$request->id)->first();
-        $item->idtipo=$request->idtipo;
         $item->nombres=$request->nombres;
         $item->apellidos=$request->apellidos;
         $item->cedula=$request->cedula;
@@ -127,7 +125,7 @@ class PersonalController extends Controller
         $item->estado_del="E";
 
         $name = $item->file_name.'.'.$item->file_ext;
-        $ruta = public_path()."/img/".$fileName; 
+        $ruta = public_path()."/img/biblioteca/".$fileName; 
         
         try {
             unlink($ruta);
