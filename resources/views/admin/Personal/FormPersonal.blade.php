@@ -17,7 +17,7 @@
                       @include('admin.dashboard')
                     </div>
                     <div class="col-md-9">
-                         <form action="{{url('/personal_form')}}" method="POST">  
+                         <form action="{{url('/personal_form')}}" method="POST"  enctype="multipart/form-data">  
                                @csrf                
                              <div class="card">
                                 <div class="card-header">
@@ -72,7 +72,7 @@
                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                                   </div>
                                   <div class="custom-file">
-                                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file" >
                                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                   </div>
                                 </div>                   

@@ -15,12 +15,13 @@ class CreatePersonalsTable extends Migration
     {
         Schema::create('personals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('idtipo');
             $table->string('titulo','100');
             $table->string('nombres','100');
             $table->string('apellidos','100');
             $table->string('cedula','10');
             $table->string('telefono','10');
+            $table->string('file_name');
+            $table->string('file_ext');
             $table->string('estado_del','2');
             $table->timestamps();
         });

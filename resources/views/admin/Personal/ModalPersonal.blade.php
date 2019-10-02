@@ -53,31 +53,31 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Nombres</span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nombres">
+                                        <input type="text" id="nombresPersonal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nombres">
                                 </div> 
                                 <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Apellidos</span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="apellidos">
+                                        <input type="text" id="apellidosPersonal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="apellidos">
                                 </div>   
                                 <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Cedula</span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cedula">
+                                        <input type="text" id="cedulaPersonal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cedula">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo"> 
+                                    <input type="text" id="tituloPersonal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo"> 
                                </div>
                                <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telefono">
+                                <input type="text" id="telefonoPersonal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telefono">
                                </div>
                            </div>
 
