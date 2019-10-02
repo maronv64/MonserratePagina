@@ -7,6 +7,7 @@ use App\TipoEstudiante;
 use App\Especialidades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class EstudianteController extends Controller
 {
@@ -49,15 +50,32 @@ class EstudianteController extends Controller
     public function store(Request $request)
     {
         $items=new Estudiante();
+
+        //*************************GUARDAR UNA IMAGEN********************************************** */    
+        //el archivo
+        $file = $request->file('file');
+        //extraccion de los datos del archivo
+        $extension = $file->getClientOriginalExtension();
+        $name='estudiante_'.date('Ymd').time();
+        $fileName = $name.'.'.$extension;
+        $ruta = public_path()."/img/".$fileName; 
+
+        $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));            
+
+        $items->file_name=$name;
+        $items->file_ext=$extension;
+
+     //************************************************************************ */
+
         $items->nombre=$request->nombre;
         $items->apellido=$request->apellido;
         $items->cedula=$request->cedula;
         $items->idEspecialidad=$request->idespecialidad;
         $items->estado_del="A";
-        $items->save();
-        return redirect('/estudiante'); 
+        // $items->save();
+        // return redirect('/estudiante'); 
         // echo $items;
-        // return;
+         return $request;
     }
 
     /**

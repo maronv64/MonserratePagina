@@ -20,6 +20,8 @@ class CreateEstudiantesTable extends Migration
             $table->string('cedula',10);
             $table->bigInteger('idEspecialidad');
             $table->string('estado_del',2);
+            $table->string('file_name','100');
+            $table->string('file_ext','100');
             $table->timestamps();
         });
     }

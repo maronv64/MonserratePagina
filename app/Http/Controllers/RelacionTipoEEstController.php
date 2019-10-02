@@ -41,7 +41,7 @@ class RelacionTipoEEstController extends Controller
         $limpieza->delete();
 
         $idTiposEst = explode(",", $request->listaTiposId);
-        //return response()->json($request);
+        //obtener el id del estudiante.
         foreach ($idTiposEst as $key => $value) {
             //echo $value;
             $items=new RelacionTipoEEst();

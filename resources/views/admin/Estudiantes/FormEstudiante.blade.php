@@ -9,7 +9,7 @@
             @include('admin.dashboard')
         </div>
         <div class="col-md-9">
-        <form action="{{url('/estudiante')}}" method="POST">
+        <form action="{{url('/estudiante')}}" method="POST" >
             @csrf
             @method('POST') 
             <div class="card">
@@ -40,6 +40,15 @@
                                 <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Archivo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                            <label class="custom-file-label" for="inputGroupFile01">Escoger Archivo...</label>
+                        </div>
                     </div>
                     <div class="input-group-mb-3">
                         <div class="row">
