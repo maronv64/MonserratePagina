@@ -47,6 +47,19 @@ class PersonalController extends Controller
     public function store(Request $request)
     {
         $personal=new Personal();
+
+        $file = $request->file('file');
+        //extraccion de los datos del archivo
+        $extension = $file->getClientOriginalExtension();
+        $name='personal_'.date('Ymd').time();
+        $fileName = $name.'.'.$extension;
+        $ruta = public_path()."/img/".$fileName; 
+
+           $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));            
+
+           $personal->file_name=$name;
+           $personal->file_ext=$extension;
+
         $personal->idtipo=$request->idtipo;
         $personal->nombres=$request->nombres;
         $personal->apellidos=$request->apellidos;
@@ -112,6 +125,16 @@ class PersonalController extends Controller
     {
         $item=Personal::where("id", $id)->first();
         $item->estado_del="E";
+
+        $name = $item->file_name.'.'.$item->file_ext;
+        $ruta = public_path()."/img/".$fileName; 
+        
+        try {
+            unlink($ruta);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
         $item->update();
         return redirect('/personal_form');
     }
