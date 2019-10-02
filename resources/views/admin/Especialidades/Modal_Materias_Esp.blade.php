@@ -6,7 +6,11 @@
                             Agregar Materias
                         </div> 
                         <div class="modal-body">
-                              <form action="{{url('/Especialidades_control')}}" method="POST">
+
+                           
+                              <form action="{{url('/relacion_especialidades_materias')}}" method="POST">
+                                    <input type="hidden" id="idEspecialidades_" name="idEspecialidades"> 
+                                    <input type="hidden" id="listaMateriasId" name="listaMateriasId"> 
                                   @csrf
                                   <table class="table table-bordered">
                                               <thead class="thead bg-primary text-white" >
@@ -16,14 +20,14 @@
                                                   
                                                 </tr>
                                               </thead>
-                                              <tbody>
+                                              <tbody id="tabla_materias">
                                               
                                                 @foreach($lista_materias as $item)
                                                         <tr>
                                                             <th scope="row"> {{$item["descripcion"]}}</th>
                                                             <td> 
                                                                     <div class="form-check">
-                                                                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                                                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox_{{$item['id']}}" value="<?php echo $item['id'] ?>" aria-label="..." onclick="pasaridmateria(this)" >
                                                                         </div>
                                                             </td>
                                                                 

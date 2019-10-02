@@ -13,6 +13,9 @@
                                                 @method('PATCH')
                                                 
                                                 <div class="modal-body">
+                                                
+                                                
+
                                                         <div class="input-group mb-3">
                                                                 <div class="input-group-prepend">
                                                                         <span class="input-group-text" id="inputGroup-sizing-default">Descripcion </span>

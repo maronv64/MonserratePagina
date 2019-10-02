@@ -68,7 +68,7 @@ class EspecialidadesController extends Controller
     public function show($id)
     {
         //
-        $item =Especialidades::where("id",$id)->first();
+        $item =Especialidades::with("lista_materias")->where("id",$id)->first();
         return response()->json($item);
     }
 

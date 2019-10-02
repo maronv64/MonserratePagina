@@ -56,3 +56,9 @@ Route::resource('/buzon','BuzonController');
 Route::resource('/personal_form','PersonalController');
 
 Route::resource('/institucion','InstitucionController');
+
+Route::resource('/relacion_especialidades_materias','RelacionEspMatController');
+
+Route::resource('/relacion_materias_personal','RelacionMatTPController');
+
+Route::resource('/relacion_personal_tipo','RelacionPersTPController');

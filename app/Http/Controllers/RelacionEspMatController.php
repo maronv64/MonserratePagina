@@ -36,12 +36,25 @@ class RelacionEspMatController extends Controller
      */
     public function store(Request $request)
     {
-        $item =new RelacionEspMat();
-        $item->id_especialidad=$request->id_especialidad;
-        $item->id_materia=$request->id_materia;
-        $item->estado_del="A";
-        $item->save();
+        $limpieza=RelacionEspMat::where("id_especialidad",$request->idEspecialidades);
+        $limpieza->delete();
+
+        $idMaterias = explode(",", $request->listaMateriasId);
+        //obtener el id del estudiante.
+        foreach ($idMaterias as $key => $value) {
+            //echo $value;
+            if(empty($value)){
+                echo "no tiene datos";
+            }else{
+                    $item =new RelacionEspMat();
+                    $item->id_especialidad=$request->idEspecialidades;
+                    $item->id_materia= $value;
+                    $item->estado_del="A";
+                    $item->save();
+            }
+        }
         return redirect('/Especialidades_control');
+        // return $request;
     }
 
     /**
