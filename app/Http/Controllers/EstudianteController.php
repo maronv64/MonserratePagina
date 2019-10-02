@@ -7,6 +7,7 @@ use App\TipoEstudiante;
 use App\Especialidades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class EstudianteController extends Controller
 {
@@ -49,6 +50,22 @@ class EstudianteController extends Controller
     public function store(Request $request)
     {
         $items=new Estudiante();
+
+        //*************************GUARDAR UNA IMAGEN********************************************** */    
+         //el archivo
+         $file = $request->file('file');      
+         //extraccion de los datos del archivo
+         $extension = $file->getClientOriginalExtension();
+        $name='estudiante_'.date('Ymd').time();    
+        $fileName = $name.'.'.$extension; 
+        
+        $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));
+
+        $items->file_name=$name;
+        $items->file_ext=$extension;   
+
+     //************************************************************************ */
+
         $items->nombre=$request->nombre;
         $items->apellido=$request->apellido;
         $items->cedula=$request->cedula;
@@ -57,7 +74,7 @@ class EstudianteController extends Controller
         $items->save();
         return redirect('/estudiante'); 
         // echo $items;
-        // return;
+        //  return $file;
     }
 
     /**
@@ -112,6 +129,18 @@ class EstudianteController extends Controller
     {
         $items=Estudiante::where("id",$id)->first();
         $items->estado_del="E";
+
+         //************************Eliminar una imagen**************************************** */
+         $name = $item->file_name.'.'.$item->file_ext;
+         $ruta = public_path()."/img/biblioteca/".$fileName; 
+         
+         try {
+             unlink($ruta);
+         } catch (\Throwable $th) {
+             //throw $th;
+         }
+         //************************************************************************************ */
+    
         $items->update();
         return redirect('/estudiante');
     
