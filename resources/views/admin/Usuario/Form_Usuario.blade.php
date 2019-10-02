@@ -6,7 +6,10 @@
 
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-12">
+                    <div class="col-md-3">
+                        @include('admin.dashboard')
+                    </div>
+                    <div class="col-md-9">
                         <div class ="content">
                                 <form action ="{{url('/users')}}" method="POST">
                                 @csrf 
@@ -64,7 +67,7 @@
                                         <th scope="col">tipo </th>
                                         <th scope="col">nombre</th>
                                         <th scope="col">E-mail</th>
-                                        <th scope="col">Contraseña</th>
+                                        {{-- <th scope="col">Contraseña</th> --}}
                                         <th scope="col">opciones</th>
                                         
                                         </tr>
@@ -76,7 +79,7 @@
                                                 <td>{{$item['tipo_usuario']['descripcion']}}</td>
                                                 <td>{{$item['name']}}</td>
                                                 <td>{{$item['email']}}</td>
-                                                <td>{{$item['password']}}</td>
+                                                {{-- <td>{{$item['password']}}</td> --}}
                                                 <td>
                                                 <button type="button" class="btn btn-info" onclick = "verUsuario(<?php echo $item['id'] ?>)">Modificar</button>
                                                 

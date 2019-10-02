@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRelacionPersTpsTable extends Migration
+class CreateInstitucionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateRelacionPersTpsTable extends Migration
      */
     public function up()
     {
-        Schema::create('relacion_pers_tps', function (Blueprint $table) {
+        Schema::create('institucions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_personal');
-            $table->bigInteger('id_tipopersonal');
-            $table->string('estado_del','2');
+            $table->string('mision');
+            $table->string('vision');
+            $table->string('himno');
+            $table->string('file_name');
+            $table->string('file_ext');
+            $table->string('estado_del')->default('A');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateRelacionPersTpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relacion_pers_tps');
+        Schema::dropIfExists('institucions');
     }
 }

@@ -36,6 +36,10 @@ class RelacionTipoEEstController extends Controller
      */
     public function store(Request $request)
     {
+
+        $limpieza=RelacionTipoEEst::where("id_estudiante",$request->idEstudiante);
+        $limpieza->delete();
+
         $idTiposEst = explode(",", $request->listaTiposId);
         //return response()->json($request);
         foreach ($idTiposEst as $key => $value) {

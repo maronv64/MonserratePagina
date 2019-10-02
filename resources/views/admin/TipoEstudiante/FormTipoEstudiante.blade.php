@@ -6,25 +6,28 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-3">
+            @include('admin.dashboard')
+        </div>
+        <div class="col-md-9">
         <form action="{{url('/tipo_estudiante')}}" method="POST">
             @csrf
             @method('POST')
-        <div class="card">
-            <div class="card-header" style="background-color: #007bff;">
-                <h5 class="card-title text-white">Tipos de Estudiantes</h5>
-            </div>
-            <div class="card-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
-                    &nbsp;
-                    <input type="submit" class="btn btn-outline-info" value="Guardar">
-                </div>             
-            </div>
-        </div>                      
+            <div class="card">
+                <div class="card-header" style="background-color: #007bff;">
+                    <h5 class="card-title text-white">Tipos de Estudiantes</h5>
+                </div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                        &nbsp;
+                        <input type="submit" class="btn btn-outline-info" value="Guardar">
+                    </div>             
+                </div>
+            </div>                      
         </form>
     
         <div class="table-responsive"> 
@@ -54,7 +57,7 @@
                 </tbody>
             </table>
         </div> 
-@include('admin.TipoEstudiante.ModalTipoEstudiante')       
+        @include('admin.TipoEstudiante.ModalTipoEstudiante')       
         </div>
     </div>
 </div>

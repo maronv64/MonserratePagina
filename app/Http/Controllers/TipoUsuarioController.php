@@ -24,7 +24,7 @@ class TipoUsuarioController extends Controller
         $items=TipoUsuario::Where("estado_del","A")->get();
         
       
-        return view("admin.Tipo_Usuario.Form_Tipousuario" ,["lista_tipoUsuario"=>$items]);
+        return view("admin.Tipo_Usuario.Form_TipoUsuario" ,["lista_tipoUsuario"=>$items]);
         //return view ("admin.Tipo_Usuario.Form_Tipousuario");
     }
 

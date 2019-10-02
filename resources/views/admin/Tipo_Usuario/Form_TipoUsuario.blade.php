@@ -5,40 +5,42 @@
                       
  <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+        <div class="col-md-3">
+          @include('admin.dashboard')
+        </div>
+        <div class="col-md-9">
+            {{-- <div class="card"> --}}
+                {{-- <div class="card-header">Dashboard</div> --}}
 
-                <div class="card-body">
-                <form action ="{{url('/tipo_usuario')}}" method="POST">  
-                        @csrf 
-                        @method('POST')                
-                            <div class="card ">
-                                <div class="card-header" style="background: #007bff" >
-                                <h5 class="card-title text-white">Tipo de Usuario </h5>
-                                </div>
-                                <div class="card-body">
+                {{-- <div class="card-body"> --}}
+                      <form action ="{{url('/tipo_usuario')}}" method="POST">  
+                              @csrf 
+                              @method('POST')                
+                                  <div class="card ">
+                                      <div class="card-header" style="background: #007bff" >
+                                      <h5 class="card-title text-white">Tipo de Usuario </h5>
+                                      </div>
+                                      <div class="card-body">
                                         <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                  <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
-                                                </div>
-                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name ="descripcion">
-                                                &nbsp;
-                                               <input type="submit" value="agregar">
-                                              </div>
-                                </div>
-                            </div>
-                        </form> 
-                        <table class="table">
-                            <thead class="thead bg-primary text-white" >
-                              <tr>
-                                <th scope="col">Código</th>
-                                <th scope="col">Descripciòn</th>                               
-                                <th scope="col">Opciones </th>
-                              </tr>
-                            </thead>
-                            
-                            <tbody>
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
+                                          </div>
+                                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name ="descripcion">
+                                          &nbsp;
+                                          <input type="submit" value="agregar">
+                                        </div>
+                                      </div>
+                                  </div>
+                      </form> 
+                      <table class="table">
+                          <thead class="thead bg-primary text-white" >
+                            <tr>
+                              <th scope="col">Código</th>
+                              <th scope="col">Descripciòn</th>                               
+                              <th scope="col">Opciones </th>
+                            </tr>
+                          </thead>
+                          <tbody>
                             @foreach ($lista_tipoUsuario as $item)
                               <tr>
                                 <th scope="row">1</th>
@@ -53,10 +55,10 @@
                                 </td>
                               </tr>
                             @endforeach                                                                                                                               
-                            </tbody>
-                          </table>
-                </div>
-            </div>
+                          </tbody>
+                      </table>
+                {{-- </div> --}}
+            {{-- </div> --}}
         </div>
     </div>
 </div>
