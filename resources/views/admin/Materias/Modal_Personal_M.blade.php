@@ -1,7 +1,4 @@
-
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Docentes </button> -->
-
-        <div class="modal materiaPersonal bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal materiaPersonal bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-container">
@@ -24,9 +21,9 @@
                                                             </thead>
 
                                                             <tbody>
-                                                                @foreach($lista_materias as $item)
+                                                                @foreach($lista_person as $item)
                                                                     <tr>
-                                                                        <th scope="row">{{$item["descripcion"]}}</th>
+                                                                        <th scope="row">{{$item["nombres"]}} {{$item["apellidos"]}}</th>
                                                                         <td> 
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
