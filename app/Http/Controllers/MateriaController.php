@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Materia;
+use App\TipoPersonal;
+use App\Personal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,8 +22,10 @@ class MateriaController extends Controller
 
     public function index()
     {
-        $items=Materia::with("lista_tipo_personal")->Where("estado_del","A")->get();
-        return view("admin.Materias.FormMaterias" ,["lista_materias"=>$items]);
+        //$item3=TipoPersonal::Where([["estado_del","A"],["descripcion","like","%docente%"]])->first();
+        $items=Materia::with("lista_tipo_person")->Where("estado_del","A")->get();
+        $items1=Personal::Where("estado_del","A")->get();
+        return view("admin.Materias.FormMaterias" ,["lista_materias"=>$items,"lista_person"=>$items1]);
         // echo $items;
         // return response()->json($items);
     }
