@@ -37,7 +37,7 @@
                                           <option value="2">Administrativo</option>
                                         </select>
                                       </div>  -->
-                                      <div class="input-group mb-3">
+                                      <!-- <div class="input-group mb-3">
                                      <div class="input-group-prepend">
                                          <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
                                      </div>
@@ -47,7 +47,7 @@
                                             <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                                         @endforeach
                                      </select>
-                                  </div>
+                                  </div> -->
 
                                 <div class="input-group mb-3">
                                         <div class="input-group-prepend">
