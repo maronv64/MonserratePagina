@@ -12,12 +12,12 @@
 
                     <form action="{{url('/social_form')}}" method="POST">   
                         @csrf             
-                        <div class="card">
+                    <div class="card">
                         <div class="card-header">
                             Social
                         </div>
 
-                        <div class="card-body">
+                    <div class="card-body">
 
                                 <div class="input-group mb-3">
                                             <div class="input-group-prepend">
@@ -29,7 +29,7 @@
                                                 <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                                             @endforeach
                                             </select>
-                                        </div>
+                                </div>
 
                                 <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -43,11 +43,20 @@
                                         </div>
                                         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                                 </div>
-                                
+
+                                <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                   <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                  </div>
+                                  <div class="custom-file">
+                                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                  </div>
+                                </div>                      
 
                                 <input type="submit" class="btn btn-info" value="Guardar"> 
                         </div>
-                        </div>
+                    </div>
                     </form>
                     <table class="table table-bordered">
                                 <thead class="thead bg-primary text-white">

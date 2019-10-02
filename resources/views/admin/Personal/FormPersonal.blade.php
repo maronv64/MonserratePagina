@@ -67,6 +67,15 @@
                                                 </div>
                                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telefono">
                                         </div>
+                                        <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                   <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                  </div>
+                                  <div class="custom-file">
+                                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                  </div>
+                                </div>                   
                                               
                                         
                                         <input type="submit" class="btn btn-info" value="Guardar"> 

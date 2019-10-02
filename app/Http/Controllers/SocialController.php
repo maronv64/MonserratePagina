@@ -52,14 +52,32 @@ class SocialController extends Controller
     public function store(Request $request)
     {
         $social=new Social();
+
+        //*************************GUARDAR UNA IMAGEN********************************************** */    
+        //el archivo
+        $file = $request->file('file');
+        //extraccion de los datos del archivo
+        $extension = $file->getClientOriginalExtension();
+        $name='social_'.date('Ymd').time();
+        $fileName = $name.'.'.$extension;
+
+
+           $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));            
+
+           $social->file_name=$name;
+           $social->file_ext=$extension;
+          
+        //************************************************************************ */
+
         $social->idtipo=$request->idtipo;
         $social->titulo=$request->titulo;
         $social->descripcion=$request->descripcion;
         $social->estado_del="A";
         $social->save();
+
         return redirect('/social_form');
-        // echo $request;
-        // return;
+
+
     }
 
     /**
@@ -113,6 +131,17 @@ class SocialController extends Controller
     {
         $item=Social::where("id", $id)->first();
         $item->estado_del="E";
+
+        //************************Eliminar una imagen**************************************** */
+        $name = $item->file_name.'.'.$item->file_ext;
+        $ruta = public_path()."/img/biblioteca/".$fileName; 
+        
+        try {
+            unlink($ruta);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        //************************************************************************************ */
         $item->update();
         return redirect('/social_form');
     }

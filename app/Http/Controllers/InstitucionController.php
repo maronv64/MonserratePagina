@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Institucion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class InstitucionController extends Controller
 {
@@ -38,17 +39,31 @@ class InstitucionController extends Controller
      */
     public function store(Request $request)
     {
+        
         $items=new Institucion ();
         $items->id=$request->id;
         $items->mision=$request->mision;
         $items->vision=$request->vision;
         $items->himno=$request->himno;
-        $items->file_name=$request->file;
-        $items->file_ext=$request->file;
+
+        //*************************GUARDAR UNA IMAGEN********************************************** */    
+        //el archivo
+        $file = $request->file('file');      
+         //extraccion de los datos del archivo
+         $extension = $file->getClientOriginalExtension();
+        $name='institucion_'.date('Ymd').time();    
+        $fileName = $name.'.'.$extension; 
+        
+        $img = Storage::disk('imgDisk')->put($fileName,\File::get($file));
+
+        $items->file_name=$name;
+        $items->file_ext=$extension;   
+         //************************************************************************ */   
+
         $items->estado_del="A";
         $items->save();
         return redirect('/tablainstitucion');
-        // return $request;
+        // return $extension;
     }
 
     /**
@@ -94,5 +109,15 @@ class InstitucionController extends Controller
     public function destroy(Institucion $institucion)
     {
         //
+        //************************Eliminar una imagen**************************************** */
+        $name = $item->file_name.'.'.$item->file_ext;
+        $ruta = public_path()."/img/biblioteca/".$fileName; 
+        
+        try {
+            unlink($ruta);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        //************************************************************************************ */
     }
 }

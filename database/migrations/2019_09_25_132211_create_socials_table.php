@@ -19,6 +19,8 @@ class CreateSocialsTable extends Migration
             $table->string('titulo','100');
             $table->string('descripcion','100');
             $table->string('estado_del','2');
+            $table->string('file_name','100');
+            $table->string('file_ext','100');
             $table->timestamps();
         });
     }
