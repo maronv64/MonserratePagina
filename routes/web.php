@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $institucion=\App\institucion::where("estado_del","A")->first();
+
+    return view('welcome',["institucion"=>$institucion]);
+    // return $institucion;
+    
 });
 
 Auth::routes();

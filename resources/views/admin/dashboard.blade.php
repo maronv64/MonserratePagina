@@ -7,7 +7,7 @@
   </a> --}}
   <a href="{{url('/tipo_usuario')}}" type="button" class="list-group-item list-group-item-action">Tipos de Usuarios</a>
   <a href="{{url('/users')}}" type="button" class="list-group-item list-group-item-action">Usuarios</a>
-  <a href="{{url('/users')}}" type="button" class="list-group-item list-group-item-action">Institucion</a>
+  <a href="{{url('/institucion')}}" type="button" class="list-group-item list-group-item-action">Institucion</a>
   <a href="{{url('/Especialidades_control')}}" type="button" class="list-group-item list-group-item-action">Especialidades</a>
   <a href="{{url('/materia_control')}}" type="button" class="list-group-item list-group-item-action">Materias</a>
   <a href="{{url('/tipopersonal_form')}}" type="button" class="list-group-item list-group-item-action">Tipos de Personal</a>

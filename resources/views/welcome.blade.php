@@ -96,59 +96,60 @@
 						<div class="col-lg-8 top-post-left">
 							<div class="feature-image-thumb relative">
 								<div class="overlay overlay-bg"></div>
-								<img class="img-fluid" src="img/top-post1.jpg" alt="">
+								<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="" style="width:1800px!important; height:450px!important">
 							</div>
 							<div class="top-post-details">
 								<ul class="tags">
-									<li><a href="#">Food Habit</a></li>
+									<li><a href="#">Unidad Educativa Monserrate Álava González</a></li>
 								</ul>
 								<a href="image-post.html">
-									<h3>A Discount Toner Cartridge Is Better Than Ever.</h3>
+									<h3></h3>
 								</a>
-								<ul class="meta">
+								<!-- {{--<ul class="meta">
 									<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 									<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
 									<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-								</ul>
+								</ul>--}} -->
 							</div>
 						</div>
 						<div class="col-lg-4 top-post-right">
 							<div class="single-top-post">
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/top-post2.jpg" alt="">
+									{{--<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="">		--}}							
+									<img class="img-fluid" src="img/xxx.jpg" alt="">
 								</div>
 								<div class="top-post-details">
 									<ul class="tags">
-										<li><a href="#">Food Habit</a></li>
+										<li><a href="#">Misión</a></li>
 									</ul>
 									<a href="image-post.html">
-										<h4>A Discount Toner Cartridge Is Better Than Ever.</h4>
+										<h4>{{$institucion["mision"]}}</h4>
 									</a>
-									<ul class="meta">
+									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
 										<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-									</ul>
+									</ul>--}} -->
 								</div>
 							</div>
 							<div class="single-top-post mt-10">
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/top-post3.jpg" alt="">
+									<img class="img-fluid" src="img/xxx.jpg" alt="">
 								</div>
 								<div class="top-post-details">
 									<ul class="tags">
-										<li><a href="#">Food Habit</a></li>
+										<li><a href="#">Visión</a></li>
 									</ul>
 									<a href="image-post.html">
-										<h4>A Discount Toner Cartridge Is Better</h4>
+										<h4>{{$institucion["vision"]}}</h4>
 									</a>
-									<ul class="meta">
+									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
 										<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-									</ul>
+									</ul>--}} -->
 								</div>
 							</div>
 						</div>
@@ -439,13 +440,16 @@
 						<div class="col-lg-4">
 							<div class="sidebars-area">
 								<div class="single-sidebar-widget editors-pick-widget">
-									<h6 class="title">Editor’s Pick</h6>
+									<h6 class="title">Himno de la Institucion</h6>
 									<div class="editors-pick-post">
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/e1.jpg" alt="">
+												<h4>{{$institucion["himno"]}}</h4>
 											</div>
+											
+											<!-- {{--
+											<img class="img-fluid" src="img/e1.jpg" alt="">
 											<ul class="tags">
 												<li><a href="#">Travel</a></li>
 											</ul>
@@ -501,10 +505,10 @@
 													<ul class="meta">
 														<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
 														<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-													</ul>
+													</ul> 
 												</div>
 											</div>
-										</div>
+										</div>--}}-->
 									</div>
 								</div>
 								<div class="single-sidebar-widget ads-widget">
@@ -513,7 +517,7 @@
 										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.384255167668!2d-80.17900218478175!3d-0.8451668993834424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902ba1bb9869a777%3A0x5339c8381c092674!2sColegio%20Monserrat%20Alava%20de%20Gonzales!5e0!3m2!1ses!2sec!4v1569945848955!5m2!1ses!2sec" width="315" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 									</form>
 								</div>
-								<div class="single-sidebar-widget newsletter-widget">
+								<!-- {{--<div class="single-sidebar-widget newsletter-widget">
 									<h6 class="title">Newsletter</h6>
 									<p>
 										Here, I focus on a range of items
@@ -594,7 +598,7 @@
 											</ul>
 										</div>
 									</div>
-								</div>
+								</div>--}}-->
 								<div class="single-sidebar-widget social-network-widget">
 									<h6 class="title">Social Networks</h6>
 									<ul class="social-list">

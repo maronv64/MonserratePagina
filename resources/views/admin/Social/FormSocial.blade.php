@@ -10,7 +10,7 @@
                 <div class="col-md-9">
     
 
-                    <form action="{{url('/social_form')}}" method="POST">   
+                    <form action="{{url('/social_form')}}"  method="POST"   enctype="multipart/form-data">   
                         @csrf             
                     <div class="card">
                         <div class="card-header">

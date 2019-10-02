@@ -6,6 +6,7 @@ use App\Social;
 use App\TipoSocial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class SocialController extends Controller
 {
@@ -134,7 +135,7 @@ class SocialController extends Controller
         $item->estado_del="E";
 
         //************************Eliminar una imagen**************************************** */
-        $name = $item->file_name.'.'.$item->file_ext;
+        $fileName = $item->file_name.'.'.$item->file_ext;
         $ruta = public_path()."/img/biblioteca/".$fileName; 
         
         try {

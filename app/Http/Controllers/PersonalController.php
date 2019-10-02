@@ -124,7 +124,7 @@ class PersonalController extends Controller
         $item=Personal::where("id", $id)->first();
         $item->estado_del="E";
 
-        $name = $item->file_name.'.'.$item->file_ext;
+        $fileName = $item->file_name.'.'.$item->file_ext;
         $ruta = public_path()."/img/biblioteca/".$fileName; 
         
         try {
