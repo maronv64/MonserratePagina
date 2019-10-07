@@ -12,7 +12,7 @@ function verDocentes(id) {
     $("#idMaterias_").val(id);
     //  alert("este es id :"+id);
     $.get('materia_control/'+id,function (data) {
-        $.each(data.lista_tipo_person,function (a,item) {
+        $.each(data.lista_person,function (a,item) {
             // console.log(item);
             $('#tabla_personal tr').each(function () {
                 $(this).find("td:eq(0) input[type='checkbox']").each(function () {
