@@ -14,8 +14,8 @@
 Route::get('/', function () {
 
     $institucion=\App\institucion::where("estado_del","A")->first();
-
-    return view('welcome',["institucion"=>$institucion]);
+    $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
+    return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
     // return $institucion;
     
 });
@@ -62,3 +62,5 @@ Route::resource('/relacion_especialidades_materias','RelacionEspMatController');
 Route::resource('/relacion_materias_personal','RelacionMatTPController');
 
 Route::resource('/relacion_personal_tipo','RelacionPersTPController');
+
+Route::resource('/enlace','EnlaceController');

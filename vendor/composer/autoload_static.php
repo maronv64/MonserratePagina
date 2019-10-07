@@ -406,6 +406,7 @@ class ComposerStaticInit22fb6837dfd617f0e8b67195d203a0c7
     public static $classMap = array (
         'App\\Buzon' => __DIR__ . '/../..' . '/app/Buzon.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Enlace' => __DIR__ . '/../..' . '/app/Enlace.php',
         'App\\Especialidades' => __DIR__ . '/../..' . '/app/Especialidades.php',
         'App\\Estudiante' => __DIR__ . '/../..' . '/app/Estudiante.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -421,6 +422,7 @@ class ComposerStaticInit22fb6837dfd617f0e8b67195d203a0c7
         'App\\Http\\Controllers\\EstudianteController' => __DIR__ . '/../..' . '/app/Http/Controllers/EstudianteController.php',
         'App\\Http\\Controllers\\GustavoController' => __DIR__ . '/../..' . '/app/Http/Controllers/GustavoController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\InstitucionController' => __DIR__ . '/../..' . '/app/Http/Controllers/InstitucionController.php',
         'App\\Http\\Controllers\\MateriaController' => __DIR__ . '/../..' . '/app/Http/Controllers/MateriaController.php',
         'App\\Http\\Controllers\\MauroController' => __DIR__ . '/../..' . '/app/Http/Controllers/MauroController.php',
         'App\\Http\\Controllers\\NancyController' => __DIR__ . '/../..' . '/app/Http/Controllers/NancyController.php',
