@@ -7,9 +7,12 @@
                 <div class="modal-header">
                     Agregar Tipo Personal
                 </div> 
+                <form action="{{url('/relacion_personal_tipo')}}" method="POST">
+
                     <div class="modal-body">
-                        <form action="{{url('/personal_form')}}" method="POST">
-                            @csrf
+                                <input type="hidden" id="idPersonal_" name="idPersonal"> 
+                                <input type="hidden" id="listaTipoPersonalId" name="listaTipoPersonalId"> 
+                                @csrf
                                 <table class="table table-bordered">
                                         <thead class="thead bg-primary text-white" >
                                         <tr>
@@ -18,13 +21,13 @@
                                             
                                         </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tabla_tipo_personal">
                                         @foreach($lista_tipo_personal as $item)
                                             <tr>
                                                 <th scope="row">{{$item["descripcion"]}}</th>
                                                 <td> 
                                                     <div class="form-check">
-                                                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                                        <input class="form-check-input position-static" type="checkbox"  id="blankCheckbox_{{$item['id']}}" value="<?php echo $item['id'] ?>" aria-label="..." onclick="pasaridtipopersonal(this)">
                                                     </div>
                                                 
                                                 </td>
@@ -32,11 +35,11 @@
                                         @endforeach
                                         </tbody>
                                 </table>    
-                        </form>
                     </div>   
                     <div class="modal-footer">
                             <input type="submit" class="btn btn-info" value="Actualizar"> 
                     </div> 
+                    </form>
                                 
             </div>
         </div>

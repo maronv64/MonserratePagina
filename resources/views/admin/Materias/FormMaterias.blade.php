@@ -49,7 +49,7 @@
                                     <td>{{$item["descripcion"]}}</td>
                                     <td>
                                         @foreach($item["lista_tipo_person"] as $item2)
-                                            {{ $item2["lista_materias"]["descripcion"]}}
+                                            {{ $item2["lista_materias"]["descripcion"]}}<?php echo ",<br>" ?>
                                         @endforeach
                                     </td>
                                     <td>

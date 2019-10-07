@@ -660,7 +660,7 @@
 								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" name="email">
 							</div>
 							<div class="form-group">
-								<input class="btn btn-outline-info" type="submit" value="enviar">
+								<input class="btn btn-outline-info" style="background:#f6214b!important;color:#fff!important" type="submit" value="enviar">
 							</div>
 						</div>
 						<div class="col-md-6">

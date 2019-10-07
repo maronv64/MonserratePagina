@@ -9,7 +9,9 @@
                                 <!-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-12"> -->
-                                            <form action="{{url('/materia_control')}}" method="POST">
+                                            <form action="{{url('/relacion_materias_personal')}}" method="POST">
+                                                     <input type="hidden" id="idMaterias_" name="idMaterias"> 
+                                                     <input type="hidden" id="listaPersonalId" name="listaPersonalId"> 
                                                     @csrf
                                                     <table class="table table-bordered">
                                                             <thead class="thead bg-primary text-white" >
@@ -20,13 +22,13 @@
                                                             </tr>
                                                             </thead>
 
-                                                            <tbody>
+                                                            <tbody id="tabla_personal">
                                                                 @foreach($lista_person as $item)
                                                                     <tr>
                                                                         <th scope="row">{{$item["nombres"]}} {{$item["apellidos"]}}</th>
                                                                         <td> 
                                                                             <div class="form-check">
-                                                                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                                                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox_{{$item['id']}}" value="<?php echo $item['id'] ?>" aria-label="..." onclick="pasaridpersonal(this)">
                                                                             </div>
                                                                         </td>
                                                                     </tr>

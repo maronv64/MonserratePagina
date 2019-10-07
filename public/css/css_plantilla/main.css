@@ -851,7 +851,7 @@ header {
 }
 
 .header-top {
-  background: #04091e;
+  background: #0006B9;/* #04091e;*/
   padding: 15px 0px;
 }
 
@@ -950,7 +950,7 @@ header {
 }
 
 .main-menu {
-  background: #04091e;
+  background: #0006B9;/*#04091e;*/
   padding: 15px 20px;
   position: relative;
 }
@@ -1647,7 +1647,7 @@ body {
 .latest-post-area .latest-post-wrap .cat-title {
   font-size: 14px;
   font-weight: 600;
-  background: #04091e;
+  background: #0006B9;/* #04091e;*/
   color: #fff;
   padding: 10px 25px;
 }
@@ -1765,7 +1765,7 @@ body {
 .popular-post-wrap .title {
   font-size: 14px;
   font-weight: 600;
-  background: #04091e;
+  background:  #0006B9;/* #04091e;*/
   color: #fff;
   padding: 10px 25px;
   margin-bottom: 20px;
@@ -1950,7 +1950,7 @@ body {
 .relavent-story-post-wrap .title {
   font-size: 14px;
   font-weight: 600;
-  background: #04091e;
+  background: #0006B9;/*#04091e ;*/
   color: #fff;
   padding: 10px 25px;
   margin-bottom: 20px;
@@ -2067,7 +2067,7 @@ body {
 }
 
 .single-sidebar-widget .title {
-  background: #04091e;
+  background:  #0006B9;/* #04091e;*/
   color: #fff;
   padding: 12px 20px;
   margin-bottom: 20px;
@@ -3229,7 +3229,7 @@ div.thumbnail_container .overlay-bg {
 /*  Footer Styles
 /* =================================== */
 .footer-area {
-  background: #04091e;
+  background: #0006B9;/* #04091e;*/
 }
 
 @media (max-width: 991px) {
