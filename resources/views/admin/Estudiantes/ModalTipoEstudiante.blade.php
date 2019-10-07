@@ -16,6 +16,7 @@
 
             <input type="hidden" id="idEstudiante_" name="idEstudiante"> 
             <input type="hidden" id="listaTiposId" name="listaTiposId"> 
+            <input type="hidden" id="listaCargo" name="listaCargo">
 
             <table class="table">
                 <thead class="thead bg-primary text-white">
@@ -23,12 +24,13 @@
                         <th scope="col">#</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Escoger</th>
+                        <th scope="col">Cargo</th>
                     </tr>
                 </thead>
                 <tbody id="tabla_tipos_estudiantes">
                 @foreach($lista_TipoEstudiante as $item)
                     <tr>
-                        <td >1</td>
+                        <td >{{$loop->iteration}}</td>
                         <td>{{$item['descripcion']}}</td>
                         <td> 
                             <div class="form-check">
@@ -36,6 +38,10 @@
                                 <input class="form-check-input position-static" type="checkbox"   id="blankCheckbox_{{$item['id']}}" value="<?php echo $item['id'] ?>" aria-label="..." onclick="pasaridtipo(this)" >
 
                             </div>         
+                        </td>
+                        <td>
+                        <input id="cargo_{{$item['id']}}" type="hidden" class="ver" value="">
+                        <a style="visibility:hidden" href="#"  id="btnGuardarCargo_{{$item['id']}}" class="btn btn- btn-primary" onclick="GE_guardarCargo(<?php echo $item['id'] ?>)">x</a>
                         </td>
                     </tr>
                 @endforeach

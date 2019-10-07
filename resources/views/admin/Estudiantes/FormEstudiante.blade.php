@@ -52,10 +52,7 @@
                     </div>
                     <div class="input-group-mb-3">
                         <div class="row">
-                            <div class="col-md-6">
-                                <input type="button" class="btn btn-outline-info btn-lg btn-block" value="Agregar">
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input type="submit" class="btn btn-outline-info btn-lg btn-block" value="Guardar">
                             </div>
                         </div>
@@ -68,7 +65,7 @@
             <table class="table">
             <thead class="thead bg-primary text-white">
                 <tr>
-                    <th scope="col">Código</th>
+                    <th scope="col">#</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Cedula</th>
@@ -77,9 +74,10 @@
                     <th scope="col">Opciones</th>
                     </tr>
             </thead>
+               <?php $contador=0;?>
                 @foreach($listaEstudiante as $item)
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{{$loop->iteration}}</th>
                         <td>{{$item["nombre"]}}</td>
                         <td>{{$item["apellido"]}}</td>
                         <td>{{$item["cedula"]}}</td>

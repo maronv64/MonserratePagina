@@ -357,34 +357,40 @@
 							<!-- End popular-post Area -->
 							<!-- Start relavent-story-post Area -->
 							<div class="relavent-story-post-wrap mt-30">
-								<h4 class="title">Relavent Stories</h4>
+								<h4 class="title">Cuadro de Honor</h4>
 								<div class="relavent-story-list-wrap">
-									<div class="single-relavent-post row align-items-center">
-										<div class="col-lg-5 post-left">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/r1.jpg" alt="">
+
+									@foreach($estudiantes['lista_estudiante'] as $item )
+										@if($loop->iteration<=3)
+											<div class="single-relavent-post row align-items-center">
+												<div class="col-lg-5 post-left">
+													<div class="feature-img relative">
+														<div class="overlay overlay-bg"></div>
+														<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['estudiante']['file_name'].'.'.$item['estudiante']['file_ext']}}" alt="">
+													</div>
+													<ul class="tags">
+														<li><a href="#">Lifestyle</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-7 post-right">
+													<a href="image-post.html">
+														<h4>A Discount Toner Cartridge Is
+														Better Than Ever.</h4>
+													</a>
+													<ul class="meta">
+														<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
+														<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+														<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
+													</ul>
+													<p class="excert">
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+													</p>
+												</div>
 											</div>
-											<ul class="tags">
-												<li><a href="#">Lifestyle</a></li>
-											</ul>
-										</div>
-										<div class="col-lg-7 post-right">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-											</p>
-										</div>
-									</div>
-									<div class="single-relavent-post row align-items-center">
+										@endif
+									@endforeach
+
+									<!-- <div class="single-relavent-post row align-items-center">
 										<div class="col-lg-5 post-left">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
@@ -433,7 +439,7 @@
 												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 											</p>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<!-- End relavent-story-post Area -->
