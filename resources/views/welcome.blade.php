@@ -117,18 +117,15 @@
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
 									{{--<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="">		--}}							
-									<img class="img-fluid" src="img/zzz.jpg" alt="">
+									<img class="img-fluid" src="img/xxx.jpg" alt="">
 								</div>
 								<div class="top-post-details">
-									
-									<a href="image-post.html">
-										<h4 style="text-align: center">{{$institucion["mision"]}}</h4>
-									</a>
 									<ul class="tags">
 										<li><a href="#">Misión</a></li>
 									</ul>
-
-									
+									<a href="image-post.html">
+										<h4>{{$institucion["mision"]}}</h4>
+									</a>
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -139,16 +136,15 @@
 							<div class="single-top-post mt-10">
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/zzz.jpg" alt="">
+									<img class="img-fluid" src="img/xxx.jpg" alt="">
 								</div>
 								<div class="top-post-details">
-									
-									<a href="image-post.html">
-										<h4 style="text-align:center">{{$institucion["vision"]}}</h4>
-									</a>
 									<ul class="tags">
 										<li><a href="#">Visión</a></li>
 									</ul>
+									<a href="image-post.html">
+										<h4>{{$institucion["vision"]}}</h4>
+									</a>
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -291,7 +287,11 @@
 								<div class="feature-post relative">
 									<div class="feature-img relative">
 										<div class="overlay overlay-bg"></div>
+<<<<<<< HEAD
 										<img class="img-fluid" src="img/magAutoridad.jpg" alt="">
+=======
+										<img class="img-fluid" src="img/doc2.jpg" alt="">
+>>>>>>> f41fa961d3580c2748d600863660aa2742cd2690
 									</div>
 									<div class="details">
 										<ul class="tags">
@@ -609,35 +609,41 @@
 									</div>
 								</div>--}}-->
 								<div class="single-sidebar-widget social-network-widget">
-									<h6 class="title">Redes Sociales</h6>
+									<h6 class="title">Social Networks</h6>
 									<ul class="social-list">
-									@foreach($lista_Enlace as $item)
 										<li class="d-flex justify-content-between align-items-center fb">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-facebook" aria-hidden="true"></i>
+<<<<<<< HEAD
 												<a target="_blank" href="{{$item['url']}}">{{$item['name']}}</a>
 											</div>											
+=======
+												<p>983 Likes</p>
+											</div>
+											<a href="#">Like our page</a>
+>>>>>>> f41fa961d3580c2748d600863660aa2742cd2690
 										</li>
-										@endforeach
-										{{--<!-- <li class="d-flex justify-content-between align-items-center tw">
+										<li class="d-flex justify-content-between align-items-center tw">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-twitter" aria-hidden="true"></i>
-												<a href="{{/enlace}}"></a>
-											</div>											
+												<p>983 Followers</p>
+											</div>
+											<a href="#">Follow Us</a>
 										</li>
 										<li class="d-flex justify-content-between align-items-center yt">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-youtube-play" aria-hidden="true"></i>
-												<a href="{{/enlace}}"></a>
-											</div>											
+												<p>983 Subscriber</p>
+											</div>
+											<a href="#">Subscribe</a>
 										</li>
 										<li class="d-flex justify-content-between align-items-center rs">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-rss" aria-hidden="true"></i>
-												<a href="{{/enlace}}"></a>
+												<p>983 Subscribe</p>
 											</div>
-
-										</li> -->--}}
+											<a href="#">Subscribe</a>
+										</li>
 									</ul>
 								</div>
 							</div>
