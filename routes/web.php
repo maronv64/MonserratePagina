@@ -15,24 +15,11 @@ Route::get('/', function () {
 
     $institucion=\App\institucion::where("estado_del","A")->first();
     $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
-<<<<<<< HEAD
     // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
     $social=\App\social::where("estado_del","A")->limit(4)->get();
     $personal=\App\personal::where("estado_del","A")->limit(2)->get();
-
 
     return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace]);
-=======
-    $social=\App\social::where("estado_del","A")->limit(4)->get();
-    $personal=\App\personal::where("estado_del","A")->limit(2)->get();
-
-    // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
-    return view('welcome',["institucion"=>$institucion],["social"=>$social],["lista_Enlace"=>$lista_Enlace],["personal"=>$personal]);
->>>>>>> f41fa961d3580c2748d600863660aa2742cd2690
-    // return $institucion;
-    
-    
-    // return view('welcome',);
     
 });
 
