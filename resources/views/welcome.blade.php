@@ -117,15 +117,18 @@
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
 									{{--<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="">		--}}							
-									<img class="img-fluid" src="img/xxx.jpg" alt="">
+									<img class="img-fluid" src="img/zzz.jpg" alt="">
 								</div>
 								<div class="top-post-details">
+									
+									<a href="image-post.html">
+										<h4 style="text-align: center">{{$institucion["mision"]}}</h4>
+									</a>
 									<ul class="tags">
 										<li><a href="#">Misión</a></li>
 									</ul>
-									<a href="image-post.html">
-										<h4>{{$institucion["mision"]}}</h4>
-									</a>
+
+									
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -136,15 +139,16 @@
 							<div class="single-top-post mt-10">
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/xxx.jpg" alt="">
+									<img class="img-fluid" src="img/zzz.jpg" alt="">
 								</div>
 								<div class="top-post-details">
+									
+									<a href="image-post.html">
+										<h4 style="text-align:center">{{$institucion["vision"]}}</h4>
+									</a>
 									<ul class="tags">
 										<li><a href="#">Visión</a></li>
 									</ul>
-									<a href="image-post.html">
-										<h4>{{$institucion["vision"]}}</h4>
-									</a>
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -169,33 +173,36 @@
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
 							<div class="latest-post-wrap">
-								<h4 class="cat-title">Latest News</h4>
+								<h4 class="cat-title">Noticias y Eventos</h4>
+
+								@foreach($social as $item)
 								<div class="single-latest-post row align-items-center">
 									<div class="col-lg-5 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l1.jpg" alt="">
+											<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
 										</div>
 										<ul class="tags">
-											<li><a href="#">Lifestyle</a></li>
+											<li><a href="#">{{$item["tiposocial"]["descripcion"]}}</a></li>
 										</ul>
 									</div>
 									<div class="col-lg-7 post-right">
 										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
+											<h4>{{$item["titulo"]}}</h4>
 										</a>
-										<ul class="meta">
+										<!-- <ul class="meta">
 											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
 											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
+										</ul> -->
 										<p class="excert">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+										{{$item["descripcion"]}}
 										</p>
 									</div>
 								</div>
-								<div class="single-latest-post row align-items-center">
+								@endforeach
+
+								<!-- <div class="single-latest-post row align-items-center">
 									<div class="col-lg-5 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
@@ -269,7 +276,7 @@
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 										</p>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<!-- End latest-post Area -->
 							
@@ -280,26 +287,31 @@
 							<!-- End banner-ads Area -->
 							<!-- Start popular-post Area -->
 							<div class="popular-post-wrap">
-								<h4 class="title">Popular Posts</h4>
+								<h4 class="title">Autoridades</h4>
 								<div class="feature-post relative">
 									<div class="feature-img relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/f1.jpg" alt="">
+<<<<<<< HEAD
+										<img class="img-fluid" src="img/doc2.jpg" alt="">
+=======
+										<img class="img-fluid" src="img/magAutoridad.jpg" alt="">
+>>>>>>> 8cdeac5690e76e48f2a9b8eab27aa64f91f4bf4b
 									</div>
 									<div class="details">
 										<ul class="tags">
-											<li><a href="#">Food Habit</a></li>
+											<li><a href="#">AUTORIDADES UEMAG</a></li>
 										</ul>
 										<a href="image-post.html">
-											<h3>A Discount Toner Cartridge Is Better Than Ever.</h3>
+											<h6></h6>
 										</a>
 										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
+											<!-- <li><a href="#"><span class="lnr lnr-user"></span></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span></a></li> -->
 										</ul>
 									</div>
 								</div>
+								
 								<div class="row mt-20 medium-gutters">
 									<div class="col-lg-6 single-popular-post">
 										<div class="feature-img-wrap relative">
@@ -326,6 +338,7 @@
 											</p>
 										</div>
 									</div>
+
 									<div class="col-lg-6 single-popular-post">
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
@@ -600,36 +613,35 @@
 									</div>
 								</div>--}}-->
 								<div class="single-sidebar-widget social-network-widget">
-									<h6 class="title">Social Networks</h6>
+									<h6 class="title">Redes Sociales</h6>
 									<ul class="social-list">
+									@foreach($lista_Enlace as $item)
 										<li class="d-flex justify-content-between align-items-center fb">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-facebook" aria-hidden="true"></i>
-												<p>983 Likes</p>
-											</div>
-											<a href="#">Like our page</a>
+												<a href="{{$item['url']}}">{{$item['name']}}</a>
+											</div>											
 										</li>
-										<li class="d-flex justify-content-between align-items-center tw">
+										@endforeach
+										{{--<!-- <li class="d-flex justify-content-between align-items-center tw">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-twitter" aria-hidden="true"></i>
-												<p>983 Followers</p>
-											</div>
-											<a href="#">Follow Us</a>
+												<a href="{{/enlace}}"></a>
+											</div>											
 										</li>
 										<li class="d-flex justify-content-between align-items-center yt">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-youtube-play" aria-hidden="true"></i>
-												<p>983 Subscriber</p>
-											</div>
-											<a href="#">Subscribe</a>
+												<a href="{{/enlace}}"></a>
+											</div>											
 										</li>
 										<li class="d-flex justify-content-between align-items-center rs">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-rss" aria-hidden="true"></i>
-												<p>983 Subscribe</p>
+												<a href="{{/enlace}}"></a>
 											</div>
-											<a href="#">Subscribe</a>
-										</li>
+
+										</li> -->--}}
 									</ul>
 								</div>
 							</div>
@@ -657,7 +669,7 @@
 								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" name="email">
 							</div>
 							<div class="form-group">
-								<input class="btn btn-outline-info" style="background:#f6214b!important;color:#fff!important" type="submit" value="enviar">
+								<input class="btn btn-outline-info" type="submit" value="enviar">
 							</div>
 						</div>
 						<div class="col-md-6">
