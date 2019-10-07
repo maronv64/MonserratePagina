@@ -14,9 +14,15 @@
 Route::get('/', function () {
 
     $institucion=\App\institucion::where("estado_del","A")->first();
+    $social=\App\social::where("estado_del","A")->limit(4)->get();
+    $personal=\App\personal::where("estado_del","A")->limit(2)->get();
 
-    return view('welcome',["institucion"=>$institucion]);
+
+    return view('welcome',["institucion"=>$institucion],["social"=>$social],["personal"=>$personal]);
     // return $institucion;
+    
+    
+    // return view('welcome',);
     
 });
 
