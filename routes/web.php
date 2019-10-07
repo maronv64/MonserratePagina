@@ -13,21 +13,22 @@
 
 Route::get('/', function () {
 
-    $institucion=\App\institucion::where("estado_del","A")->first();
+    $institucion=\App\Institucion::where("estado_del","A")->first();
 
     $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
-    // return $estudiantes;
-    // $estudiantes=\App\Estudiante::with(["lista_tipos","especialidad"])->where([["estado_del","A"],[""]])->get();
+    // echo $estudiantes;
+    // return response()->json($estudiantes);
+    // $estudiantes=\App\Estudiante::with(["lista_tipos","especialidad"])->where([["estado_del","A"],["descripcion"]])->get();
 
     // return view('welcome',["institucion"=>$institucion,"estudiantes"=>$estudiantes]);
 
     $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
-    // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
+    // // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
     $social=\App\social::where("estado_del","A")->limit(4)->get();
     $personal=\App\personal::where("estado_del","A")->limit(2)->get();
 
-    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace]);
-
+    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace , "estudiantes"=>$estudiantes]);
+    // return view('welcome');
 });
 
 Auth::routes();
