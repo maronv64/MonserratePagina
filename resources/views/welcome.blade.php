@@ -290,7 +290,7 @@
 								<h4 class="title">Cuadro de Honor</h4>
 								<div class="relavent-story-list-wrap">
 
-									{{--@foreach($estudiantes['lista_estudiante'] as $item )
+									@foreach($estudiantes['lista_estudiante'] as $item )
 										@if($loop->iteration<=3)
 											<div class="single-relavent-post row align-items-center">
 												<div class="col-lg-5 post-left">
@@ -318,7 +318,7 @@
 												</div>
 											</div>
 										@endif
-									@endforeach--}}
+									@endforeach
 
 								</div>
 							</div>

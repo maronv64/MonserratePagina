@@ -15,9 +15,9 @@ Route::get('/', function () {
 
     $institucion=\App\Institucion::where("estado_del","A")->first();
 
-    $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->get();
+    $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
     // echo $estudiantes;
-    // return;
+    // return response()->json($estudiantes);
     // $estudiantes=\App\Estudiante::with(["lista_tipos","especialidad"])->where([["estado_del","A"],["descripcion"]])->get();
 
     // return view('welcome',["institucion"=>$institucion,"estudiantes"=>$estudiantes]);
@@ -27,7 +27,7 @@ Route::get('/', function () {
     $social=\App\social::where("estado_del","A")->limit(4)->get();
     $personal=\App\personal::where("estado_del","A")->limit(2)->get();
 
-    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace , "lista_estudiante"=>$estudiantes]);
+    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace , "estudiantes"=>$estudiantes]);
     // return view('welcome');
 });
 
