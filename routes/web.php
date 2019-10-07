@@ -14,8 +14,11 @@
 Route::get('/', function () {
 
     $institucion=\App\institucion::where("estado_del","A")->first();
+    $estudiantes=\App\TipoEstudiante::with(["Lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
+    // return $estudiantes;
+    // $estudiantes=\App\Estudiante::with(["lista_tipos","especialidad"])->where([["estado_del","A"],[""]])->get();
 
-    return view('welcome',["institucion"=>$institucion]);
+    return view('welcome',["institucion"=>$institucion,"estudiantes"=>$estudiantes]);
     // return $institucion;
     
 });

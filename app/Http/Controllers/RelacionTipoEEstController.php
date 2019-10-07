@@ -41,21 +41,44 @@ class RelacionTipoEEstController extends Controller
         $limpieza->delete();
 
         $idTiposEst = explode(",", $request->listaTiposId);
+        $Cargos = explode(",", $request->listaCargo);
+     
+        //return $request;
         //obtener el id del estudiante.
-        foreach ($idTiposEst as $key => $value) {
-            //echo $value;
-            if(empty($value)){
-                echo "no tiene datos";
+
+        for ($i=0; $i <sizeof($idTiposEst) ; $i++) { 
+            # code...
+            //  echo $Cargos[$i];;
+            //  return;
+            
+            if(empty($idTiposEst[$i])||empty($Cargos[$i])){
+                // echo "no tiene datos";
             }else{
                 
                 $items=new RelacionTipoEEst();
                 $items->id_estudiante=$request->idEstudiante;
-                $items->id_tipo_estudiante=$value;
+                $items->id_tipo_estudiante=$idTiposEst[$i];
+                $items->cargo=$Cargos[$i];
                 $items->estado_del="A";
                 $items->save();    
             }
-            
         }
+
+        // foreach ($idTiposEst as $key => $value) {
+        //     //echo $value;
+        //     if(empty($value)){
+        //         echo "no tiene datos";
+        //     }else{
+                
+        //         $items=new RelacionTipoEEst();
+        //         $items->id_estudiante=$request->idEstudiante;
+        //         $items->id_tipo_estudiante=$value;
+        //         $items->cargo=
+        //         $items->estado_del="A";
+        //         $items->save();    
+        //     }
+            
+        // }
          return redirect('/estudiante');
         
     }
@@ -91,10 +114,10 @@ class RelacionTipoEEstController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $items=RelacionTipoEEst::where("id",$request->id)->first();
-        $items->id_tipo_estudiante=$request->id_tipo_estudiante;
-        $items->id_estudiante=$request->id_estudiante;
-        $items->update();
+        // $items=RelacionTipoEEst::where("id",$request->id)->first();
+        // $items->id_tipo_estudiante=$request->id_tipo_estudiante;
+        // $items->id_estudiante=$request->id_estudiante;
+        // $items->update();
     }
 
     /**
@@ -105,8 +128,8 @@ class RelacionTipoEEstController extends Controller
      */
     public function destroy($id)
     {
-        $items=RelacionTipoEEst::where("id",$id)->first();
-        $items->estado_del="E";
-        $items->update();
+        // $items=RelacionTipoEEst::where("id",$id)->first();
+        // $items->estado_del="E";
+        // $items->update();
     }
 }
