@@ -70,9 +70,9 @@
 							</ul>
 						  </li>
 						  <li><a href="about.html">About</a></li>
-						  <li><a href="contact.html">Contact</a></li>
+						  <li><a href="#buzon">Buzón</a></li>
 					   </ul>
-					</nav><!-- #nav-menu-container -->
+					</nav><!-- #nav-menu-coantainer -->
 					<div class="navbar-right">
 						<form class="Search">
 							<input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
@@ -281,9 +281,9 @@
 							<!-- End latest-post Area -->
 							
 							<!-- Start banner-ads Area -->
-							<div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
+							<!-- <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
 								<img class="img-fluid" src="img/banner-ad.jpg" alt="">
-							</div>
+							</div> -->
 							<!-- End banner-ads Area -->
 							<!-- Start popular-post Area -->
 							<div class="popular-post-wrap">
@@ -300,11 +300,11 @@
 										<a href="image-post.html">
 											<h6></h6>
 										</a>
-										<ul class="meta">
+										<!-- <ul class="meta">
 											<li><a href="#"><span class="lnr lnr-user"></span></a></li>
 											<li><a href="#"><span class="lnr lnr-calendar-full"></span></a></li>
 											<li><a href="#"><span class="lnr lnr-bubble"></span></a></li>
-										</ul>
+										</ul> -->
 									</div>
 								</div>
 								<div class="row mt-20 medium-gutters">
@@ -448,7 +448,7 @@
 							<div class="sidebars-area">
 								<div class="single-sidebar-widget editors-pick-widget">
 									<h6 class="title">Himno de la Institucion</h6>
-									<div class="editors-pick-post">
+									<div >
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
@@ -613,7 +613,7 @@
 										<li class="d-flex justify-content-between align-items-center fb">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-facebook" aria-hidden="true"></i>
-												<a href="{{$item['url']}}">{{$item['name']}}</a>
+												<a target="_blank" href="{{$item['url']}}">{{$item['name']}}</a>
 											</div>											
 										</li>
 										@endforeach
@@ -647,7 +647,7 @@
 		</div>
 		
 		<!-- start footer Area -->
-		<footer class="footer-area section-gap">
+		<footer id="buzon" class="footer-area section-gap">
 			<div class="container">
 				<div>					
 					<form action ="{{url('/buzon')}}" method="POST" class="row">
