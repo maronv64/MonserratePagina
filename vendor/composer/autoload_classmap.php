@@ -58,6 +58,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\RelacionEspMat' => $baseDir . '/app/RelacionEspMat.php',
+    'App\\RelacionMatPerson' => $baseDir . '/app/RelacionMatPerson.php',
     'App\\RelacionMatTP' => $baseDir . '/app/RelacionMatTP.php',
     'App\\RelacionPersTp' => $baseDir . '/app/RelacionPersTp.php',
     'App\\RelacionTipoEEst' => $baseDir . '/app/RelacionTipoEEst.php',

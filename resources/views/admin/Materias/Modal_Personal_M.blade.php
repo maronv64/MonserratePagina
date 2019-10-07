@@ -5,11 +5,12 @@
                         <div class="modal-header">
                         Agregar Docentes
                         </div> 
+                        <form action="{{url('/relacion_materias_personal')}}" method="POST">
                             <div class="modal-body">
                                 <!-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-12"> -->
-                                            <form action="{{url('/relacion_materias_personal')}}" method="POST">
+                                            
                                                      <input type="hidden" id="idMaterias_" name="idMaterias"> 
                                                      <input type="hidden" id="listaPersonalId" name="listaPersonalId"> 
                                                     @csrf
@@ -35,7 +36,7 @@
                                                                 @endforeach
                                                             </tbody>
                                                     </table>  
-                                            </form>
+                                            
                             
                                         <!-- </div>
                                     </div>    
@@ -46,7 +47,7 @@
                             <div class="modal-footer">
                                     <input type="submit" class="btn btn-info" value="Actualizar">                        
                             </div> 
-                                        
+                         </form>       
                     </div>
                 </div>
             </div>
