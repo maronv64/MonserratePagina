@@ -287,15 +287,7 @@
 								<div class="feature-post relative">
 									<div class="feature-img relative">
 										<div class="overlay overlay-bg"></div>
-<<<<<<< HEAD
-										<img class="img-fluid" src="img/magAutoridad.jpg" alt="">
-=======
-										<img class="img-fluid" src="img/doc2.jpg" alt="">
->>>>>>> f41fa961d3580c2748d600863660aa2742cd2690
 									</div>
-									<div class="details">
-										<ul class="tags">
-											<li><a href="#">AUTORIDADES UEMAG</a></li>
 										</ul>
 										<a href="image-post.html">
 											<h6></h6>
@@ -614,14 +606,9 @@
 										<li class="d-flex justify-content-between align-items-center fb">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-facebook" aria-hidden="true"></i>
-<<<<<<< HEAD
-												<a target="_blank" href="{{$item['url']}}">{{$item['name']}}</a>
-											</div>											
-=======
 												<p>983 Likes</p>
 											</div>
 											<a href="#">Like our page</a>
->>>>>>> f41fa961d3580c2748d600863660aa2742cd2690
 										</li>
 										<li class="d-flex justify-content-between align-items-center tw">
 											<div class="icons d-flex flex-row align-items-center">
