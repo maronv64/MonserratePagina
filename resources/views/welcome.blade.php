@@ -287,11 +287,7 @@
 								<div class="feature-post relative">
 									<div class="feature-img relative">
 										<div class="overlay overlay-bg"></div>
-<<<<<<< HEAD
 										<img class="img-fluid" src="img/magAutoridad.jpg" alt="">
-=======
-										<img class="img-fluid" src="img/doc2.jpg" alt="">
->>>>>>> f41fa961d3580c2748d600863660aa2742cd2690
 									</div>
 									<div class="details">
 										<ul class="tags">
