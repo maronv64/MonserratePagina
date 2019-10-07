@@ -26,7 +26,7 @@ class PersonalController extends Controller
         $items=Personal::with("lista_tipo_personal")->Where("estado_del","A")->get();
         $items1=TipoPersonal::Where("estado_del","A")->get();
         return view("admin.Personal.FormPersonal" ,["lista_personal"=>$items, "lista_tipo_personal"=>$items1]);
-        // return response()->json($items);
+        //return response()->json($items);
     }
 
     /**
@@ -78,7 +78,7 @@ class PersonalController extends Controller
      */
     public function show($id)
     {
-        $item =Personal::where("id",$id)->first();
+        $item =Personal::with("lista_tipo_personal")->where("id",$id)->first();
         return response()->json($item);
     }
 

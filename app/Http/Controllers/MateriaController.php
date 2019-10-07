@@ -64,7 +64,7 @@ class MateriaController extends Controller
      */
     public function show($id)
     {
-        $item =Materia::where("id",$id)->first();
+        $item =Materia::with("lista_person")->where("id",$id)->first();
         return response()->json($item);
     }
 

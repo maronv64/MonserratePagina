@@ -102,7 +102,7 @@
                                           <tr>
                                               <th scope="row">
                                               @foreach($item["lista_tipo_personal"] as $item2)
-                                                            {{ $item2["tipo_personal"]["descripcion"]}}
+                                                            {{ $item2["tipo_personal"]["descripcion"]}}<?php echo ",<br>" ?>
                                                         @endforeach
                                               </th>  
                                               <td scope="row">{{$item["nombres"]}}</td>
