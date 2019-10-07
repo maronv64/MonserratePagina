@@ -8,6 +8,6 @@ class Materia extends Model
 {
     public function lista_person()
     {
-        return $this->hasMany('App\RelacionMatTP','id_materia','id')->with('personal');
+        return $this->hasMany('App\RelacionMatPerson','id_materia','id')->with('personal');
     }
 }

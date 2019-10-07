@@ -66,7 +66,7 @@ Route::resource('/institucion','InstitucionController');
 
 Route::resource('/relacion_especialidades_materias','RelacionEspMatController');
 
-Route::resource('/relacion_materias_personal','RelacionMatTPController');
+Route::resource('/relacion_materias_personal','RelacionMatPersonController');
 
 Route::resource('/relacion_personal_tipo','RelacionPersTPController');
 

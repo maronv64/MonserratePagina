@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRelacionMatTPSTable extends Migration
+class CreateRelacionMatPeopleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateRelacionMatTPSTable extends Migration
      */
     public function up()
     {
-        Schema::create('relacion_mat_t_p_s', function (Blueprint $table) {
+        Schema::create('relacion_mat_people', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_materia');
-            $table->bigInteger('id_tipopersonal');
+            $table->bigInteger('id_personal');
             $table->string('estado_del','2');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateRelacionMatTPSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relacion_mat_t_p_s');
+        Schema::dropIfExists('relacion_mat_people');
     }
 }

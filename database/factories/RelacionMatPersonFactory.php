@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\RelacionMatTP;
+use App\RelacionMatPerson;
 use Faker\Generator as Faker;
 
-$factory->define(RelacionMatTP::class, function (Faker $faker) {
+$factory->define(RelacionMatPerson::class, function (Faker $faker) {
     return [
         //
     ];
