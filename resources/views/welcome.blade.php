@@ -186,11 +186,11 @@
 										<a href="image-post.html">
 											<h4>{{$item["titulo"]}}</h4>
 										</a>
-										<ul class="meta">
+										<!-- <ul class="meta">
 											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
 											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
+										</ul> -->
 										<p class="excert">
 										{{$item["descripcion"]}}
 										</p>
@@ -287,7 +287,7 @@
 								<div class="feature-post relative">
 									<div class="feature-img relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/m1.jpg" alt="">
+										<img class="img-fluid" src="img/doc2.jpg" alt="">
 									</div>
 									<div class="details">
 										<ul class="tags">
@@ -297,12 +297,13 @@
 											<h6></h6>
 										</a>
 										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span></a></li>
+											<!-- <li><a href="#"><span class="lnr lnr-user"></span></a></li>
 											<li><a href="#"><span class="lnr lnr-calendar-full"></span></a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span></a></li> -->
 										</ul>
 									</div>
 								</div>
+								
 								<div class="row mt-20 medium-gutters">
 									<div class="col-lg-6 single-popular-post">
 										<div class="feature-img-wrap relative">
@@ -329,6 +330,7 @@
 											</p>
 										</div>
 									</div>
+
 									<div class="col-lg-6 single-popular-post">
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
@@ -660,7 +662,7 @@
 								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" name="email">
 							</div>
 							<div class="form-group">
-								<input class="btn btn-outline-info" style="background:#f6214b!important;color:#fff!important" type="submit" value="enviar">
+								<input class="btn btn-outline-info" type="submit" value="enviar">
 							</div>
 						</div>
 						<div class="col-md-6">
