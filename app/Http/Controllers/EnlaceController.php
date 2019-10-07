@@ -2,20 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\RelacionMatTP;
+use App\Enlace;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class RelacionMatTPController extends Controller
+class EnlaceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        //
+        $items=Enlace::Where("estado_del","A")->get();
+        
+      
+        return view("admin.Enlaces.Form_Enlace" ,["lista_Enlace"=>$items]);
     }
 
     /**
@@ -36,32 +43,34 @@ class RelacionMatTPController extends Controller
      */
     public function store(Request $request)
     {
-        $item =new RelacionMatTP();
-        $item->id_materia=$request->id_materia;
-        $item->id_tipopersonal=$request->id_tipopersonal;
-        $item->estado_del="A";
-        $item->save();
-        return redirect('/materia_control');
+        $items=new Enlace();
+        $items->name=$request->nombre;
+        $items->url=$request->url;
+        $items->estado_del="A";
+        $items->save();
+        //echo $items;
+        return redirect('/enlace') ;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\RelacionMatTP  $relacionMatTP
+     * @param  \App\Enlace  $enlace
      * @return \Illuminate\Http\Response
      */
-    public function show(RelacionMatTP $relacionMatTP)
+    public function show($id)
     {
-        //
+        $item =Enlace::where("id",$id)->first();
+        return response()->json($item);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\RelacionMatTP  $relacionMatTP
+     * @param  \App\Enlace  $enlace
      * @return \Illuminate\Http\Response
      */
-    public function edit(RelacionMatTP $relacionMatTP)
+    public function edit(Enlace $enlace)
     {
         //
     }
@@ -70,29 +79,31 @@ class RelacionMatTPController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RelacionMatTP  $relacionMatTP
+     * @param  \App\Enlace  $enlace
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RelacionMatTP $relacionMatTP)
+    public function update(Request $request, Enlace $enlace)
     {
-        $item=RelacionMatTP::where("id",$request->id)->first();
-        $item->id_materia=$request->id_materia;
-        $item->id_tipopersonal=$request->id_tipopersonal;
-         $item->update();
-         return redirect('/materia_control');
+        // return $request;
+        $item =Enlace::where("id",$request->id)->first();
+        $item->name=$request->nombre;
+        $item->url=$request->url;
+        $item->update();
+        return redirect('/enlace');   
+        // return $request;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\RelacionMatTP  $relacionMatTP
+     * @param  \App\Enlace  $enlace
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RelacionMatTP $relacionMatTP)
+    public function destroy($id)
     {
-        $item =RelacionMatTP::where("id",$id)->first();
+        $item =Enlace::where("id",$id)->first();
         $item->estado_del="E";
         $item->update();
-        return redirect('/materia_control');
+        return redirect('/enlace'); 
     }
 }

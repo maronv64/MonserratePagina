@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\RelacionPersTp;
+use App\RelacionMatPerson;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class RelacionPersTpController extends Controller
+class RelacionMatPersonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,35 +36,35 @@ class RelacionPersTpController extends Controller
      */
     public function store(Request $request)
     {
-        $limpieza=RelacionPersTp::where("id_personal",$request->idPersonal);
+        $limpieza=RelacionMatPerson::where("id_materia",$request->idMaterias);
         $limpieza->delete();
 
-        $listaTipoPersonalId = explode(",", $request->listaTipoPersonalId);
+        $listaPersonalId = explode(",", $request->listaPersonalId);
         //obtener el id del estudiante.
-        foreach ($listaTipoPersonalId as $key => $value) {
+        foreach ($listaPersonalId as $key => $value) {
             //echo $value;
             if(empty($value)){
                 //echo "no tiene datos";
             }else{
                 
-                $items=new RelacionPersTp();
-                $items->id_personal=$request->idPersonal;
-                $items->id_tipopersonal=$value;
+                $items=new RelacionMatPerson();
+                $items->id_materia=$request->idMaterias;
+                $items->id_personal=$value;
                 $items->estado_del="A";
                 $items->save();    
             }
             
         }
-        return redirect('/personal_form');
+        return redirect('/materia_control');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\RelacionPersTp  $relacionPersTp
+     * @param  \App\RelacionMatPerson  $relacionMatPerson
      * @return \Illuminate\Http\Response
      */
-    public function show(RelacionPersTp $relacionPersTp)
+    public function show(RelacionMatPerson $relacionMatPerson)
     {
         //
     }
@@ -72,10 +72,10 @@ class RelacionPersTpController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\RelacionPersTp  $relacionPersTp
+     * @param  \App\RelacionMatPerson  $relacionMatPerson
      * @return \Illuminate\Http\Response
      */
-    public function edit(RelacionPersTp $relacionPersTp)
+    public function edit(RelacionMatPerson $relacionMatPerson)
     {
         //
     }
@@ -84,22 +84,22 @@ class RelacionPersTpController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RelacionPersTp  $relacionPersTp
+     * @param  \App\RelacionMatPerson  $relacionMatPerson
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RelacionPersTp $relacionPersTp)
+    public function update(Request $request, RelacionMatPerson $relacionMatPerson)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\RelacionPersTp  $relacionPersTp
+     * @param  \App\RelacionMatPerson  $relacionMatPerson
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RelacionPersTp $relacionPersTp)
+    public function destroy(RelacionMatPerson $relacionMatPerson)
     {
-
+        //
     }
 }

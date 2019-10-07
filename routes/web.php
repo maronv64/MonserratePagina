@@ -14,13 +14,20 @@
 Route::get('/', function () {
 
     $institucion=\App\institucion::where("estado_del","A")->first();
+
     $estudiantes=\App\TipoEstudiante::with(["Lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
     // return $estudiantes;
     // $estudiantes=\App\Estudiante::with(["lista_tipos","especialidad"])->where([["estado_del","A"],[""]])->get();
 
-    return view('welcome',["institucion"=>$institucion,"estudiantes"=>$estudiantes]);
-    // return $institucion;
-    
+    // return view('welcome',["institucion"=>$institucion,"estudiantes"=>$estudiantes]);
+
+    $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
+    // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
+    $social=\App\social::where("estado_del","A")->limit(4)->get();
+    $personal=\App\personal::where("estado_del","A")->limit(2)->get();
+
+    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace]);
+
 });
 
 Auth::routes();
@@ -62,6 +69,8 @@ Route::resource('/institucion','InstitucionController');
 
 Route::resource('/relacion_especialidades_materias','RelacionEspMatController');
 
-Route::resource('/relacion_materias_personal','RelacionMatTPController');
+Route::resource('/relacion_materias_personal','RelacionMatPersonController');
 
 Route::resource('/relacion_personal_tipo','RelacionPersTPController');
+
+Route::resource('/enlace','EnlaceController');

@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Buzon' => $baseDir . '/app/Buzon.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Enlace' => $baseDir . '/app/Enlace.php',
     'App\\Especialidades' => $baseDir . '/app/Especialidades.php',
     'App\\Estudiante' => $baseDir . '/app/Estudiante.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -23,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\EstudianteController' => $baseDir . '/app/Http/Controllers/EstudianteController.php',
     'App\\Http\\Controllers\\GustavoController' => $baseDir . '/app/Http/Controllers/GustavoController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\InstitucionController' => $baseDir . '/app/Http/Controllers/InstitucionController.php',
     'App\\Http\\Controllers\\MateriaController' => $baseDir . '/app/Http/Controllers/MateriaController.php',
     'App\\Http\\Controllers\\MauroController' => $baseDir . '/app/Http/Controllers/MauroController.php',
     'App\\Http\\Controllers\\NancyController' => $baseDir . '/app/Http/Controllers/NancyController.php',
@@ -56,6 +58,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\RelacionEspMat' => $baseDir . '/app/RelacionEspMat.php',
+    'App\\RelacionMatPerson' => $baseDir . '/app/RelacionMatPerson.php',
     'App\\RelacionMatTP' => $baseDir . '/app/RelacionMatTP.php',
     'App\\RelacionPersTp' => $baseDir . '/app/RelacionPersTp.php',
     'App\\RelacionTipoEEst' => $baseDir . '/app/RelacionTipoEEst.php',
