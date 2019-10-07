@@ -287,7 +287,7 @@
 							<!-- End popular-post Area -->
 							<!-- Start relavent-story-post Area -->
 							<div class="relavent-story-post-wrap mt-30">
-								<h4 class="title">Relavent Stories</h4>
+								<h4 class="title">Cuadro de Honor</h4>
 								<div class="relavent-story-list-wrap">
 
 									{{--@foreach($estudiantes['lista_estudiante'] as $item )
