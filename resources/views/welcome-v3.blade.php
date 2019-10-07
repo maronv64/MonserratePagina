@@ -117,16 +117,15 @@
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
 									{{--<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="">		--}}							
-									<img class="img-fluid" src="img/zzz.jpg" alt="">
+									<img class="img-fluid" src="img/xxx.jpg" alt="">
 								</div>
 								<div class="top-post-details">
-									
+									<ul class="tags">
+										<li><a href="#">Misión</a></li>
+									</ul>
 									<a href="image-post.html">
 										<h4>{{$institucion["mision"]}}</h4>
 									</a>
-                                    <ul class="tags">
-										<li><a href="#">Misión</a></li>
-									</ul>
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -137,16 +136,15 @@
 							<div class="single-top-post mt-10">
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/zzz.jpg" alt="">
+									<img class="img-fluid" src="img/xxx.jpg" alt="">
 								</div>
 								<div class="top-post-details">
-									
+									<ul class="tags">
+										<li><a href="#">Visión</a></li>
+									</ul>
 									<a href="image-post.html">
 										<h4>{{$institucion["vision"]}}</h4>
 									</a>
-                                    <ul class="tags">
-										<li><a href="#">Visión</a></li>
-									</ul>
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -290,7 +288,7 @@
 								<h4 class="title">Cuadro de Honor</h4>
 								<div class="relavent-story-list-wrap">
 
-									{{--@foreach($estudiantes['lista_estudiante'] as $item )
+									@foreach($estudiantes['lista_estudiante'] as $item )
 										@if($loop->iteration<=3)
 											<div class="single-relavent-post row align-items-center">
 												<div class="col-lg-5 post-left">
@@ -318,7 +316,7 @@
 												</div>
 											</div>
 										@endif
-									@endforeach--}}
+									@endforeach
 
 								</div>
 							</div>
@@ -347,7 +345,7 @@
 								<div class="single-sidebar-widget social-network-widget">
 									<h6 class="title">Social Networks</h6>
 									<ul class="social-list">
-									@foreach($lista_Enlace as $item)
+									@foreach(lista_Enlace as item)
 										<li class="d-flex justify-content-between align-items-center fb">
 											<div class="icons d-flex flex-row align-items-center">
 												<i class="fa fa-facebook" aria-hidden="true"></i>
@@ -392,7 +390,6 @@
 							</div>
 						</div>
 					</form>
-                    
 					
 					
 				</div>
