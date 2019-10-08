@@ -15,12 +15,41 @@ Route::get('/', function () {
 
     $institucion=\App\Institucion::where("estado_del","A")->first();
 
-    return view('welcome',["institucion"=>$institucion]);
-    // return $institucion;
-    
+    $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
+
+    // echo $estudiantes;
+    // return response()->json($estudiantes);
+    // $estudiantes=\App\Estudiante::with(["lista_tipos","especialidad"])->where([["estado_del","A"],["descripcion"]])->get();
+
+    // return view('welcome',["institucion"=>$institucion,"estudiantes"=>$estudiantes]);
+
+    $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
+    // // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
+    $social=\App\Social::where("estado_del","A")->limit(4)->get();
+    $personal=\App\Personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->limit(2)->get();
+
+    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace , "estudiantes"=>$estudiantes ]);
+    // return view('welcome');
 });
 
 Auth::routes();
+Route::get('/personals', function(){
+    $lista_materias=\App\Materia::where("estado_del","A")->get();
+
+    return view('personal',["lista_materias"=>$lista_materias]);
+});      
+
+Route::get('/mostrar_estudiante', function(){
+    $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where("estado_del","A")->get();
+    $institucion=\App\Institucion::where("estado_del","A")->first();
+    $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
+
+
+        // return response()->json($estudiantes);
+
+    return view('estudiantes',["estudiantes"=>$estudiantes,"lista_Enlace"=>$lista_Enlace,"institucion"=>$institucion]);
+});      
+
 
 Route::get('/home', 'HomeController@index')->name('home');        
 
@@ -59,6 +88,8 @@ Route::resource('/institucion','InstitucionController');
 
 Route::resource('/relacion_especialidades_materias','RelacionEspMatController');
 
-Route::resource('/relacion_materias_personal','RelacionMatTPController');
+Route::resource('/relacion_materias_personal','RelacionMatPersonController');
 
 Route::resource('/relacion_personal_tipo','RelacionPersTPController');
+
+Route::resource('/enlace','EnlaceController');

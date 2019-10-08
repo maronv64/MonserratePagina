@@ -70,20 +70,10 @@
 							</ul>
 						  </li>
 						  <li><a href="about.html">About</a></li>
-						  <li><a href="contact.html">Contact</a></li>
+						  <li><a href="#buzon">Buzón</a></li>
 					   </ul>
-					</nav><!-- #nav-menu-container -->
-					{{-- <div class="navbar-right">
-						<form class="Search">
-							<input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
-							<label for="Search-box" class="Search-box-label">
-								<span class="lnr lnr-magnifier"></span>
-							</label>
-							<span class="Search-close">
-								<span class="lnr lnr-cross"></span>
-							</span>
-						</form>
-					</div> --}}
+					</nav><!-- #nav-menu-coantainer -->
+					
 				</div>
 			</div>
 		</header>
@@ -96,7 +86,10 @@
 						<div class="col-lg-8 top-post-left">
 							<div class="feature-image-thumb relative">
 								<div class="overlay overlay-bg"></div>
-								<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="" style="width:1800px!important; height:450px!important">
+									@isset($institucion)
+										<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="" style="width:1800px!important; height:450px!important">
+
+									@endisset
 							</div>
 							<div class="top-post-details">
 								<ul class="tags">
@@ -117,15 +110,18 @@
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
 									{{--<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="">		--}}							
-									<img class="img-fluid" src="img/xxx.jpg" alt="">
+									<img class="img-fluid" src="img/zzz.jpg" alt="">
 								</div>
 								<div class="top-post-details">
-									<ul class="tags">
-										<li><a href="#">Misión</a></li>
-									</ul>
-									<a href="image-post.html">
-										<h4>{{$institucion["mision"]}}</h4>
-									</a>
+									@isset($institucion)
+										<a href="image-post.html">
+											<h4>{{$institucion["mision"]}}</h4>
+										</a>
+										<ul class="tags">
+											<li><a href="#">Misión</a></li>
+										</ul>
+									@endisset
+									
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -136,15 +132,18 @@
 							<div class="single-top-post mt-10">
 								<div class="feature-image-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/xxx.jpg" alt="">
+									<img class="img-fluid" src="img/zzz.jpg" alt="">
 								</div>
 								<div class="top-post-details">
-									<ul class="tags">
-										<li><a href="#">Visión</a></li>
-									</ul>
-									<a href="image-post.html">
-										<h4>{{$institucion["vision"]}}</h4>
-									</a>
+									@isset($institucion)
+										<a href="image-post.html">
+											<h4>{{$institucion["vision"]}}</h4>
+										</a>
+										<ul class="tags">
+											<li><a href="#">Visión</a></li>
+										</ul>
+									@endisset
+									
 									<!--{{-- <ul class="meta">
 										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -154,9 +153,10 @@
 							</div>
 						</div>
 						<div class="col-lg-12">
-							<div class="news-tracker-wrap">
+						   <hr><hr/>
+							<!-- <div class="news-tracker-wrap">
 								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
@@ -169,164 +169,97 @@
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
 							<div class="latest-post-wrap">
-								<h4 class="cat-title">Latest News</h4>
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-5 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l1.jpg" alt="">
+								<h4 class="cat-title">Noticias y Eventos</h4>
+									@isset($social)
+										@foreach($social as $item)
+										<div class="single-latest-post row align-items-center">
+											<div class="col-lg-5 post-left">
+												<div class="feature-img relative">
+													<div class="overlay overlay-bg"></div>
+													<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
+												</div>
+												<ul class="tags">
+													<li><a href="#">{{$item["tiposocial"]["descripcion"]}}</a></li>
+												</ul>
+											</div>
+											<div class="col-lg-7 post-right">
+												<a href="image-post.html">
+													<h4>{{$item["titulo"]}}</h4>
+												</a>
+												<!-- <ul class="meta">
+													<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
+													<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+													<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
+												</ul> -->
+												<p class="excert">
+												{{$item["descripcion"]}}
+												</p>
+											</div>
 										</div>
-										<ul class="tags">
-											<li><a href="#">Lifestyle</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-										<p class="excert">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-										</p>
-									</div>
-								</div>
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-5 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l2.jpg" alt="">
-										</div>
-										<ul class="tags">
-											<li><a href="#">Science</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-										</p>
-									</div>
-								</div>
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-5 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l3.jpg" alt="">
-										</div>
-										<ul class="tags">
-											<li><a href="#">Travel</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-										</p>
-									</div>
-								</div>
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-5 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l4.jpg" alt="">
-										</div>
-										<ul class="tags">
-											<li><a href="#">Fashion</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-										</p>
-									</div>
-								</div>
+										@endforeach	
+									@endisset
+															
 							</div>
 							<!-- End latest-post Area -->
 							
 							<!-- Start banner-ads Area -->
-							<div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
+							<!-- <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
 								<img class="img-fluid" src="img/banner-ad.jpg" alt="">
-							</div>
+							</div> -->
 							<!-- End banner-ads Area -->
 							<!-- Start popular-post Area -->
 							<div class="popular-post-wrap">
-								<h4 class="title">Popular Posts</h4>
+								<h4 class="title">Autoridades</h4>
 								<div class="feature-post relative">
 									<div class="feature-img relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/f1.jpg" alt="">
+										<img class="img-fluid" src="img/magAutoridad.jpg" alt="">
 									</div>
 									<div class="details">
 										<ul class="tags">
-											<li><a href="#">Food Habit</a></li>
+											<li><a href="#">AUTORIDADES UEMAG</a></li>
 										</ul>
 										<a href="image-post.html">
-											<h3>A Discount Toner Cartridge Is Better Than Ever.</h3>
+											<h6></h6>
 										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
+										<!-- <ul class="meta">
+											<li><a href="#"><span class="lnr lnr-user"></span></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span></a></li>
+										</ul> -->
 									</div>
 								</div>
+								
 								<div class="row mt-20 medium-gutters">
-									<div class="col-lg-6 single-popular-post">
-										<div class="feature-img-wrap relative">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/f2.jpg" alt="">
+									@isset($personal)
+											@foreach($personal as $item )
+										<div class="col-lg-6 single-popular-post">
+											<div class="feature-img-wrap relative">
+												<div class="feature-img relative">
+													<div class="overlay overlay-bg"></div>
+													<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="">
+												</div>
+												<ul class="tags">
+													<li><a href="#">{{$item['cargo']}}</a></li>
+												</ul>
 											</div>
-											<ul class="tags">
-												<li><a href="#">Travel</a></li>
-											</ul>
+											<div class="details">
+												<a href="image-post.html">
+													<h4>{{$item['apellidos'] . ' ' . $item['nombres']}}</h4>
+												</a>
+												<ul class="meta">
+													<li><a href="#"><span class="lnr lnr-user"></span>{{$item['telefono']}}</a></li>
+													<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+													<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li> -->
+												</ul>
+												<p class="excert">
+													{{$item['titulo']}}
+												</p>
+											</div>
 										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
-											</p>
-										</div>
-									</div>
-									<div class="col-lg-6 single-popular-post">
+									@endforeach
+									@endisset
+									<!-- <div class="col-lg-6 single-popular-post">
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
@@ -350,7 +283,7 @@
 												Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
 											</p>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<!-- End popular-post Area -->
@@ -358,81 +291,38 @@
 							<div class="relavent-story-post-wrap mt-30">
 								<h4 class="title">Relavent Stories</h4>
 								<div class="relavent-story-list-wrap">
-									<div class="single-relavent-post row align-items-center">
-										<div class="col-lg-5 post-left">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/r1.jpg" alt="">
-											</div>
-											<ul class="tags">
-												<li><a href="#">Lifestyle</a></li>
-											</ul>
-										</div>
-										<div class="col-lg-7 post-right">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-											</p>
-										</div>
-									</div>
-									<div class="single-relavent-post row align-items-center">
-										<div class="col-lg-5 post-left">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/r2.jpg" alt="">
-											</div>
-											<ul class="tags">
-												<li><a href="#">Science</a></li>
-											</ul>
-										</div>
-										<div class="col-lg-7 post-right">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-											</p>
-										</div>
-									</div>
-									<div class="single-relavent-post row align-items-center">
-										<div class="col-lg-5 post-left">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/r3.jpg" alt="">
-											</div>
-											<ul class="tags">
-												<li><a href="#">Travel</a></li>
-											</ul>
-										</div>
-										<div class="col-lg-7 post-right">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-											</p>
-										</div>
-									</div>
+									@isset($estudiantes['lista_estudiante'])
+										@foreach($estudiantes['lista_estudiante'] as $item )
+											@if($loop->iteration<=3)
+												<div class="single-relavent-post row align-items-center">
+													<div class="col-lg-5 post-left">
+														<div class="feature-img relative">
+															<div class="overlay overlay-bg"></div>
+															<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['estudiante']['file_name'].'.'.$item['estudiante']['file_ext']}}" alt="">
+														</div>
+														<ul class="tags">
+															<li><a href="#">{{$item['Cargo']}}</a></li>
+														</ul>
+													</div>
+													<div class="col-lg-7 post-right">
+														<a href="image-post.html">
+															<h4>{{$item['estudiante']['apellido'] . ' ' .$item['estudiante']['nombre']}}</h4>
+														</a>
+														<ul class="meta">
+															<li><a href="#"><span class="lnr lnr-user"></span>{{$item['estudiante']['especialidad']['descripcion'] }}</a></li>
+															<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+															<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li> -->
+														</ul>
+														<!-- <p class="excert">
+															Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+														</p> -->
+													</div>
+												</div>
+											@endif
+										@endforeach
+									@endisset
+									
+
 								</div>
 							</div>
 							<!-- End relavent-story-post Area -->
@@ -440,75 +330,17 @@
 						<div class="col-lg-4">
 							<div class="sidebars-area">
 								<div class="single-sidebar-widget editors-pick-widget">
-									<h6 class="title">Himno de la Institucion</h6>
-									<div class="editors-pick-post">
+									<h6 style="text-align:center" class="title">Himno de la Institucion</h6>
+									<div >
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
-												<h4>{{$institucion["himno"]}}</h4>
+													@isset($institucion)
+														<h4 style="text-align:center"><?php echo $institucion["himno"]?></h4>
+													@endisset
+												
 											</div>
-											
-											<!-- {{--
-											<img class="img-fluid" src="img/e1.jpg" alt="">
-											<ul class="tags">
-												<li><a href="#">Travel</a></li>
-											</ul>
-										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h4 class="mt-20">A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
-											</p>
-										</div>
-										<div class="post-lists">
-											<div class="single-post d-flex flex-row">
-												<div class="thumb">
-													<img src="img/e2.jpg" alt="">
-												</div>
-												<div class="detail">
-													<a href="image-post.html"><h6>Help Finding Information
-													Online is so easy</h6></a>
-													<ul class="meta">
-														<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-														<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-													</ul>
-												</div>
-											</div>
-											<div class="single-post d-flex flex-row">
-												<div class="thumb">
-													<img src="img/e3.jpg" alt="">
-												</div>
-												<div class="detail">
-													<a href="image-post.html"><h6>Compatible Inkjet Cartr
-													world famous</h6></a>
-													<ul class="meta">
-														<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-														<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-													</ul>
-												</div>
-											</div>
-											<div class="single-post d-flex flex-row">
-												<div class="thumb">
-													<img src="img/e4.jpg" alt="">
-												</div>
-												<div class="detail">
-													<a href="image-post.html"><h6>5 Tips For Offshore Soft
-													Development </h6></a>
-													<ul class="meta">
-														<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-														<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-													</ul> 
-												</div>
-											</div>
-										</div>--}}-->
+										 </div>	
 									</div>
 								</div>
 								<div class="single-sidebar-widget ads-widget">
@@ -517,119 +349,21 @@
 										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.384255167668!2d-80.17900218478175!3d-0.8451668993834424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902ba1bb9869a777%3A0x5339c8381c092674!2sColegio%20Monserrat%20Alava%20de%20Gonzales!5e0!3m2!1ses!2sec!4v1569945848955!5m2!1ses!2sec" width="315" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 									</form>
 								</div>
-								<!-- {{--<div class="single-sidebar-widget newsletter-widget">
-									<h6 class="title">Newsletter</h6>
-									<p>
-										Here, I focus on a range of items
-										andfeatures that we use in life without
-										giving them a second thought.
-									</p>
-									<div class="form-group d-flex flex-row">
-										<div class="col-autos">
-											<div class="input-group">
-												<input class="form-control" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" type="text">
-											</div>
-										</div>
-										<a href="#" class="bbtns">Subcribe</a>
-									</div>
-									<p>
-										You can unsubscribe us at any time
-									</p>
-								</div>
-								<div class="single-sidebar-widget most-popular-widget">
-									<h6 class="title">Most Popular</h6>
-									<div class="single-list flex-row d-flex">
-										<div class="thumb">
-											<img src="img/m1.jpg" alt="">
-										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h6>Help Finding Information
-												Online is so easy</h6>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="single-list flex-row d-flex">
-										<div class="thumb">
-											<img src="img/m2.jpg" alt="">
-										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h6>Compatible Inkjet Cartr
-												world famous</h6>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="single-list flex-row d-flex">
-										<div class="thumb">
-											<img src="img/m3.jpg" alt="">
-										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h6>5 Tips For Offshore Soft
-												Development </h6>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="single-list flex-row d-flex">
-										<div class="thumb">
-											<img src="img/m4.jpg" alt="">
-										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h6>5 Tips For Offshore Soft
-												Development </h6>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>--}}-->
+								
 								<div class="single-sidebar-widget social-network-widget">
-									<h6 class="title">Social Networks</h6>
+									<h6 style="text-align:center" class="title">Redes Sociales</h6>
 									<ul class="social-list">
-										<li class="d-flex justify-content-between align-items-center fb">
-											<div class="icons d-flex flex-row align-items-center">
-												<i class="fa fa-facebook" aria-hidden="true"></i>
-												<p>983 Likes</p>
-											</div>
-											<a href="#">Like our page</a>
-										</li>
-										<li class="d-flex justify-content-between align-items-center tw">
-											<div class="icons d-flex flex-row align-items-center">
-												<i class="fa fa-twitter" aria-hidden="true"></i>
-												<p>983 Followers</p>
-											</div>
-											<a href="#">Follow Us</a>
-										</li>
-										<li class="d-flex justify-content-between align-items-center yt">
-											<div class="icons d-flex flex-row align-items-center">
-												<i class="fa fa-youtube-play" aria-hidden="true"></i>
-												<p>983 Subscriber</p>
-											</div>
-											<a href="#">Subscribe</a>
-										</li>
-										<li class="d-flex justify-content-between align-items-center rs">
-											<div class="icons d-flex flex-row align-items-center">
-												<i class="fa fa-rss" aria-hidden="true"></i>
-												<p>983 Subscribe</p>
-											</div>
-											<a href="#">Subscribe</a>
-										</li>
+										@isset($lista_Enlace)
+											@foreach($lista_Enlace as $item)
+												<li class="d-flex justify-content-between align-items-center fb">
+													<div class="icons d-flex flex-row align-items-center">
+														<i class="fa fa-facebook" aria-hidden="true"></i>
+														<a target="_blank" href="{{$item['url']}}">{{$item['name']}}</a>
+													</div>											
+												</li>
+											@endforeach
+										@endisset
+									
 									</ul>
 								</div>
 							</div>
@@ -641,7 +375,7 @@
 		</div>
 		
 		<!-- start footer Area -->
-		<footer class="footer-area section-gap">
+		<footer id="buzon" class="footer-area section-gap">
 			<div class="container">
 				<div>					
 					<form action ="{{url('/buzon')}}" method="POST" class="row">
@@ -666,9 +400,13 @@
 								<textarea name="mensaje" class="form-control" id="" cols="30" rows="10"></textarea>
 							</div>
 						</div>
-					</form>	
-				</div>		
-			</div>
+					</form>
+                    
+					
+					
+				</div>
+				
+			 </div>
 		</footer>
 		<!-- End footer Area -->
 		

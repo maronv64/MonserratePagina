@@ -61,6 +61,14 @@
                                                 </div>
                                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo">
                                         </div>
+
+                                        <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                  <span class="input-group-text" id="inputGroup-sizing-default">Cargo</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cargo">
+                                        </div>
+
                                         <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                   <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
@@ -102,7 +110,7 @@
                                           <tr>
                                               <th scope="row">
                                               @foreach($item["lista_tipo_personal"] as $item2)
-                                                            {{ $item2["tipo_personal"]["descripcion"]}}
+                                                            {{ $item2["tipo_personal"]["descripcion"]}}<?php echo ",<br>" ?>
                                                         @endforeach
                                               </th>  
                                               <td scope="row">{{$item["nombres"]}}</td>

@@ -16,6 +16,7 @@ class CreatePersonalsTable extends Migration
         Schema::create('personals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('titulo','100');
+            $table->string('cargo','100')->nullable();
             $table->string('nombres','100');
             $table->string('apellidos','100');
             $table->string('cedula','10');

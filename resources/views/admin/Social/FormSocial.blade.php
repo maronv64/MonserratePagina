@@ -64,6 +64,7 @@
                                             <th scope="col">Tipo Social</th>
                                             <th scope="col">Titulo</th>
                                             <th scope="col">Descripcion</th> 
+                                            <th scope="col">Imagen</th>
                                             <th scope="col">Acciones</th>               
                                         </tr>
                                 </thead>
@@ -76,7 +77,7 @@
                                         <th scope="row">{{$item["titulo"]}}</th>
 
                                         <th>{{$item["descripcion"]}}</th>
-
+                                        <td>archivo</td>
                                         <td>
                                                 <a href="#" onclick="verSocial(<?php echo $item['id']?>)" class="btn btn-info" >Modificar</a>
                                             <form action="{{route('social_form.destroy',$item['id'])}}" method="POST">

@@ -48,8 +48,8 @@
                                     <th scope="row">1</th>
                                     <td>{{$item["descripcion"]}}</td>
                                     <td>
-                                        @foreach($item["lista_tipo_person"] as $item2)
-                                            {{ $item2["lista_materias"]["descripcion"]}}
+                                        @foreach($item["lista_person"] as $item2)
+                                            {{ $item2['personal']["nombres"]}} {{ $item2['personal']["apellidos"]}}<?php echo ",<br>" ?>
                                         @endforeach
                                     </td>
                                     <td>

@@ -16,5 +16,6 @@
   <a href="{{url('/estudiante')}}" type="button" class="list-group-item list-group-item-action">Estudiantes</a>
   <a href="{{url('/tiposocial_form')}}" type="button" class="list-group-item list-group-item-action">Tipos Social</a>
   <a href="{{url('/social_form')}}" type="button" class="list-group-item list-group-item-action">Social</a>
-  <a href="{{url('/buzon')}}" type="button" class="list-group-item list-group-item-action">Buzon</a>
+  <a href="{{url('/buzon')}}" type="button" class="list-group-item list-group-item-action">Buzón</a>
+  <a href="{{url('/enlace')}}" type="button" class="list-group-item list-group-item-action">Enlace</a>
 </div>

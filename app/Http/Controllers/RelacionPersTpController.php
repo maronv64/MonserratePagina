@@ -36,12 +36,26 @@ class RelacionPersTpController extends Controller
      */
     public function store(Request $request)
     {
-        $item =new RelacionPersTp();
-        $item->id_TipoPersonal=$request->id_TipoPersonal;
-        $item->id_personal=$request->id_personal;
-        $item->estado_del="A";
-        $item->save();
-        return redirect('/tipopersonal_form');
+        $limpieza=RelacionPersTp::where("id_personal",$request->idPersonal);
+        $limpieza->delete();
+
+        $listaTipoPersonalId = explode(",", $request->listaTipoPersonalId);
+        //obtener el id del estudiante.
+        foreach ($listaTipoPersonalId as $key => $value) {
+            //echo $value;
+            if(empty($value)){
+                //echo "no tiene datos";
+            }else{
+                
+                $items=new RelacionPersTp();
+                $items->id_personal=$request->idPersonal;
+                $items->id_tipopersonal=$value;
+                $items->estado_del="A";
+                $items->save();    
+            }
+            
+        }
+        return redirect('/personal_form');
     }
 
     /**
@@ -75,11 +89,7 @@ class RelacionPersTpController extends Controller
      */
     public function update(Request $request, RelacionPersTp $relacionPersTp)
     {
-        $item=RelacionPersTp::where("id",$request->id)->first();
-        $item->id_tipopersonal=$request->id_tipopersonal;
-        $item->id_personal=$request->id_personal;
-         $item->update();
-         return redirect('/tipopersonal_form');
+
     }
 
     /**
@@ -90,9 +100,6 @@ class RelacionPersTpController extends Controller
      */
     public function destroy(RelacionPersTp $relacionPersTp)
     {
-        $item =RelacionPersTp::where("id",$id)->first();
-        $item->estado_del="E";
-        $item->update();
-        return redirect('/tipopersonal_form');
+
     }
 }

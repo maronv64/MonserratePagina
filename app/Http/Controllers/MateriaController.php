@@ -23,7 +23,8 @@ class MateriaController extends Controller
     public function index()
     {
         //$item3=TipoPersonal::Where([["estado_del","A"],["descripcion","like","%docente%"]])->first();
-        $items=Materia::with("lista_tipo_person")->Where("estado_del","A")->get();
+        $items=Materia::with("lista_person")->Where("estado_del","A")->get();
+        //return $items;
         $items1=Personal::Where("estado_del","A")->get();
         return view("admin.Materias.FormMaterias" ,["lista_materias"=>$items,"lista_person"=>$items1]);
         // echo $items;
@@ -64,7 +65,7 @@ class MateriaController extends Controller
      */
     public function show($id)
     {
-        $item =Materia::where("id",$id)->first();
+        $item =Materia::with("lista_person")->where("id",$id)->first();
         return response()->json($item);
     }
 
