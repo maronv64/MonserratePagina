@@ -24,16 +24,18 @@ Route::get('/', function () {
 
     $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
     // // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
-    $social=\App\social::where("estado_del","A")->limit(4)->get();
-    $personal=\App\personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->limit(2)->get();
+    $social=\App\Social::where("estado_del","A")->limit(4)->get();
+    $personal=\App\Personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->limit(2)->get();
 
-    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace , "estudiantes"=>$estudiantes]);
+    return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace , "estudiantes"=>$estudiantes ]);
     // return view('welcome');
 });
 
 Auth::routes();
 Route::get('/personals', function(){
-    return view('personal');
+    $lista_materias=\App\Materia::where("estado_del","A")->get();
+
+    return view('personal',["lista_materias"=>$lista_materias]);
 });      
 
 Route::get('/home', 'HomeController@index')->name('home');        
