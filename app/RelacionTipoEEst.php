@@ -13,7 +13,7 @@ class RelacionTipoEEst extends Model
     }
     public function estudiante()
     {
-        return $this->hasOne('App\Estudiante', 'id', 'id_estudiante');
+        return $this->hasOne('App\Estudiante', 'id', 'id_estudiante')->with("especialidad");
         
     }
 }

@@ -73,6 +73,14 @@
                                     </div>
                                     <input type="text" id="tituloPersonal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo"> 
                                </div>
+
+                               <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroup-sizing-default">Cargo</span>
+                                    </div>
+                                    <input type="text" id="cargoPersonal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cargo"> 
+                               </div>
+
                                <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
