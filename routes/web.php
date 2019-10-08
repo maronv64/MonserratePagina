@@ -32,6 +32,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/personals', function(){
+    return view('personal');
+});      
 
 Route::get('/home', 'HomeController@index')->name('home');        
 
