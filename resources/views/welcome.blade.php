@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="es" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,7 +57,7 @@
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
-							<li class="menu-active"><a href="index.html">Home</a></li>
+						<li class="menu-active"><a href="{{url('/')}}">Inicio</a></li>
 							<li><a href="archive.html">Archive</a></li>
 							<li><a href="category.html">Category</a></li>
 							<li class="menu-has-children"><a href="">Post Types</a>
@@ -73,7 +73,7 @@
 						  <li><a href="contact.html">Contact</a></li>
 					   </ul>
 					</nav><!-- #nav-menu-container -->
-					<div class="navbar-right">
+					{{-- <div class="navbar-right">
 						<form class="Search">
 							<input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
 							<label for="Search-box" class="Search-box-label">
@@ -83,7 +83,7 @@
 								<span class="lnr lnr-cross"></span>
 							</span>
 						</form>
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</header>
@@ -645,8 +645,8 @@
 			<div class="container">
 				<div>					
 					<form action ="{{url('/buzon')}}" method="POST" class="row">
-					@csrf 
-                    @method('POST')   
+						@csrf 
+						@method('POST')   
 						<div class = "col-md-6">
 							<div class="form-group">
 								<label for="formGroupExampleInput">nombre</label>
@@ -666,12 +666,9 @@
 								<textarea name="mensaje" class="form-control" id="" cols="30" rows="10"></textarea>
 							</div>
 						</div>
-					</form>
-					
-					
-				</div>
-				
-			 </div>
+					</form>	
+				</div>		
+			</div>
 		</footer>
 		<!-- End footer Area -->
 		

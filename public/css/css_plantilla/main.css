@@ -1478,7 +1478,7 @@ body {
 
 .top-post-area .top-post-left .top-post-details .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;/*#f6214b*/
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;
@@ -1562,7 +1562,7 @@ body {
 
 .top-post-area .top-post-right .single-top-post .top-post-details .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;/*#f6214b*/
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;
@@ -1688,7 +1688,7 @@ body {
 
 .latest-post-area .latest-post-wrap .single-latest-post .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;/*#f6214b;*/
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;
@@ -1806,7 +1806,7 @@ body {
 
 .popular-post-wrap .feature-post .details .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;
@@ -1886,7 +1886,7 @@ body {
 
 .popular-post-wrap .single-popular-post .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;
@@ -1988,7 +1988,7 @@ body {
 
 .relavent-story-post-wrap .single-relavent-post .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;
@@ -2105,7 +2105,7 @@ body {
 
 .editors-pick-post .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;
@@ -2792,7 +2792,7 @@ body {
 
 .single-post-wrap .tags li {
   display: inline-block;
-  background: #f6214b;
+  background: #007bff;
   color: #fff;
   padding: 4px 30px;
   font-weight: 300;

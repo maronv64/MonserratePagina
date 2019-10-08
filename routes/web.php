@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 
-    $institucion=\App\institucion::where("estado_del","A")->first();
+    $institucion=\App\Institucion::where("estado_del","A")->first();
 
     return view('welcome',["institucion"=>$institucion]);
     // return $institucion;
