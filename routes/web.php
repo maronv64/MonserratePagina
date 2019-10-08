@@ -25,7 +25,7 @@ Route::get('/', function () {
     $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
     // // return view('welcome',["institucion"=>$institucion,"lista_Enlace"=>$lista_Enlace]);
     $social=\App\social::where("estado_del","A")->limit(4)->get();
-    $personal=\App\personal::where("estado_del","A")->limit(2)->get();
+    $personal=\App\personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->limit(2)->get();
 
     return view('welcome',["institucion"=>$institucion,"social"=>$social,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace , "estudiantes"=>$estudiantes]);
     // return view('welcome');

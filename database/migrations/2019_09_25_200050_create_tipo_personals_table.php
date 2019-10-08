@@ -16,7 +16,7 @@ class CreateTipoPersonalsTable extends Migration
         Schema::create('tipo_personals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('descripcion');
-            $table->string('estado_del','2');
+            $table->string('estado_del','2')->default("A");
             $table->timestamps();
         });
     }

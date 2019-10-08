@@ -64,6 +64,7 @@ class PersonalController extends Controller
         $personal->apellidos=$request->apellidos;
         $personal->cedula=$request->cedula;
         $personal->titulo=$request->titulo;
+        $personal->cargo=$request->cargo;
         $personal->telefono=$request->telefono;
         $personal->estado_del="A";
         $personal->save();
@@ -107,6 +108,7 @@ class PersonalController extends Controller
         $item->apellidos=$request->apellidos;
         $item->cedula=$request->cedula;
         $item->titulo=$request->titulo;
+        $item->cargo=$request->cargo;
         $item->telefono=$request->telefono;
         $item->update();
        return redirect('/personal_form');

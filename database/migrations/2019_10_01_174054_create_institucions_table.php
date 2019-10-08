@@ -17,7 +17,7 @@ class CreateInstitucionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('mision','500');
             $table->string('vision','500');
-            $table->string('himno','800');
+            $table->string('himno','1800');
             $table->string('file_name',"100");
             $table->string('file_ext',"100");
             $table->string('estado_del')->default('A');

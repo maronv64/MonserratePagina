@@ -6,6 +6,7 @@ function verPersonal(id) {
         $("#apellidosPersonal").val(data.apellidos);
         $("#cedulaPersonal").val(data.cedula);
         $("#tituloPersonal").val(data.titulo);
+        $("#cargoPersonal").val(data.cargo);
         $("#telefonoPersonal").val(data.telefono);
     }
     );
