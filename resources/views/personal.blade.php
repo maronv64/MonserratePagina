@@ -73,113 +73,38 @@
 						  <li><a href="#buzon">Buzón</a></li>
 					   </ul>
 					</nav><!-- #nav-menu-coantainer -->
-					<div class="navbar-right">
-						<form class="Search">
-							<input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
-							<label for="Search-box" class="Search-box-label">
-								<span class="lnr lnr-magnifier"></span>
-							</label>
-							<span class="Search-close">
-								<span class="lnr lnr-cross"></span>
-							</span>
-						</form>
-					</div>
+					
 				</div>
 			</div>
 		</header>
 		
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
-			<section class="top-post-area pt-10">
+			
+			<!-- End top-post Area -->
+			<!-- Start latest-post Area -->
+            <section class="top-post-area pt-10">
 				<div class="container no-padding">
-					<div class="row small-gutters">
-						<div class="col-lg-8 top-post-left">
-							<div class="feature-image-thumb relative">
-								<div class="overlay overlay-bg"></div>
-									@isset($institucion)
-										<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="" style="width:1800px!important; height:450px!important">
-
-									@endisset
-							</div>
-							<div class="top-post-details">
-								<ul class="tags">
-									<li><a href="#">Unidad Educativa Monserrate Álava González</a></li>
-								</ul>
-								<a href="image-post.html">
-									<h3></h3>
-								</a>
-								<!-- {{--<ul class="meta">
-									<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-									<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-									<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-								</ul>--}} -->
-							</div>
-						</div>
-						<div class="col-lg-4 top-post-right">
-							<div class="single-top-post">
-								<div class="feature-image-thumb relative">
-									<div class="overlay overlay-bg"></div>
-									{{--<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$institucion['file_name'].'.'.$institucion['file_ext']}}" alt="">		--}}							
-									<img class="img-fluid" src="img/zzz.jpg" alt="">
-								</div>
-								<div class="top-post-details">
-									@isset($institucion)
-										<a href="image-post.html">
-											<h4>{{$institucion["mision"]}}</h4>
-										</a>
-										<ul class="tags">
-											<li><a href="#">Misión</a></li>
-										</ul>
-									@endisset
-									
-									<!--{{-- <ul class="meta">
-										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-										<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-									</ul>--}} -->
-								</div>
-							</div>
-							<div class="single-top-post mt-10">
-								<div class="feature-image-thumb relative">
-									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/zzz.jpg" alt="">
-								</div>
-								<div class="top-post-details">
-									@isset($institucion)
-										<a href="image-post.html">
-											<h4>{{$institucion["vision"]}}</h4>
-										</a>
-										<ul class="tags">
-											<li><a href="#">Visión</a></li>
-										</ul>
-									@endisset
-									
-									<!--{{-- <ul class="meta">
-										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-										<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-									</ul>--}} -->
-								</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="hero-nav-area">
+								<h1 class="text-white">Conozca Nuestras Autoridades</h1>
 							</div>
 						</div>
 						<div class="col-lg-12">
-						   <hr><hr/>
-							<!-- <div class="news-tracker-wrap">
-								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
-							</div> -->
+							<div class="news-tracker-wrap">
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- End top-post Area -->
-			<!-- Start latest-post Area -->
 			<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
 							<div class="latest-post-wrap">
-								<h4 class="cat-title">Noticias y Eventos</h4>
+								<h4 class="cat-title">Autoridades</h4>
 									@isset($social)
 										@foreach($social as $item)
 										<div class="single-latest-post row align-items-center">
@@ -218,84 +143,7 @@
 							</div> -->
 							<!-- End banner-ads Area -->
 							<!-- Start popular-post Area -->
-							<div class="popular-post-wrap">
-								<h4 class="title">Autoridades</h4>
-								<div class="feature-post relative">
-									<div class="feature-img relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/magAutoridad.jpg" alt="">
-									</div>
-									<div class="details">
-										<ul class="tags">
-											<li><a href="#">AUTORIDADES UEMAG</a></li>
-										</ul>
-										<a href="image-post.html">
-											<h6></h6>
-										</a>
-										<!-- <ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span></a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span></a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span></a></li>
-										</ul> -->
-									</div>
-								</div>
-								
-								<div class="row mt-20 medium-gutters">
-									@isset($personal)
-											@foreach($personal as $item )
-										<div class="col-lg-6 single-popular-post">
-											<div class="feature-img-wrap relative">
-												<div class="feature-img relative">
-													<div class="overlay overlay-bg"></div>
-													<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="">
-												</div>
-												<ul class="tags">
-													<li><a href="#">{{$item['cargo']}}</a></li>
-												</ul>
-											</div>
-											<div class="details">
-												<a href="image-post.html">
-													<h4>{{$item['apellidos'] . ' ' . $item['nombres']}}</h4>
-												</a>
-												<ul class="meta">
-													<li><a href="#"><span class="lnr lnr-user"></span>{{$item['telefono']}}</a></li>
-													<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-													<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li> -->
-												</ul>
-												<p class="excert">
-													{{$item['titulo']}}
-												</p>
-											</div>
-										</div>
-									@endforeach
-									@endisset
-									<!-- <div class="col-lg-6 single-popular-post">
-										<div class="feature-img-wrap relative">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/f3.jpg" alt="">
-											</div>
-											<ul class="tags">
-												<li><a href="#">Travel</a></li>
-											</ul>
-										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
-											</p>
-										</div>
-									</div> -->
-								</div>
-							</div>
+							
 							<!-- End popular-post Area -->
 							<!-- Start relavent-story-post Area -->
 							<div class="relavent-story-post-wrap mt-30">
