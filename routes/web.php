@@ -16,6 +16,7 @@ Route::get('/', function () {
     $institucion=\App\Institucion::where("estado_del","A")->first();
 
     $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
+
     // echo $estudiantes;
     // return response()->json($estudiantes);
     // $estudiantes=\App\Estudiante::with(["lista_tipos","especialidad"])->where([["estado_del","A"],["descripcion"]])->get();
@@ -37,6 +38,18 @@ Route::get('/personals', function(){
 
     return view('personal',["lista_materias"=>$lista_materias]);
 });      
+
+Route::get('/mostrar_estudiante', function(){
+    $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where("estado_del","A")->get();
+    $institucion=\App\Institucion::where("estado_del","A")->first();
+    $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
+
+
+        // return response()->json($estudiantes);
+
+    return view('estudiantes',["estudiantes"=>$estudiantes,"lista_Enlace"=>$lista_Enlace,"institucion"=>$institucion]);
+});      
+
 
 Route::get('/home', 'HomeController@index')->name('home');        
 
