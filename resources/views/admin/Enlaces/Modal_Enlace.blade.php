@@ -13,7 +13,7 @@
                                     <h5 class="card-title text-white">Enlace</h5>
             
                                  </div>
-                                 <form action="{{route('enlace.update',1)}}" method="POST">
+                                 <form class="needs-validation" action="{{route('enlace.update',1)}}" method="POST">
                                     @method('PATCH')
                                     @csrf
                                     <input type="hidden" id="idEnlace" name="id">
@@ -24,14 +24,14 @@
                                             <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
                                                 </div>
-                                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="nameEnlace" name ="nombre">  
+                                                    <input required type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="nameEnlace" name ="nombre">  
 
                                             &nbsp;
 
                                             <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroup-sizing-default">url</span>
                                                 </div>
-                                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="urlEnlace" name ="url">                                                                                                                                    
+                                                    <input required type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="urlEnlace" name ="url">                                                                                                                                    
                                         </div>  
                                     </div>
                                     <div class="modal-footer">

@@ -16,14 +16,14 @@
                      <div class="card-header" style="background: #007bff">Institucion</div>
 
                     <div class="card-body">
-                         <form action="{{url('/institucion')}}" method="POST" enctype="multipart/form-data">
+                         <form class="needs-validation" action="{{url('/institucion')}}" method="POST" enctype="multipart/form-data">
                          @csrf
                                 <div class="row">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">mision</span>
                                         </div>
-                                        <textarea name="mision" class="form-control" aria-label="With textarea"></textarea>
+                                        <textarea required name="mision" class="form-control" aria-label="With textarea"></textarea>
                                     </div>                                                       
                                 </div>
                                 <div class="row">
@@ -31,7 +31,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">vision</span>
                                         </div>
-                                        <textarea name="vision" class="form-control" aria-label="With textarea"></textarea>
+                                        <textarea required name="vision" class="form-control" aria-label="With textarea"></textarea>
                                     </div>   
                                 </div>
                                 <div class="row">
@@ -39,7 +39,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">himno</span>
                                         </div>                                                        
-                                        <textarea name="himno" class="form-control" aria-label="With textarea"></textarea>
+                                        <textarea required name="himno" class="form-control" aria-label="With textarea"></textarea>
                                     </div>
                                 </div>
                                 <!-- <input type="file" name ="file"> -->
@@ -49,7 +49,7 @@
                                             <span class="input-group-text" id="inputGroupFileAddon01">actualizar</span>
                                         </div>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                                            <input required type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
                                             <label class="custom-file-label" for="inputGroupFile01">escoger archivo</label>
                                         </div>
                                    </div>
@@ -82,7 +82,7 @@
                                             <td>{{$item['mision']}}</td>
                                             <td>{{$item['vision']}}</td>
                                             <td>{{$item['himno']}}</td>
-                                            <td>archivo</td>
+                                            <td> <a href="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" target="_blank">ver</a> </td>
                                             <td>                                        
                                                 <form action="{{route('institucion.destroy',$item['id'])}}" method="POST">
                                                                 @csrf

@@ -8,7 +8,7 @@
                                                  Modificar Especialidades
                                         </div> 
 
-                                        <form action="{{route('Especialidades_control.update',1)}}" method="POST">
+                                        <form class="needs-validation" action="{{route('Especialidades_control.update',1)}}" method="POST">
                                                 @csrf
                                                 @method('PATCH')
                                                 
@@ -21,7 +21,7 @@
                                                                         <span class="input-group-text" id="inputGroup-sizing-default">Descripcion </span>
                                                                 </div>
                                                                 <input type="hidden" id="idEspecialidad" name="id">
-                                                                <input id="descripcionEspecialidad" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                                                                <input required id="descripcionEspecialidad" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                                                         </div>
                                                 </div>   
                                                 <div class="modal-footer">

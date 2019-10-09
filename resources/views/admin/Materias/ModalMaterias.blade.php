@@ -8,7 +8,7 @@
                                         <div class="modal-header">
                                                 Modificar Materias
                                         </div> 
-                                        <form action="{{route('materia_control.update',1)}}" method="POST">
+                                        <form class="needs-validation" action="{{route('materia_control.update',1)}}" method="POST">
                                                 @csrf
                                                 @method('PATCH')
                                                 <div class="modal-body">
@@ -17,7 +17,7 @@
                                                                         <span class="input-group-text" id="inputGroup-sizing-default">Descripcion </span>
                                                                 </div>
                                                                 <input type="hidden" id="idMaterias" name="id">
-                                                                <input id="descripcionMaterias" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                                                                <input required id="descripcionMaterias" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
                                                         </div>
                                                         
                                                 </div>   
