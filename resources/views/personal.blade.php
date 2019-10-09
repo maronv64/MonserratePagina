@@ -194,10 +194,18 @@
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
-													@isset($institucion)
-														<h4 style="text-align:center"><?php echo $institucion["himno"]?></h4>
-													@endisset
-												
+													<ul class="social-list">
+														@isset($lista_materias)
+															@foreach($lista_materias as $item)
+																<li class="d-flex justify-content-between align-items-center fb">
+																	<div class="icons d-flex flex-row align-items-center">
+																	
+																		<h5 target="_blank" style="color:#000000" >{{$item['descripcion']}}</h5>
+																	</div>											
+																</li>
+															@endforeach
+														@endisset
+													</ul>
 											</div>
 										 </div>	
 									</div>
