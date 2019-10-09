@@ -35,8 +35,8 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/personals', function(){
     $lista_materias=\App\Materia::where("estado_del","A")->get();
-
-    return view('personal',["lista_materias"=>$lista_materias]);
+    $personal=\App\Personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->get();
+    return view('personal',["lista_materias"=>$lista_materias,"personal"=>$personal]);
 });      
 
 Route::get('/mostrar_estudiante', function(){
