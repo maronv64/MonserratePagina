@@ -41,7 +41,7 @@
                     <tbody>
                         @foreach($lista_especialidades as $item)
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{$loop->iteration}}</th>
                                 <td>{{$item["descripcion"]}} </td>
                                 <td>
                                 @foreach($item["lista_materias"] as $item2)

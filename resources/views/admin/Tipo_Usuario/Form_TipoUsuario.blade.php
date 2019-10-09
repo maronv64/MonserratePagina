@@ -43,7 +43,7 @@
                           <tbody>
                             @foreach ($lista_tipoUsuario as $item)
                               <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{$loop->iteration}}</th>
                                 <td>{{$item['descripcion']}}</td>
                                 <td>
                                     <button type="button" class="btn btn-info" onclick = "verTipoUsuario(<?php echo $item['id'] ?>)">Modificar</button>

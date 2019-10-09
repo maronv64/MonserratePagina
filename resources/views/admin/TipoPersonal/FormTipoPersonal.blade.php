@@ -39,7 +39,7 @@
                             <tbody>
                                 @foreach($lista_tipo_personal as $item)
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row">{{$loop->iteration}}</th>
                                             <th>
                                                 {{$item["descripcion"]}}
                                             </th>
