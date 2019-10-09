@@ -37,7 +37,12 @@ Route::get('/personals', function(){
     $lista_materias=\App\Materia::where("estado_del","A")->get();
     $personal=\App\Personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->get();
     return view('personal',["lista_materias"=>$lista_materias,"personal"=>$personal]);
-});      
+});  
+
+Route::get('/social', function(){
+    $social=\App\Social::where("estado_del","A")->get();
+    return view('social',["social"=>$social]);
+}); 
 
 Route::get('/mostrar_estudiante', function(){
     $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where("estado_del","A")->get();
