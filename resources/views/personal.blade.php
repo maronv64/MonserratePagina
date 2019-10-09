@@ -198,8 +198,8 @@
 															@foreach($lista_materias as $item)
 																<li class="d-flex justify-content-between align-items-center fb">
 																	<div class="icons d-flex flex-row align-items-center">
-																		<i class="fa fa-facebook" aria-hidden="true"></i>
-																		<a target="_blank" href="{{$item['url']}}">{{$item['descripcion']}}</a>
+																	
+																		<h5 target="_blank" style="color:#000000" >{{$item['descripcion']}}</h5>
 																	</div>											
 																</li>
 															@endforeach
