@@ -8,6 +8,8 @@ use App\Especialidades;
 use App\TipoPersonal;
 use App\TipoSocial;
 use App\TipoEstudiante;
+use App\Enlace;
+use App\Materia;
 
 class DatabaseSeeder extends Seeder
 {
@@ -83,8 +85,51 @@ class DatabaseSeeder extends Seeder
        $item->estado_del="A";
        $item->save();
 
-       
+       $item = new Enlace();
+       $item->name="facebook";       
+       $item->url="https://www.facebook.com/monserrate.alavadegonzalez.9";
+       $item->save();
 
-        // $this->call(UsersTableSeeder::class);
+       $item =new Materia();
+       $item->descripcion="Analisis";
+       $item->estado_del="A";
+       $item->save();
+
+       $item =new Materia();
+       $item->descripcion="CASE";
+       $item->estado_del="A";
+       $item->save();
+
+       $item =new Materia();
+       $item->descripcion="Matematica";
+       $item->estado_del="A";
+       $item->save();
+
+       $item =new Materia();
+       $item->descripcion="Ingles";
+       $item->estado_del="A";
+       $item->save();
+
+       $item =new Materia();
+       $item->descripcion="Biologia";
+       $item->estado_del="A";
+       $item->save();
+
+       $item =new Materia();
+       $item->descripcion="Educacion Fisica";
+       $item->estado_del="A";
+       $item->save();
+       
+       $item =new Materia();
+       $item->descripcion="Diseño";
+       $item->estado_del="A";
+       $item->save();
+
+       $item =new Materia();
+       $item->descripcion="Emprendimiento y Gestion";
+       $item->estado_del="A";
+       $item->save();
+
+    //$this->call(UsersTableSeeder::class);
     }
 }

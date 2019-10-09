@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>UEMAG PERSONAL</title>
+		<title>UEMAG SOCIALES</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--
 		CSS
@@ -88,7 +88,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="hero-nav-area">
-								<h1 class="text-white">Conozca Nuestras Autoridades</h1>
+								<h1 class="text-white">Conozca Nuestras Actividades Sociales</h1>
 							</div>
 						</div>
 						<div class="col-lg-12">
@@ -103,45 +103,37 @@
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
-							<div class="relavent-story-post-wrap mt-30">
-								<h4 class="title">Autoridades</h4>
-								<div class="relavent-story-list-wrap">
-									@isset($personal)
-										@foreach($personal as $item  )
-											
-												<div class="single-relavent-post row align-items-center">
-													<div class="col-lg-5 post-left">
-														<div class="feature-img relative">
-															<div class="overlay overlay-bg"></div>
-															<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
-														</div>
-														<ul class="tags">
-															<li><a href="#">{{$item['cargo']}}</a></li>
-														</ul>
-													</div>
-													<div class="col-lg-7 post-right">
-														<a href="image-post.html">
-															<h4>{{$item['apellidos'] . ' ' . $item['nombres']}}</h4>
-														</a>
-														<ul class="meta">
-															<li><a href="#"><span class="lnr lnr-user"></span>{{$item['telefono']}}</a></li>
-															<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-															<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li> -->
-														</ul>
-														<p class="excert">
-													       {{$item['titulo']}}
-												        </p>
-														<!-- <p class="excert">
-															Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-														</p> -->
-													</div>
+							<div class="latest-post-wrap">
+								<h4 class="cat-title">Noticias y Eventos</h4>
+									@isset($social)
+										@foreach($social as $item)
+										<div class="single-latest-post row align-items-center">
+											<div class="col-lg-5 post-left">
+												<div class="feature-img relative">
+													<div class="overlay overlay-bg"></div>
+													<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
 												</div>
-											
-										@endforeach
+												<ul class="tags">
+													<li><a href="#">{{$item["tiposocial"]["descripcion"]}}</a></li>
+												</ul>
+											</div>
+											<div class="col-lg-7 post-right">
+												<a href="image-post.html">
+													<h4>{{$item["titulo"]}}</h4>
+												</a>
+												<!-- <ul class="meta">
+													<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
+													<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+													<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
+												</ul> -->
+												<p class="excert">
+												{{$item["descripcion"]}}
+												</p>
+											</div>
+										</div>
+										@endforeach	
 									@endisset
-									
-
-								</div>
+															
 							</div>
 							<!-- End latest-post Area -->
 							
@@ -157,8 +149,8 @@
 							
 							<!-- End relavent-story-post Area -->
 						</div>
-						<div class="col-lg-4">
-							<div class="sidebars-area">
+						 <div class="col-lg-4">
+							<!--<div class="sidebars-area">
 								<div class="single-sidebar-widget editors-pick-widget">
 									<h6 style="text-align:center" class="title">Materias</h6>
 									<div >
@@ -180,7 +172,7 @@
 											</div>
 										 </div>	
 									</div>
-								</div>
+								</div> -->
 								<div class="single-sidebar-widget ads-widget">
 									<!-- <img class="img-fluid" src="img/sidebar-ads.jpg" alt=""> -->
 									<form  class ="img-fluid" action="">

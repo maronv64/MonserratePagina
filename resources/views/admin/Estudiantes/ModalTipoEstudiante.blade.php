@@ -28,23 +28,7 @@
                     </tr>
                 </thead>
                 <tbody id="tabla_tipos_estudiantes">
-                @foreach($lista_TipoEstudiante as $item)
-                    <tr>
-                        <td >{{$loop->iteration}}</td>
-                        <td>{{$item['descripcion']}}</td>
-                        <td> 
-                            <div class="form-check">
-                            
-                                <input class="form-check-input position-static" type="checkbox"   id="blankCheckbox_{{$item['id']}}" value="<?php echo $item['id'] ?>" aria-label="..." onclick="pasaridtipo(this)" >
-
-                            </div>         
-                        </td>
-                        <td>
-                        <input id="cargo_{{$item['id']}}" type="hidden" class="ver" value="">
-                        <a style="visibility:hidden" href="#"  id="btnGuardarCargo_{{$item['id']}}" class="btn btn- btn-primary" onclick="GE_guardarCargo(<?php echo $item['id'] ?>)">x</a>
-                        </td>
-                    </tr>
-                @endforeach
+                    
                 </tbody>
             </table>
        

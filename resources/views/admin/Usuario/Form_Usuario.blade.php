@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-9">
                         <div class ="content">
-                                <form action ="{{url('/users')}}" method="POST">
+                                <form class="needs-validation" action ="{{url('/users')}}" method="POST">
                                 @csrf 
                                 @method('POST')                     
                                     <div class="card ">
@@ -47,13 +47,13 @@
 
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="inputGroup-sizing-default">contraseñora</span>
+                                                        <span class="input-group-text" id="inputGroup-sizing-default">contraseña</span>
                                                     </div>
                                                         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name = "contraseña">                                                                                 
                                                 </div> 
 
                                                 <div class="input-group mb-3">
-                                                <input type="submit" value="agregar">       
+                                                <input class="btn btn-info" type="submit" value="agregar">       
                                                 <!-- <button type="button" class="btn btn-info">Agregar</button>                                                                         -->
                                                 </div> 
                                             </div>

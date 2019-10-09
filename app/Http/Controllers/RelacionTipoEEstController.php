@@ -36,7 +36,7 @@ class RelacionTipoEEstController extends Controller
      */
     public function store(Request $request)
     {
-
+        return $request;
         $limpieza=RelacionTipoEEst::where("id_estudiante",$request->idEstudiante);
         $limpieza->delete();
 

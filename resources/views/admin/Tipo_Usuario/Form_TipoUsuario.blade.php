@@ -13,7 +13,7 @@
                 {{-- <div class="card-header">Dashboard</div> --}}
 
                 {{-- <div class="card-body"> --}}
-                      <form action ="{{url('/tipo_usuario')}}" method="POST">  
+                      <form class="needs-validation" action ="{{url('/tipo_usuario')}}" method="POST">  
                               @csrf 
                               @method('POST')                
                                   <div class="card ">
@@ -25,9 +25,9 @@
                                           <div class="input-group-prepend">
                                               <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
                                           </div>
-                                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name ="descripcion">
+                                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name ="descripcion" required>
                                           &nbsp;
-                                          <input type="submit" value="agregar">
+                                          <input type="submit" value="agregar" class="btn btn-primary">
                                         </div>
                                       </div>
                                   </div>
@@ -43,7 +43,7 @@
                           <tbody>
                             @foreach ($lista_tipoUsuario as $item)
                               <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{$loop->iteration}}</th>
                                 <td>{{$item['descripcion']}}</td>
                                 <td>
                                     <button type="button" class="btn btn-info" onclick = "verTipoUsuario(<?php echo $item['id'] ?>)">Modificar</button>

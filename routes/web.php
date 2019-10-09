@@ -35,9 +35,14 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/personals', function(){
     $lista_materias=\App\Materia::where("estado_del","A")->get();
+    $personal=\App\Personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->get();
+    return view('personal',["lista_materias"=>$lista_materias,"personal"=>$personal]);
+});  
 
-    return view('personal',["lista_materias"=>$lista_materias]);
-});      
+Route::get('/social', function(){
+    $social=\App\Social::where("estado_del","A")->get();
+    return view('social',["social"=>$social]);
+}); 
 
 Route::get('/mostrar_estudiante', function(){
     $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where("estado_del","A")->get();
@@ -70,6 +75,7 @@ Route::resource('/tipo_usuario','TipoUsuarioController');
 //Route::resource('/Tipo_Usuario','TipoUsuarioController');
 
 Route::resource('/tipo_estudiante','TipoEstudianteController');
+Route::get('/tipo_estudiante_filtro/{data?}','TipoEstudianteController@filtro');
 Route::resource('/estudiante','EstudianteController');
 Route::resource('/relacion_tipoe_est','RelacionTipoEEstController');
 

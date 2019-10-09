@@ -237,7 +237,7 @@
 											<div class="feature-img-wrap relative">
 												<div class="feature-img relative">
 													<div class="overlay overlay-bg"></div>
-													<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="">
+													<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
 												</div>
 												<ul class="tags">
 													<li><a href="#">{{$item['cargo']}}</a></li>
@@ -289,7 +289,7 @@
 							<!-- End popular-post Area -->
 							<!-- Start relavent-story-post Area -->
 							<div class="relavent-story-post-wrap mt-30">
-								<h4 class="title">Relavent Stories</h4>
+								<h4 class="title">Cuadro de Honor</h4>
 								<div class="relavent-story-list-wrap">
 									@isset($estudiantes['lista_estudiante'])
 										@foreach($estudiantes['lista_estudiante'] as $item )
@@ -298,7 +298,7 @@
 													<div class="col-lg-5 post-left">
 														<div class="feature-img relative">
 															<div class="overlay overlay-bg"></div>
-															<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['estudiante']['file_name'].'.'.$item['estudiante']['file_ext']}}" alt="">
+															<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['estudiante']['file_name'].'.'.$item['estudiante']['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
 														</div>
 														<ul class="tags">
 															<li><a href="#">{{$item['Cargo']}}</a></li>

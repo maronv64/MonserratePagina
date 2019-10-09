@@ -9,7 +9,7 @@
             @include('admin.dashboard')
         </div>
         <div class="col-md-9">
-        <form action="{{url('/estudiante')}}" method="POST" enctype="multipart/form-data">
+        <form class="needs-validation" action="{{url('/estudiante')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST') 
             <div class="card">
@@ -21,21 +21,21 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nombres y Apellidos</span>
                         </div>
-                        <input type="text" aria-label="First name" class="form-control" name="nombre">
-                        <input type="text" aria-label="Last name" class="form-control" name="apellido">
+                        <input type="text" aria-label="First name" class="form-control" name="nombre" required>
+                        <input type="text" aria-label="Last name" class="form-control" name="apellido" required>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Cedula &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
                         </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cedula">
+                            <input type="text" class="form-control solonumeros"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cedula" maxlength="10"  required>
                     </div> 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Especialidades &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
                         </div>
-                        <select  class="custom-select" id="inputGroupSelect01" name="idespecialidad">
-                        <option disabled="true" selected>Escoja...</option>                  
+                        <select  class="custom-select" id="inputGroupSelect01" name="idespecialidad" required>
+                        <!-- <option disabled="true" selected>Escoja...</option>                   -->
                             @foreach($lista_TipoEspecialidad as $item)
                                 <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                             @endforeach
@@ -46,7 +46,7 @@
                             <span class="input-group-text" id="inputGroupFileAddon01">Archivo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>
                         </div>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file" required>
                             <label class="custom-file-label" for="inputGroupFile01">Escoger Archivo...</label>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                     <th scope="col">Opciones</th>
                     </tr>
             </thead>
-               <?php $contador=0;?>
+              
                 @foreach($listaEstudiante as $item)
                     <tr>
                         <th scope="row">{{$loop->iteration}}</th>
@@ -88,7 +88,7 @@
                         @endforeach
                         </td>
                         <td>
-                        <button type="button" onclick='GE_verTipoE(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Tipo Estudiante</button>
+                        <button type="button" onclick='GE_CargarTablaTipoE(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Tipo Estudiante</button>
                         <button type="button" onclick='GE_verEstudiantes(<?php echo $item["id"] ?>)' class="btn btn-outline-info" >Modificar</button>
                             <form action="{{route('estudiante.destroy',$item['id'])}}" method="POST">
                                 @csrf    

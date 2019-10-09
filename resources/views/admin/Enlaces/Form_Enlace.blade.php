@@ -51,7 +51,7 @@
                           <tbody>
                             @foreach ($lista_Enlace as $item)
                               <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{$loop->iteration}}</th>
                                 <td>{{$item['name']}}</td>
                                 <td>{{$item['url']}}</td>
                                 <td>

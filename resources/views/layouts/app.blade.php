@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/adminSIS.js') }}" defer></script>
     <script src="{{ asset('js/GestionEspecialidades.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoEstudiante.js') }}" defer></script>
     <script src="{{ asset('js/GestionTipoSocial.js') }}" defer></script>
