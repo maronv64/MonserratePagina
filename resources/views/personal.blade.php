@@ -103,38 +103,45 @@
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
-								<h4 class="cat-title">Autoridades</h4>
-								@isset($personal)
-											@foreach($personal as $item )
+							<div class="relavent-story-post-wrap mt-30">
+								<h4 class="title">Autoridades</h4>
+								<div class="relavent-story-list-wrap">
+									@isset($personal)
+										@foreach($personal as $item  )
 											
-										<div class="col-lg-6 single-popular-post">
-											<div class="feature-img-wrap relative">
-												<div class="feature-img relative">
-													<div class="overlay overlay-bg"></div>
-													<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
+												<div class="single-relavent-post row align-items-center">
+													<div class="col-lg-5 post-left">
+														<div class="feature-img relative">
+															<div class="overlay overlay-bg"></div>
+															<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['file_name'].'.'.$item['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
+														</div>
+														<ul class="tags">
+															<li><a href="#">{{$item['cargo']}}</a></li>
+														</ul>
+													</div>
+													<div class="col-lg-7 post-right">
+														<a href="image-post.html">
+															<h4>{{$item['apellidos'] . ' ' . $item['nombres']}}</h4>
+														</a>
+														<ul class="meta">
+															<li><a href="#"><span class="lnr lnr-user"></span>{{$item['telefono']}}</a></li>
+															<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+															<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li> -->
+														</ul>
+														<p class="excert">
+													       {{$item['titulo']}}
+												        </p>
+														<!-- <p class="excert">
+															Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+														</p> -->
+													</div>
 												</div>
-												<ul class="tags">
-													<li><a href="#">{{$item['cargo']}}</a></li>
-												</ul>
-											</div>
-											<div class="details">
-												<a href="image-post.html">
-													<h4>{{$item['apellidos'] . ' ' . $item['nombres']}}</h4>
-												</a>
-												<ul class="meta">
-													<li><a href="#"><span class="lnr lnr-user"></span>{{$item['telefono']}}</a></li>
-													<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-													<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li> -->
-												</ul>
-												<p class="excert">
-													{{$item['titulo']}}
-												</p>
-											</div>
-										</div>
-									@endforeach
+											
+										@endforeach
 									@endisset
-															
+									
+
+								</div>
 							</div>
 							<!-- End latest-post Area -->
 							
@@ -147,49 +154,13 @@
 							
 							<!-- End popular-post Area -->
 							<!-- Start relavent-story-post Area -->
-							<div class="relavent-story-post-wrap mt-30">
-								<h4 class="title">Cuadro de Honor</h4>
-								<div class="relavent-story-list-wrap">
-									@isset($estudiantes['lista_estudiante'])
-										@foreach($estudiantes['lista_estudiante'] as $item )
-											@if($loop->iteration<=3)
-												<div class="single-relavent-post row align-items-center">
-													<div class="col-lg-5 post-left">
-														<div class="feature-img relative">
-															<div class="overlay overlay-bg"></div>
-															<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['estudiante']['file_name'].'.'.$item['estudiante']['file_ext']}}" alt="">
-														</div>
-														<ul class="tags">
-															<li><a href="#">{{$item['Cargo']}}</a></li>
-														</ul>
-													</div>
-													<div class="col-lg-7 post-right">
-														<a href="image-post.html">
-															<h4>{{$item['estudiante']['apellido'] . ' ' .$item['estudiante']['nombre']}}</h4>
-														</a>
-														<ul class="meta">
-															<li><a href="#"><span class="lnr lnr-user"></span>{{$item['estudiante']['especialidad']['descripcion'] }}</a></li>
-															<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-															<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li> -->
-														</ul>
-														<!-- <p class="excert">
-															Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-														</p> -->
-													</div>
-												</div>
-											@endif
-										@endforeach
-									@endisset
-									
-
-								</div>
-							</div>
+							
 							<!-- End relavent-story-post Area -->
 						</div>
 						<div class="col-lg-4">
 							<div class="sidebars-area">
 								<div class="single-sidebar-widget editors-pick-widget">
-									<h6 style="text-align:center" class="title">Himno de la Institucion</h6>
+									<h6 style="text-align:center" class="title">Materias</h6>
 									<div >
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
