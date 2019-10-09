@@ -188,15 +188,23 @@
 						<div class="col-lg-4">
 							<div class="sidebars-area">
 								<div class="single-sidebar-widget editors-pick-widget">
-									<h6 style="text-align:center" class="title">Himno de la Institucion</h6>
+									<h6 style="text-align:center" class="title">Materias</h6>
 									<div >
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
-													@isset($institucion)
-														<h4 style="text-align:center"><?php echo $institucion["himno"]?></h4>
-													@endisset
-												
+													<ul class="social-list">
+														@isset($lista_materias)
+															@foreach($lista_materias as $item)
+																<li class="d-flex justify-content-between align-items-center fb">
+																	<div class="icons d-flex flex-row align-items-center">
+																		<i class="fa fa-facebook" aria-hidden="true"></i>
+																		<a target="_blank" href="{{$item['url']}}">{{$item['descripcion']}}</a>
+																	</div>											
+																</li>
+															@endforeach
+														@endisset
+													</ul>
 											</div>
 										 </div>	
 									</div>
