@@ -110,7 +110,8 @@ class EstudianteController extends Controller
     //update
     public function update(Request $request,$id)
     {
-        $items=Estudiante::where("id",$request->id)->first();
+        // return $request;
+        $items=Estudiante::where("id",$request->idEstudiante)->first();
         $items->nombre=$request->nombre;
         $items->apellido=$request->apellido;
         $items->cedula=$request->cedula;

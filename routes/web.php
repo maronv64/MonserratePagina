@@ -75,6 +75,7 @@ Route::resource('/tipo_usuario','TipoUsuarioController');
 //Route::resource('/Tipo_Usuario','TipoUsuarioController');
 
 Route::resource('/tipo_estudiante','TipoEstudianteController');
+Route::get('/tipo_estudiante_filtro/{data?}','TipoEstudianteController@filtro');
 Route::resource('/estudiante','EstudianteController');
 Route::resource('/relacion_tipoe_est','RelacionTipoEEstController');
 
