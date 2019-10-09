@@ -8,6 +8,7 @@ use App\Especialidades;
 use App\TipoPersonal;
 use App\TipoSocial;
 use App\TipoEstudiante;
+use App\Enlace;
 
 class DatabaseSeeder extends Seeder
 {
@@ -83,7 +84,11 @@ class DatabaseSeeder extends Seeder
        $item->estado_del="A";
        $item->save();
 
-       
+       $item = new Enlace();
+       $item->name="facebook";       
+       $item->url="https://www.facebook.com/monserrate.alavadegonzalez.9";
+       $item->estado_del="A";
+       $item->save();
 
         // $this->call(UsersTableSeeder::class);
     }
