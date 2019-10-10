@@ -20,7 +20,7 @@
                                     <input type="hidden" id="idUsuario" name="id">
                                        <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
-                                                      <label class="input-group-text" for="inputGroupSelect01">Id de Tipo</label>
+                                                      <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
                                                 </div>
                                                 <select id="cmbTusuario" name= "idtipo" class="custom-select" >
                                                    <!-- <option disabled ="true" selected>Escoja...</option> -->
