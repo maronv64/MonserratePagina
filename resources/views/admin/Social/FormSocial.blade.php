@@ -10,7 +10,7 @@
                 <div class="col-md-9">
     
 
-                    <form action="{{url('/social_form')}}"  method="POST"   enctype="multipart/form-data">   
+                    <form  class="needs-validation" action="{{url('/social_form')}}"  method="POST"   enctype="multipart/form-data">   
                         @csrf             
                     <div class="card">
                         <div class="card-header">
@@ -23,8 +23,8 @@
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
                                             </div>
-                                            <select name= "idtipo" class="custom-select" id="inputGroupSelect01">
-                                            <option selected>...</option>
+                                            <select name= "idtipo" class="custom-select" id="inputGroupSelect01" required>
+                                            <!-- <option selected>...</option> -->
                                             @foreach($lista_tipo_social as $item)
                                                 <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                                             @endforeach
@@ -35,13 +35,13 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroup-sizing-default">Titulo   </span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo">
+                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo" required>
                                 </div>   
                                 <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroup-sizing-default">Descripcion</span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion"required>
                                 </div>
 
                                 <div class="input-group mb-3">
@@ -49,7 +49,7 @@
                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                                   </div>
                                   <div class="custom-file">
-                                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file" required>
                                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                   </div>
                                 </div>                      

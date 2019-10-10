@@ -7,7 +7,7 @@
                 <div class="modal-header">
                     Agregar Tipo Personal
                 </div> 
-                <form action="{{url('/relacion_personal_tipo')}}" method="POST">
+                <form  action="{{url('/relacion_personal_tipo')}}" method="POST">
 
                     <div class="modal-body">
                                 <input type="hidden" id="idPersonal_" name="idPersonal"> 

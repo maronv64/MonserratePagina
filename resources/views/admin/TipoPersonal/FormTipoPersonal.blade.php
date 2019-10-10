@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-md-9">
 
-                        <form action="{{url('/tipopersonal_form')}}" method="POST">       
+                        <form  class="needs-validation" action="{{url('/tipopersonal_form')}}" method="POST">       
                                 @csrf             
                                 <div class="card ">
                                 <div class="card-header" style="background: #ffeed" >
@@ -19,7 +19,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
                                                 </div>
-                                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion"> 
+                                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion" required> 
                                                     &nbsp;
                                                     <input type="submit" class="btn btn-info" value="Guardar">
                                         </div>

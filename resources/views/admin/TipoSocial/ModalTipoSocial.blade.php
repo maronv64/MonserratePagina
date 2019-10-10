@@ -8,7 +8,7 @@
                         Modificar Tipo Social
                     </div> 
 
-                    <form action="{{route('tiposocial_form.update',1)}}" method="POST">
+                    <form   class="needs-validation" action="{{route('tiposocial_form.update',1)}}" method="POST">
                         @csrf
                         @method('PATCH')
                         <!-- <input name="_method" type="hidden" value="PATCH"> -->
@@ -33,7 +33,7 @@
                                       <span class="input-group-text" id="inputGroup-sizing-default">Descripcion </span>
                                 </div>
                                 <input type="hidden" id="idTipoSocial" name="id">
-                                <input id="descripcionTipoSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                                <input id="descripcionTipoSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion" required>
                               </div>
                         </div>   
                         <div class="modal-footer">

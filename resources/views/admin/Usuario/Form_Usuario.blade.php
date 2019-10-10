@@ -23,15 +23,15 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
                                                     </div>
-                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nombre">                                                                                 
+                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nombre" required>                                                                                  
                                                 </div> 
                                                 
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
                                                     </div>
-                                                    <select name= "idtipo" class="custom-select" id="inputGroupSelect01">
-                                                        <option selected>Escoja...</option>
+                                                    <select name= "idtipo" class="custom-select" id="inputGroupSelect01" required>
+                                                        <!-- <option selected></option> -->
                                                         @foreach($lista_tipoUsuario as $item)
                                                             <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                                                         @endforeach
@@ -42,14 +42,14 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
                                                     </div>
-                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="email">                                                                                 
+                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="email" required>                                                                                 
                                                 </div> 
 
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="inputGroup-sizing-default">contraseña</span>
                                                     </div>
-                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name = "contraseña">                                                                                 
+                                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name = "contraseña" required>                                                                                 
                                                 </div> 
 
                                                 <div class="input-group mb-3">

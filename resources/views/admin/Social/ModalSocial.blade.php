@@ -20,7 +20,7 @@
                        <div class="modal-header">
                           Modificar Social
                        </div>
-                       <form action="{{route('social_form.update',1)}}" method="POST">
+                       <form  class="needs-validation" action="{{route('social_form.update',1)}}" method="POST">
                            @csrf
                            @method('PATCH')
                            <div class="modal-body">
@@ -41,8 +41,8 @@
                                      <div class="input-group-prepend">
                                          <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
                                      </div>
-                                     <select name= "idtipo" class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Escoja...</option>
+                                     <select name= "idtipo" class="custom-select" id="inputGroupSelect01" required>
+                                        <!-- <option selected>Escoja...</option> -->
                                         @foreach($lista_tipo_social as $item)
                                             <option value="{{$item['id']}}">{{$item['descripcion']}} </option>
                                         @endforeach
@@ -54,7 +54,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroup-sizing-default">Titulo   </span>
                                         </div>
-                                        <input id="tituloSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo">
+                                        <input id="tituloSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="titulo" required>
                                </div>
                                
                                <div class="input-group mb-3">
@@ -62,7 +62,7 @@
                                           <span class="input-group-text" id="inputGroup-sizing-default">Descripcion</span>
                                         </div>
                                        
-                                        <input id="descripcionSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                                        <input id="descripcionSocial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion" required>
                                </div>
 
                                <input type="hidden" id="idSocial" name="id">
