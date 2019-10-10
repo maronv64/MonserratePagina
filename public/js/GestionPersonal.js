@@ -27,7 +27,7 @@ function gp_verTipoPersonal(id) {
                     console.log($(this).val());
                     if (item.tipo_personal.id==$(this).val()) {
                         $(this).attr('checked',true);
-                        listaidtipopersonal.push(item.tipo_personal.id);
+                        listaidtipopersonal.push(item.tipo_personal.id.toString());
                     }
                 // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
                 });
@@ -54,8 +54,9 @@ function pasaridtipopersonal(obj)
             console.log(listaidtipopersonal);
         } 
     } else if(obj.checked == false){
-        var indice = listaidtipopersonal.indexOf(id);
-        listaidtipopersonal.splice(indice, 1);
+        removeItemFromArr(listaidtipopersonal, id);
+        // var indice = listaidtipopersonal.indexOf(id);
+        // listaidtipopersonal.splice(indice, 1);
         // console.log(listaidmateria);
     }
     // console.log(listaidtipo);
