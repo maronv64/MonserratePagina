@@ -39,7 +39,7 @@
 								</div>
 								<div class="top-post-details">
 									@isset($institucion)
-										<a href="image-post.html">
+										<a>
 											<h4>{{$institucion["mision"]}}</h4>
 										</a>
 										<ul class="tags">
@@ -61,7 +61,7 @@
 								</div>
 								<div class="top-post-details">
 									@isset($institucion)
-										<a href="image-post.html">
+										<a>
 											<h4>{{$institucion["vision"]}}</h4>
 										</a>
 										<ul class="tags">
