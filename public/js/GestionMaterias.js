@@ -22,7 +22,7 @@ function verDocentes(id) {
                     console.log($(this).val());
                     if (item.personal.id==$(this).val()) {
                         $(this).attr('checked',true);
-                        listaidpersonal.push(item.personal.id);
+                        listaidpersonal.push(item.personal.id.toString());
                     }
                 // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
                 });
@@ -48,8 +48,7 @@ function pasaridpersonal(obj)
             console.log(listaidpersonal);
         } 
     } else if(obj.checked == false){
-        var indice = listaidpersonal.indexOf(id);
-        listaidpersonal.splice(indice, 1);
+        removeItemFromArr(listaidpersonal,id);
         // console.log(listaidmateria);
     }
     // console.log(listaidtipo);
