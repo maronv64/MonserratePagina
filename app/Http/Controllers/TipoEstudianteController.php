@@ -108,4 +108,9 @@ class TipoEstudianteController extends Controller
         // echo "funcion destroy";
         // return;
     }
+    public function filtro($data="")
+    {
+        $items=TipoEstudiante::where([["estado_del","A"],["descripcion","like","%$data%"]])->get();
+        return response()->json($items);
+    }
 }
