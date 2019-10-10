@@ -17,7 +17,7 @@ class CreateRelacionTipoEEstsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_tipo_estudiante');
             $table->bigInteger('id_estudiante');
-            $table->string('Cargo',30);
+            $table->string('Cargo',200);
             $table->string('estado_del',2);
             $table->timestamps();
         });
