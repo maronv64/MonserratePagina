@@ -60,7 +60,7 @@
 						<li class="menu-active"><a href="{{url('/')}}">Inicio</a></li>
 							<li><a href="{{url('/social')}}">Social</a></li>
 							<li><a href="{{url('/personals')}}">Cuerpo de Trabajo</a></li>
-							{{-- <li class="menu-has-children"><a href="">Post Types</a> --}}
+							<li><a href="{{url('/mostrar_estudiante')}}">Estudiantes</a></li>
 						    {{-- <ul>
 								<li><a href="standard-post.html">Standard Post</a></li>
 								<li><a href="image-post.html">Image Post</a></li>
