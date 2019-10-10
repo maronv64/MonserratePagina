@@ -53,7 +53,7 @@
                                                 <div class="input-group-prepend">
                                                   <span class="input-group-text" id="inputGroup-sizing-default">Cedula</span>
                                                 </div>
-                                                <input type="text" class="form-control solonumeros" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cedula" required>
+                                                <input type="text" class="form-control solonumeros" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cedula" maxlength="10"  required>
                                         </div>
                                         <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -73,7 +73,7 @@
                                                 <div class="input-group-prepend">
                                                   <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
                                                 </div>
-                                                <input type="text" class="form-control solonumeros" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telefono" required>
+                                                <input type="text" class="form-control solonumeros" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telefono" maxlength="10"   required>
                                         </div>
                                         <div class="input-group mb-3">
                                   <div class="input-group-prepend">
