@@ -27,7 +27,7 @@ function gp_verTipoPersonal(id) {
                     console.log($(this).val());
                     if (item.tipo_personal.id==$(this).val()) {
                         $(this).attr('checked',true);
-                        listaidmateria.push(item.materia.id);
+                        listaidtipopersonal.push(item.tipo_personal.id);
                     }
                 // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
                 });
