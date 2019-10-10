@@ -35,13 +35,15 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/personals', function(){
     $lista_materias=\App\Materia::where("estado_del","A")->get();
+    $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
     $personal=\App\Personal::where([["estado_del","A"],["cargo","like","%Rector%"]])->get();
-    return view('personal',["lista_materias"=>$lista_materias,"personal"=>$personal]);
+    return view('personal',["lista_materias"=>$lista_materias,"personal"=>$personal,"lista_Enlace"=>$lista_Enlace]);
 });  
 
 Route::get('/social', function(){
     $social=\App\Social::where("estado_del","A")->get();
-    return view('social',["social"=>$social]);
+    $lista_Enlace=\App\Enlace::where("estado_del","A")->get();
+    return view('social',["social"=>$social,"lista_Enlace"=>$lista_Enlace]);
 }); 
 
 Route::get('/mostrar_estudiante', function(){
