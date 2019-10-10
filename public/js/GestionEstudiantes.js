@@ -21,7 +21,6 @@ function GE_CargarTablaTipoE(idEst) {
     cargo="";
     $.get('estudiante/'+idEst,function(dataE){
         estudiante = dataE;
-        console.log(estudiante);
     });
 
     $.get('tipo_estudiante_filtro',function (dataT) {
@@ -29,39 +28,58 @@ function GE_CargarTablaTipoE(idEst) {
             var fila ="";
             fila+= '<tr>';
             fila+=  `<td >${a+1}</td> `;
-            fila+=      `<td>${itemT.descripcion}</td>`;
+            fila+=  `<td>${itemT.descripcion}</td>`;
             fila+=  '<td>' ;
             fila+=    '<div class="form-check">';
             // fila2="";     
-                
+            var checked = "";
+            var cargo ="";
+            var visible ="hidden";
+            var type = "hidden";
+            var btnCss = "btn-primary";
+            var valueButton ="";
+            var required = "";
+            var disabled = "";
                 $.each(estudiante.lista_tipos,function (a,itemTE) {
                     if (itemTE.tipo.id==itemT.id) {
-                       console.log(itemTE);
-                        fila+=`<input class="form-check-input position-static" type="checkbox"   id="blankCheckbox_${itemT.id}" value="${itemT.id}" aria-label="..." onclick="pasaridtipo(this)" checked></input>`;
+                        checked = "checked";
+                        cargo = itemTE.Cargo;
+                        visible = "hidden";
+                        type = "text";
+                        btnCss = "btn-success";
+                        valueButton="si";
+                        required = "required";
+                        disabled = "disabled";
+
+                        listaidtipo.push(itemT.id.toString());
+                        listaCargo.push(cargo);
+                        
+                        $("#listaCargo").val(listaCargo);
+                        $("#listaTiposId").val(listaidtipo);
+
+                        
+                        //fila+=`<input class="form-check-input position-static" type="checkbox"   id="blankCheckbox_${itemT.id}" value="${itemT.id}" aria-label="..." onclick="pasaridtipo(this)" checked></input>`;
                        // debugger
                        //cargo = itemTE.Cargo;
-                       fila+='</div>';         
-                       fila+='    </td>';
-                       fila+='    <td>';
-                       fila+=`    <input id="cargo_${itemT.id}" type="text" class="ver" value="${itemTE.Cargo}">`;
-                       fila+=`   <a style="visibility:visible" href="#"  id="btnGuardarCargo_${itemT.id}" class="btn btn- btn-primary" onclick="GE_guardarCargo(${itemT.id})">x</a>`;
-                       fila+='    </td>';
-                       fila+='</tr>';
                     }else{
-                        fila+=`<input class="form-check-input position-static" type="checkbox"   id="blankCheckbox_${itemT.id}" value="${itemT.id}" aria-label="..." onclick="pasaridtipo(this)"></input>`;
-                        fila+='</div>';         
-                        fila+='    </td>';
-                        fila+='    <td>';
-                        fila+=`    <input id="cargo_${itemT.id}" type="hidden" class="ver" value="">`;
-                        fila+=`   <a style="visibility:hidden" href="#"  id="btnGuardarCargo_${itemT.id}" class="btn btn- btn-primary" onclick="GE_guardarCargo(${itemT.id})">x</a>`;
-                        fila+='    </td>';
-                        fila+='</tr>';
+                        //fila+=`<input class="form-check-input position-static" type="checkbox"   id="blankCheckbox_${itemT.id}" value="${itemT.id}" aria-label="..." onclick="pasaridtipo(this)"></input>`;
                     }
+                    
                 });
-            
+
+
+                fila+=`<input class="form-check-input position-static" type="checkbox"   id="blankCheckbox_${itemT.id}" value="${itemT.id}" aria-label="..." onclick="pasaridtipo(this)" ${checked}></input>`;
+                fila+='</div>';         
+                fila+='    </td>';
+                fila+='    <td>';
+                fila+=`    <input id="cargo_${itemT.id}" type="${type}" class="ver" value="${cargo}" >`;
+                //fila+=`    <input id="validarButton_${itemT.id}" type="hidden" value="${valueButton}" ${required}>`;/////////////////////////////////////////////////
+                fila+=`   <a style="visibility:${visible}" href="#"  id="btnGuardarCargo_${itemT.id}" class="btn ${btnCss}" onclick="GE_guardarCargo(${itemT.id})">x</a>`;
+                fila+='    </td>';
+                fila+='</tr>';
             //  fila+=fila2;
            
-
+            console.log("listaTipoId:"+listaidtipo+" ListaCargo: "+listaCargo);
             $('#tabla_tipos_estudiantes').append(fila);
                 
         });
@@ -79,7 +97,6 @@ function GE_verTipoE(id){
     $.get('estudiante/'+id,function(data){
 
         $.each(data.lista_tipos,function (a,item) {
-            // console.log(item);
             $('#tabla_tipos_estudiantes tr').each(function () {
                 var fila = this;
                 $(this).find("td:eq(2) input[type='checkbox']").each(function () {
@@ -95,7 +112,6 @@ function GE_verTipoE(id){
                         $(fila).find("td:eq(3) input[type='text']").attr("type","hidden");
                         $(fila).find("td:eq(3) input[type='hidden']").attr("value","");
                     }
-                // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
                 });
 
             });
@@ -107,11 +123,10 @@ function GE_verTipoE(id){
 
 
     $("#tabla_tipos_estudiantes tr").each(function (index) {
-        // console.log( $(this).find("td:eq(2) input[type='checkbox']").val());
         //var valores = $(this).parents("tr").find("td")[1].innerHTML;
     });
 
-console.log(listaidtipo);
+
     $(".TipoE").modal("show");
     
 }
@@ -127,23 +142,22 @@ var listaCargo=[];
 
 function pasaridtipo(obj) 
 {
+
     var id=$(obj).val();
 
     if(obj.checked == true){
-
         if (listaidtipo.length== 0) {//la lista esta limpia 
             listaidtipo.push(id);
             // listaCargo.push($('#cargo_'+id).val());
-            // console.log($('#cargo_'+id).val());
             $('#btnGuardarCargo_'+id).css("visibility", "visible");
-
+           // $('#btnGuardarCargo_'+id).attr("required",true);/////////////////////////////////////////////////////////////////////////
         } 
         if (listaidtipo.indexOf(id)=="-1") {//ese elemento no esta dentro de la lista
             listaidtipo.push(id);
             $('#btnGuardarCargo_'+id).css("visibility", "visible");
+           // $('#btnGuardarCargo_'+id).attr("required",true);/////////////////////////////////////////////////////////////////////////
 
             // listaCargo.push($('#cargo_'+id).val());
-            // console.log($('#cargo_'+id).val());
         } 
 
         $('#cargo_'+id).attr("type","text");
@@ -153,22 +167,44 @@ function pasaridtipo(obj)
         var indice = listaidtipo.indexOf(id);
         listaidtipo.splice(indice, 1);
         // listaCargo.splice(indice, 1);
-        // console.log(listaidtipo);
         $('#btnGuardarCargo_'+id).css("visibility", "hidden");
         $('#cargo_'+id).attr("type","hidden");
+        $('#cargo_'+id).attr("value","");
+        listaCargo.splice($('#cargo_'+id).val(),1);
+
+        $('#btnGuardarCargo_'+id).removeClass("btn-success");
+        $('#btnGuardarCargo_'+id).addClass("btn-primary");
+
+        $('#btnGuardarCargo_'+id).attr("required",false);/////////////////////////////////////////////////////////////////////////
+
+
     }
-    // console.log(listaidtipo);
+    console.log("listaTipoId:"+listaidtipo+" ListaCargo: "+listaCargo);
     $("#listaTiposId").val(listaidtipo);
     
 }
 function GE_guardarCargo(id) {
-    var hola = $('#cargo_'+id).val();
+    //var hola = $('#cargo_'+id).val();
     $('#btnGuardarCargo_'+id).removeClass("btn-primary");
     $('#btnGuardarCargo_'+id).addClass("btn-success");
 
-    listaCargo.push($('#cargo_'+id).val());
+   // listaCargo.push($('#cargo_'+id).val());
+
+    if (listaCargo.length== 0) {//la lista esta limpia 
+        listaCargo.push($('#cargo_'+id).val());
+    } 
+    if (listaCargo.indexOf($('#cargo_'+id).val())=="-1") {//ese elemento no esta dentro de la lista
+        listaCargo.push($('#cargo_'+id).val());
+    } 
+
+
     $("#listaCargo").val(listaCargo);
+    console.log("listaTipoId:"+listaidtipo+" ListaCargo: "+listaCargo);
     // $("")
 
     // alert(hola);
 }
+
+$('#frmEstudianteModal').on('submit',function (e) {
+    e.preventDefault();
+});

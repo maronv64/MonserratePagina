@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-9">
                         <div class ="content">
-                                <form action ="{{url('/users')}}" method="POST">
+                                <form class="needs-validation" action ="{{url('/users')}}" method="POST">
                                 @csrf 
                                 @method('POST')                     
                                     <div class="card ">

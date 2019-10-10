@@ -13,7 +13,7 @@
                                     <h5 class="card-title text-white">Tipo de Usuario </h5>
             
                                  </div>
-                                 <form action="{{route('tipo_usuario.update',1)}}" method="POST">
+                                 <form class="needs-validation" action="{{route('tipo_usuario.update',1)}}" method="POST">
                                     @method('PATCH')
                                     @csrf
                                     <div class="modal-body">
@@ -23,7 +23,7 @@
                                                     <input type="hidden" id="idTipousuario" name="id">
                                                     <span class="input-group-text" id="inputGroup-sizing-default">descripción</span>
                                                 </div>
-                                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="descripcionTipoUsuario" name ="descripcion">                                                                                                                                    
+                                                    <input required type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="descripcionTipoUsuario" name ="descripcion">                                                                                                                                    
                                         </div>  
                                     </div>
                                     <div class="modal-footer">
