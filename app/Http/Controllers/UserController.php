@@ -91,7 +91,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+    //    return $request;
         $items =User::where("id",$request->id)->first();
+        $items->idtipo=$request->idtipo;
         $items->name=$request->nombre;
         $items->email=$request->email;
         $items->password=bcrypt($request->contraseña);

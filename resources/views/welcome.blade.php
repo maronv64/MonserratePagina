@@ -108,7 +108,7 @@
 												</ul>
 											</div>
 											<div class="col-lg-7 post-right">
-												<a href="image-post.html">
+												<a href="">
 													<h4>{{$item["titulo"]}}</h4>
 												</a>
 												<!-- <ul class="meta">
@@ -169,7 +169,7 @@
 												</ul>
 											</div>
 											<div class="details">
-												<a href="image-post.html">
+												<a href="">
 													<h4>{{$item['apellidos'] . ' ' . $item['nombres']}}</h4>
 												</a>
 												<ul class="meta">
