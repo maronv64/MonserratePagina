@@ -41,7 +41,7 @@
                             <tbody>
                                 @foreach($lista_tipo_social as $item)
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row">{{$loop->iteration}}</th>
                                             <th>
                                                 {{$item["descripcion"]}}
                                             </th>
