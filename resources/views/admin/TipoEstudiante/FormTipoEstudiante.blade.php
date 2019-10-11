@@ -50,6 +50,7 @@
                                 @csrf    
                                 @method("DELETE")                
                                 <input type="submit" class="btn btn-outline-danger" value="Eliminar">
+                                
                             </form>
                         </td>
                         </tr>

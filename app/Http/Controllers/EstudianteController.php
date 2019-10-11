@@ -128,11 +128,13 @@ class EstudianteController extends Controller
      */
     public function destroy($id)
     {
+        // return $id;
         $items=Estudiante::where("id",$id)->first();
         $items->estado_del="E";
+        // return $items;
 
          //************************Eliminar una imagen**************************************** */
-         $name = $item->file_name.'.'.$item->file_ext;
+         $fileName = $items->file_name.'.'.$items->file_ext;
          $ruta = public_path()."/img/biblioteca/".$fileName; 
          
          try {

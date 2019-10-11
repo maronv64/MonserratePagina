@@ -15,7 +15,7 @@ Route::get('/', function () {
 
     $institucion=\App\Institucion::where("estado_del","A")->first();
 
-    $estudiantes=\App\TipoEstudiante::with(["lista_estudiante"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
+    $estudiantes=\App\TipoEstudiante::with(["lista_estudiante2"])->where([["estado_del","A"],["descripcion","like","%honor%"]])->first();
 
     // echo $estudiantes;
     // return response()->json($estudiantes);

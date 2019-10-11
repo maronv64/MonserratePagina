@@ -216,34 +216,36 @@
 							<div class="relavent-story-post-wrap mt-30">
 								<h4 class="title">Cuadro de Honor</h4>
 								<div class="relavent-story-list-wrap">
-									@isset($estudiantes['lista_estudiante'])
-										@foreach($estudiantes['lista_estudiante'] as $item )
-											@if($loop->iteration<=3)
-												<div class="single-relavent-post row align-items-center">
-													<div class="col-lg-5 post-left">
-														<div class="feature-img relative">
-															<div class="overlay overlay-bg"></div>
-															<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['estudiante']['file_name'].'.'.$item['estudiante']['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
+									@isset($estudiantes['lista_estudiante2'])
+										@foreach($estudiantes['lista_estudiante2'] as $item )
+											{{--@if($loop->iteration<=3)--}}
+												@isset($item['estudiante'])
+													<div  class="single-relavent-post row align-items-center container">
+														<div class="col-lg-5 post-left">
+															<div class="feature-img relative">
+																<div  class="overlay overlay-bg"></div>
+																<img class="img-fluid" src="{{asset('/img/biblioteca/')}}{{'/'.$item['estudiante']['file_name'].'.'.$item['estudiante']['file_ext']}}" alt="" style="width:300px!important; height:200px!important">
+															</div>
+															<ul class="tags">
+																<li><a href="#">{{$item['Cargo']}}</a></li>
+															</ul>
 														</div>
-														<ul class="tags">
-															<li><a href="#">{{$item['Cargo']}}</a></li>
-														</ul>
+														<div class="col-lg-7 post-right">
+															<a href="image-post.html">
+																<h4>{{$item['estudiante']['apellido'] . ' ' .$item['estudiante']['nombre']}}</h4>
+															</a>
+															<ul class="meta">
+																<li><a href="#"><span class="lnr lnr-user"></span>{{$item['estudiante']['especialidad']['descripcion'] }}</a></li>
+																<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+																<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li> -->
+															</ul>
+															<!-- <p class="excert">
+																Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+															</p> -->
+														</div>
 													</div>
-													<div class="col-lg-7 post-right">
-														<a href="image-post.html">
-															<h4>{{$item['estudiante']['apellido'] . ' ' .$item['estudiante']['nombre']}}</h4>
-														</a>
-														<ul class="meta">
-															<li><a href="#"><span class="lnr lnr-user"></span>{{$item['estudiante']['especialidad']['descripcion'] }}</a></li>
-															<!-- <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-															<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li> -->
-														</ul>
-														<!-- <p class="excert">
-															Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-														</p> -->
-													</div>
-												</div>
-											@endif
+												@endisset
+											{{--@endif--}}
 										@endforeach
 									@endisset
 									

@@ -31,8 +31,8 @@
                                         <div class="relavent-story-list-wrap">
                                             @isset($item1['lista_estudiante'])
                                                 @foreach($item1['lista_estudiante'] as $item )
-                                                   
-                                                        <div class="single-relavent-post row align-items-center">
+													@isset($item['estudiante'])
+                                                        <div class="single-relavent-post row align-items-center container">
                                                             <div class="col-lg-5 post-left">
                                                                 <div class="feature-img relative">
                                                                     <div class="overlay overlay-bg"></div>
@@ -56,7 +56,7 @@
                                                                 </p> -->
                                                             </div>
                                                         </div>
-                                
+                                					@endisset
                                                 @endforeach
                                             @endisset
                                             

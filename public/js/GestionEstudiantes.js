@@ -206,5 +206,5 @@ function GE_guardarCargo(id) {
 }
 
 $('#frmEstudianteModal').on('submit',function (e) {
-    e.preventDefault();
+    // e.preventDefault();
 });

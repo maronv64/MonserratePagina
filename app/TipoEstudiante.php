@@ -10,4 +10,8 @@ class TipoEstudiante extends Model
      {
         return $this->hasMany('App\RelacionTipoEEst', 'id_tipo_estudiante', 'id')->with("estudiante");
      }
+     function lista_estudiante2()
+     {
+        return $this->hasMany('App\RelacionTipoEEst', 'id_tipo_estudiante', 'id')->with("estudiante")->where("Cargo","like","%Abanderad%");
+     }
 }
