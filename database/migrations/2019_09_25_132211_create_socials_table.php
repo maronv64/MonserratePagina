@@ -16,8 +16,8 @@ class CreateSocialsTable extends Migration
         Schema::create('socials', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('idtipo');
-            $table->string('titulo','100');
-            $table->string('descripcion','100');
+            $table->string('titulo','1800');
+            $table->string('descripcion','1800');
             $table->string('estado_del','2');
             $table->string('file_name','100');
             $table->string('file_ext','100');
