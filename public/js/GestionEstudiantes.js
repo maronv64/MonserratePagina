@@ -103,7 +103,7 @@ function GE_verTipoE(id){
                     //alert($(this).val());
                     if (item.tipo.id==$(this).val()) {
                         $(this).attr('checked',true);
-                        listaidtipo.push(item.tipo.id);
+                        listaidtipo.push(item.tipo.id.toString());
                         $(fila).find("td:eq(3) input[type='hidden']").attr("type","text");
                         //$(fila).find("td:eq(3) a").attr("value","text");
                         $('#cargo_'+item.tipo.id).val(item.Cargo);

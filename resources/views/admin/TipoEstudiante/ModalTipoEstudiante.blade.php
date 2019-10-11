@@ -8,7 +8,7 @@
             <div class="modal-header" style="background-color: #007bff;">
                 <h5 class="card-title text-white">Tipos de Estudiantes</h5>
             </div>
-                <form action="{{route('tipo_estudiante.update',1)}}" method="POST">
+                <form class="needs-validation" action="{{route('tipo_estudiante.update',1)}}" method="POST">
                     @csrf
                     @method('PATCH')
                     <div class="modal-body">
@@ -17,7 +17,7 @@
                                 <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
                             </div>
                             <input type="hidden" id="idTipoEstudiante" name="id">   
-                            <input id="descripcionTipoEstudiante" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion">
+                            <input id="descripcionTipoEstudiante" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion" required>
                              &nbsp;
                             <input type="submit" class="btn btn-outline-info" value="Guardar">
                         </div>    
